@@ -188,6 +188,3 @@ Data compiled: 2025-08-26T21:25:36.980436Z
 Format version: 1.0
 
 ---
-
-**Tip:**  
-For interactive or network-visualization pages, GitHub Pages is the easiest way to make your HTML accessible to collaborators and the public.
