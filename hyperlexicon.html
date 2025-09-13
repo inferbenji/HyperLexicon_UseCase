@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyperlexicon - Knowledge Graph Structure</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #0a0a0a 100%);
+            color: #f1f5f9;
+            line-height: 1.4;
+            font-size: 0.85rem;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        /* ===========================
+           UNIFIED HEADER STYLES
+           =========================== */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4, #10b981, #f59e0b, #ef4444, #3b82f6);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+            animation: borderGlow 6s ease-in-out infinite;
+            text-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            background: linear-gradient(135deg, #a1a8b8 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        /* ===========================
+           UNIFIED ANIMATION KEYFRAMES
+           =========================== */
+        @keyframes borderGlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* ===========================
+           SHARED CARD/WRAP STYLES
+           =========================== */
+        .unified-wrap {
+            background: linear-gradient(180deg, rgba(18, 26, 58, 0.9), rgba(15, 24, 56, 0.9));
+            border: 1px solid #1f2a52;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 12px 32px rgba(0,0,0,.25);
+            margin: 24px 0;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .unified-wrap::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 10px;
+            padding: 2px;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4, #10b981, #f59e0b, #ef4444, #3b82f6);
+            background-size: 400% 400%;
+            animation: borderGlow 8s ease-in-out infinite;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .unified-wrap:hover::before {
+            opacity: 1 !important;
+        }
+        
+        .unified-wrap:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(59, 130, 246, 0.2);
+        }
+
+        /* ===========================
+           UNIFIED HEADER FOR SECTIONS
+           =========================== */
+        .section-head {
+            padding: 14px 16px;
+            background: linear-gradient(180deg, #121a3a, #0f1533);
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            border-bottom: 1px solid #1f2a52;
+        }
+
+        .section-title {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+            letter-spacing: 0.05em;
+        }
+
+        .section-pill {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 0.78rem;
+            background: rgba(96, 165, 250, 0.12);
+            color: #60a5fa;
+            border: 1px solid rgba(96, 165, 250, 0.35);
+        }
+
+        /* ===========================
+           STATS GRID (TOP SECTION)
+           =========================== */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-block {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            padding: 1.2rem;
+            border-radius: 8px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 8px 32px rgba(59, 130, 246, 0.15);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 8px;
+            padding: 2px;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4, #10b981, #f59e0b, #ef4444, #3b82f6);
+            background-size: 400% 400%;
+            animation: borderGlow 8s ease-in-out infinite;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .stat-block:hover::before {
+            opacity: 1;
+        }
+
+        .stat-block:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(59, 130, 246, 0.2);
+            border-color: rgba(59, 130, 246, 0.6);
+            backdrop-filter: blur(8px);
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            background: linear-gradient(135deg, #a1a8b8 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* ===========================
+           EXECUTIVE BRIEF STYLES
+           =========================== */
+        .hx-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 12px;
+            padding: 12px;
+        }
+
+        .hx-card {
+            background: #0e1533;
+            border: 1px solid #1f2a52;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .hx-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 8px;
+            padding: 2px;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4, #10b981, #f59e0b, #ef4444, #3b82f6);
+            background-size: 400% 400%;
+            animation: borderGlow 8s ease-in-out infinite;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .hx-card:hover::before {
+            opacity: 1;
+        }
+        
+        .hx-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(59, 130, 246, 0.2);
+        }
+
+        .hx-card h4 {
+            margin: 0;
+            padding: 10px 12px;
+            background: linear-gradient(135deg, #a5b4fc 0%, #c7d2fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            border-bottom: 1px solid #1f2a52;
+            font-weight: 800;
+        }
+
+        .hx-body {
+            padding: 10px 12px;
+        }
+
+        .hx-kpis {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+
+        .hx-kpi {
+            background: #0b122d;
+            border: 1px solid #1f2a52;
+            border-radius: 8px;
+            padding: 8px 10px;
+        }
+
+        .hx-kpi .k {
+            color: #9aa4bf;
+            font-size: 0.78rem;
+        }
+
+        .hx-kpi .v {
+            font-weight: 800;
+            color: #e5e7eb;
+            margin-top: 2px;
+        }
+
+        .hx-legend {
+            padding: 8px 12px;
+            color: #9aa4bf;
+            border-top: 1px solid #1f2a52;
+            font-size: 0.8rem;
+        }
+
+        .hx-span4 { grid-column: span 4; }
+        .hx-span6 { grid-column: span 6; }
+        .hx-span8 { grid-column: span 8; }
+        .hx-colspan { grid-column: span 12; }
+
+        table.hx {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table.hx th, table.hx td {
+            padding: 8px 10px;
+            border-bottom: 1px solid #1f2a52;
+            vertical-align: top;
+        }
+
+        table.hx thead th {
+            background: linear-gradient(135deg, #a5b4fc 0%, #c7d2fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-color: #0f1838;
+            text-align: left;
+            position: sticky;
+            top: 0;
+        }
+
+        table.hx tbody tr:nth-child(even) {
+            background: #0c1433;
+        }
+
+        .hx-list {
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        .hx-list li {
+            margin: 4px 0;
+        }
+
+        .hx-flex {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .hx-chip {
+            background: #0b122d;
+            border: 1px solid #1f2a52;
+            border-radius: 999px;
+            padding: 3px 8px;
+            color: #9aa4bf;
+        }
+
+        .hx-skinny td {
+            padding: 6px 8px;
+        }
+
+        /* ===========================
+           NODE REGISTRY STYLES
+           =========================== */
+        .nr-legend {
+            padding: 8px 16px;
+            color: #9aa4bf;
+            font-size: 0.82rem;
+            border-top: 1px solid #1f2a52;
+            background: rgba(0,0,0,.12);
+        }
+
+        .nr-legend code {
+            background: linear-gradient(135deg, rgba(59,130,246,.1), rgba(139,92,246,.1));
+            border: 1px solid rgba(96,165,250,.3);
+            padding: 0 6px;
+            border-radius: 6px;
+            color: #e5e7eb;
+        }
+
+        .overflow-scroll {
+            overflow-x: auto;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(59, 130, 246, 0.6) rgba(15, 24, 56, 0.3);
+        }
+
+        .overflow-scroll::-webkit-scrollbar {
+            height: 12px;
+        }
+
+        .overflow-scroll::-webkit-scrollbar-track {
+            background: linear-gradient(90deg, rgba(15, 24, 56, 0.8), rgba(18, 26, 58, 0.8));
+            border-radius: 6px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .overflow-scroll::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4, #10b981, #f59e0b, #ef4444, #3b82f6);
+            background-size: 400% 400%;
+            border-radius: 6px;
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            animation: borderGlow 8s ease-in-out infinite;
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+        }
+
+        .overflow-scroll::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(45deg, #60a5fa, #a78bfa, #22d3ee, #34d399, #fbbf24, #f87171, #60a5fa);
+            background-size: 400% 400%;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.5);
+        }
+
+        table.nr {
+            width: 100%;
+            border-collapse: collapse;
+            font: 12px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        }
+
+        .nr th, .nr td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #1f2a52;
+            vertical-align: top;
+        }
+
+        .nr thead th {
+            position: sticky;
+            top: 0;
+            background: linear-gradient(180deg, #0f1533, rgba(96,165,250,.08));
+            background: linear-gradient(135deg, #a5b4fc 0%, #c7d2fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-color: #0f1838;
+            text-align: left;
+            font-weight: 800;
+        }
+
+        .nr tbody tr:nth-child(even) {
+            background: rgba(96,165,250,.05);
+        }
+
+        .nr tbody tr:hover {
+            background: rgba(96,165,250,.12);
+        }
+
+        .pill {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 999px;
+            font-weight: 800;
+            font-size: 0.72rem;
+        }
+
+        .type-GENE { color: #60a5fa; background: rgba(96,165,250,.15); border: 1px solid rgba(96,165,250,.3); }
+        .type-PATHWAY { color: #8b5cf6; background: rgba(139,92,246,.15); border: 1px solid rgba(139,92,246,.3); }
+        .type-VARIANT { color: #f59e0b; background: rgba(245,158,11,.15); border: 1px solid rgba(245,158,11,.35); }
+        .type-EFFECT { color: #ef4444; background: rgba(239,68,68,.15); border: 1px solid rgba(239,68,68,.35); }
+        .type-CLASSIFICATION { color: #ec4899; background: rgba(236,72,153,.15); border: 1px solid rgba(236,72,153,.35); }
+        .type-TISSUE { color: #10b981; background: rgba(16,185,129,.15); border: 1px solid rgba(16,185,129,.35); }
+        .type-SOURCE { color: #94a3b8; background: rgba(148,163,184,.15); border: 1px solid rgba(148,163,184,.35); }
+        .type-OUTPUT { color: #06b6d4; background: rgba(6,182,212,.15); border: 1px solid rgba(6,182,212,.35); }
+
+        .na { color: #6b7280; }
+        .unk { color: #f59e0b; }
+        .redact { color: #eab308; }
+        .mono { white-space: pre-wrap; }
+        .ont { color: #fbbf24; font-weight: 700; }
+
+        .tooltip {
+            position: relative;
+            cursor: help;
+        }
+
+        .tooltip .tip {
+            visibility: hidden;
+            opacity: 0;
+            transition: 0.12s ease;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            background: #111827;
+            color: #e5e7eb;
+            border: 1px solid #374151;
+            padding: 6px 8px;
+            border-radius: 6px;
+            white-space: nowrap;
+            z-index: 20;
+        }
+
+        .tooltip:hover .tip {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(2px);
+        }
+
+        /* ===========================
+           SCHEMA STYLES
+           =========================== */
+        .schema-info {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.03) 0%, rgba(139, 92, 246, 0.03) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 8px 32px rgba(59, 130, 246, 0.15);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .schema-info::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 8px;
+            padding: 2px;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4, #10b981, #f59e0b, #ef4444, #3b82f6);
+            background-size: 400% 400%;
+            animation: borderGlow 8s ease-in-out infinite;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .schema-info:hover::before {
+            opacity: 1 !important;
+        }
+
+        .schema-info:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(59, 130, 246, 0.2);
+            border-color: rgba(59, 130, 246, 0.6);
+            backdrop-filter: blur(8px);
+        }
+
+        .schema-title {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.1em;
+        }
+
+        .schema-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+
+        .schema-block {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.12) 0%, rgba(139, 92, 246, 0.12) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            padding: 1.5rem;
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .schema-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 8px;
+            padding: 2px;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4, #10b981, #f59e0b, #ef4444, #3b82f6);
+            background-size: 400% 400%;
+            animation: borderGlow 8s ease-in-out infinite;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .schema-block:hover::before {
+            opacity: 1 !important;
+        }
+
+        .schema-block:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.2);
+            border-color: rgba(59, 130, 246, 0.5);
+            backdrop-filter: blur(6px);
+        }
+
+        .schema-block-title {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.05em;
+        }
+
+        .field-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .field-list li {
+            padding: 0.4rem 0;
+            color: #f8fafc;
+            font-size: 0.75rem;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .field-list li:hover {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(139, 92, 246, 0.08));
+            padding-left: 0.5rem;
+            border-radius: 4px;
+            transform: translateX(2px);
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
+        }
+
+        .field-list li:last-child {
+            border-bottom: none;
+        }
+
+        .field-name {
+            background: linear-gradient(135deg, #e2e8f0 0%, #f1f5f9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+
+        .field-type {
+            background: linear-gradient(135deg, #60a5fa 0%, #34d399 50%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        /* ===========================
+           RESPONSIVE DESIGN
+           =========================== */
+        @media (max-width: 1024px) {
+            .hx-span6, .hx-span4, .hx-span8 {
+                grid-column: span 12;
+            }
+            .hx-kpis {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 1rem; }
+            .title { font-size: 2rem; }
+            body { font-size: 0.8rem; }
+            .nr { font-size: 0.7rem; }
+            .schema-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">HYPERLEXICON</h1>
+            <p class="subtitle">KNOWLEDGE GRAPH NODE STRUCTURE • BIOMEDICAL USE CASE</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-block">
+                <span class="stat-value">8</span>
+                <span class="stat-label">Node Types</span>
+            </div>
+            <div class="stat-block">
+                <span class="stat-value">600K+</span>
+                <span class="stat-label">Total Nodes</span>
+            </div>
+            <div class="stat-block">
+                <span class="stat-value">7</span>
+                <span class="stat-label">Edge Types</span>
+            </div>
+            <div class="stat-block">
+                <span class="stat-value">2.1M+</span>
+                <span class="stat-label">Total Edges</span>
+            </div>
+        </div>
+
+        <!-- Executive Brief Section -->
+        <div class="unified-wrap">
+            <div class="section-head">
+                <div class="section-title">EXECUTIVE BRIEF</div>
+                <div class="section-pill">Model Performance Envelope & Cost Structure</div>
+            </div>
+
+            <div class="hx-grid">
+                <!-- Performance Envelope -->
+                <div class="hx-card hx-span6">
+                    <h4>MODEL PERFORMANCE ENVELOPE</h4>
+                    <div class="hx-body">
+                        <div class="hx-kpis" id="hx-perf-kpis"></div>
+                        <div class="hx-legend" id="hx-perf-foot"></div>
+                    </div>
+                </div>
+
+                <!-- Intelligence Cost Structure -->
+                <div class="hx-card hx-span6">
+                    <h4>INTELLIGENCE COST STRUCTURE</h4>
+                    <div class="hx-body">
+                        <div class="hx-kpis" id="hx-cost-kpis"></div>
+                        <div class="hx-legend">Fast-path efficiency shows the percentage of requests that avoid LLM escalation.</div>
+                    </div>
+                </div>
+
+                <!-- Task-Level Timing Targets -->
+                <div class="hx-card hx-span6">
+                    <h4>NEURAL OBSERVABILITY • Task-Level Timing Targets</h4>
+                    <div class="hx-body">
+                        <table class="hx hx-skinny" id="hx-task-table">
+                            <thead><tr><th>Task</th><th>Avg Time</th><th>Notes</th></tr></thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Operational Comparison -->
+                <div class="hx-card hx-span6">
+                    <h4>Operational Comparison</h4>
+                    <div class="hx-body">
+                        <table class="hx" id="hx-comp-table">
+                            <thead>
+                                <tr><th>Metric</th><th>Hyperlexicon</th><th>LLMs (e.g., GPT-4, Claude)</th></tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                        <div class="hx-legend">Figures reflect steady-state optimized configurations.</div>
+                    </div>
+                </div>
+
+                <!-- Functional Value -->
+                <div class="hx-card hx-span4">
+                    <h4>Business Value & Cost Model • Functional Value</h4>
+                    <div class="hx-body">
+                        <ul class="hx-list" id="hx-functional-list"></ul>
+                    </div>
+                </div>
+
+                <!-- User-Scale Cost Model -->
+                <div class="hx-card hx-span8">
+                    <h4>User-Scale Cost Model (illustrative, optimized)</h4>
+                    <div class="hx-body">
+                        <table class="hx" id="hx-users-table">
+                            <thead><tr><th>Users</th><th>Estimated Cost / User</th></tr></thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Failure Patterns -->
+                <div class="hx-card hx-span6">
+                    <h4>AI-SPECIFIC FAILURE PATTERNS</h4>
+                    <div class="hx-body">
+                        <div id="hx-failure-chips" class="hx-flex"></div>
+                        <div class="hx-legend">Track early and tie to gates: accuracy, tail-latency, cache miss, index staleness.</div>
+                    </div>
+                </div>
+
+                <!-- Observability & Gates -->
+                <div class="hx-card hx-span6">
+                    <h4>NEURAL OBSERVABILITY • Quality & Gates</h4>
+                    <div class="hx-body">
+                        <div id="hx-obs-chips" class="hx-flex"></div>
+                        <div class="hx-legend">5-minute SLO windows with real-time OOM and degrade triggers.</div>
+                    </div>
+                </div>
+
+                <!-- Security & Continuous Learning -->
+                <div class="hx-card hx-colspan">
+                    <h4>ML SECURITY MODEL • CONTINUOUS LEARNING OPS</h4>
+                    <div class="hx-body">
+                        <div class="hx-flex" id="hx-sec-chips"></div>
+                        <div class="hx-legend">Execution: local-only inference; signed weights/indices; PII-scrubbed vectors; network-gapped nodes.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Node Registry Section -->
+        <div class="unified-wrap">
+            <div class="section-head">
+                <div class="section-title">NODE REGISTRY • BRCA1 PATHWAY</div>
+            </div>
+            <div class="nr-legend">
+                Legend: <code>—</code> = Not applicable (by design), <code>∅</code> = Unknown (expected but not found),
+                <code>□</code> = Withheld (exists but redacted). All timestamps ISO-8601 UTC. Provenance required for all nodes.
+            </div>
+            <div class="overflow-scroll">
+                <table class="nr" id="node-registry">
+                    <thead>
+                        <tr>
+                            <th>OID</th>
+                            <th>LABEL</th>
+                            <th>TYPE</th>
+                            <th>ENSEMBL</th>
+                            <th>PROVENANCE</th>
+                            <th>CREATED</th>
+                            <th>ONTOLOGY</th>
+                            <th>HGVS</th>
+                            <th>UBERON</th>
+                        </tr>
+                    </thead>
+                    <tbody><!-- rows injected --></tbody>
+                </table>
+            </div>
+            <div class="note" id="nr-summary"></div>
+        </div>
+
+        <!-- Schema Specification -->
+        <div class="schema-info">
+            <div class="schema-title">NODE SCHEMA SPECIFICATION</div>
+            <div class="schema-grid">
+                <div class="schema-block">
+                    <div class="schema-block-title">CORE IDENTIFIERS</div>
+                    <ul class="field-list">
+                        <li><span class="field-name">oid</span> <span class="field-type">STRING PRIMARY KEY</span></li>
+                        <li><span class="field-name">label</span> <span class="field-type">STRING DISPLAY</span></li>
+                        <li><span class="field-name">type</span> <span class="field-type">ENUM NODE_TYPE</span></li>
+                        <li><span class="field-name">created</span> <span class="field-type">TIMESTAMP UTC</span></li>
+                    </ul>
+                </div>
+                
+                <div class="schema-block">
+                    <div class="schema-block-title">SEMANTIC REFERENCES</div>
+                    <ul class="field-list">
+                        <li><span class="field-name">ensemble</span> <span class="field-type">STRING? ENSEMBL_ID</span></li>
+                        <li><span class="field-name">ontology</span> <span class="field-type">STRING? GO_TERM</span></li>
+                        <li><span class="field-name">hgvs</span> <span class="field-type">STRING? HGVS_NOTATION</span></li>
+                        <li><span class="field-name">uberon_like</span> <span class="field-type">STRING? ANATOMY_REF</span></li>
+                    </ul>
+                </div>
+                
+                <div class="schema-block">
+                    <div class="schema-block-title">PROVENANCE & METADATA</div>
+                    <ul class="field-list">
+                        <li><span class="field-name">provenance</span> <span class="field-type">STRING? SOURCE_INFO</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="schema-info">
+            <div class="schema-title">TYPE DISTRIBUTION & PATTERNS</div>
+            <div class="schema-grid">
+                <div class="schema-block">
+                    <div class="schema-block-title">BIOLOGICAL ENTITIES</div>
+                    <ul class="field-list">
+                        <li><span class="field-name">gene</span> <span class="field-type">ENSEMBLE + GO TERMS</span></li>
+                        <li><span class="field-name">pathway</span> <span class="field-type">GO ONTOLOGY REF</span></li>
+                        <li><span class="field-name">variant</span> <span class="field-type">HGVS NOTATION</span></li>
+                        <li><span class="field-name">tissue</span> <span class="field-type">UBERON REFERENCE</span></li>
+                    </ul>
+                </div>
+                
+                <div class="schema-block">
+                    <div class="schema-block-title">ANALYTICAL NODES</div>
+                    <ul class="field-list">
+                        <li><span class="field-name">effect</span> <span class="field-type">FUNCTIONAL IMPACT</span></li>
+                        <li><span class="field-name">classification</span> <span class="field-type">CLINICAL SIGNIFICANCE</span></li>
+                        <li><span class="field-name">source</span> <span class="field-type">PROVENANCE TRACKING</span></li>
+                        <li><span class="field-name">output</span> <span class="field-type">INFERENCE RESULT</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="schema-info">
+            <div class="schema-title">GRAPH TOPOLOGY METRICS</div>
+            <div class="schema-grid">
+                <div class="schema-block">
+                    <div class="schema-block-title">CONNECTIVITY PATTERNS</div>
+                    <ul class="field-list">
+                        <li><span class="field-name">Gene → Pathway</span> <span class="field-type">1:N MEMBERSHIP</span></li>
+                        <li><span class="field-name">Variant → Gene</span> <span class="field-type">N:1 BELONGS_TO</span></li>
+                        <li><span class="field-name">Effect → Variant</span> <span class="field-type">1:1 CAUSES</span></li>
+                        <li><span class="field-name">Classification → Effect</span> <span class="field-type">1:1 DESCRIBES</span></li>
+                    </ul>
+                </div>
+                
+                <div class="schema-block">
+                    <div class="schema-block-title">INFERENCE CHAINS</div>
+                    <ul class="field-list">
+                        <li><span class="field-name">Gene → Tissue</span> <span class="field-type">EXPRESSION_IN</span></li>
+                        <li><span class="field-name">Source → *</span> <span class="field-type">EVIDENCE_FOR</span></li>
+                        <li><span class="field-name">* → Output</span> <span class="field-type">GENERATES</span></li>
+                        <li><span class="field-name">Query → Output</span> <span class="field-type">SEMANTIC_MATCH</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 3rem; padding: 2rem; color: #a1a8b8; font-size: 0.8rem; border-top: 1px solid rgba(59, 130, 246, 0.2);">
+        Copyright (c) 2025 Benjamin Nelson — All rights reserved.<br>
+        Commercial licensing: <a href="mailto:benjaminnelson1@outlook.com" style="color: #3b82f6; text-decoration: none; text-shadow: 0 0 8px rgba(59, 130, 246, 0.3);">benjaminnelson1@outlook.com</a>
+    </div>
+
+    <script>
+    // ---------- Exec Brief Data ----------
+    const DATA = {
+      perfEnvelope: {
+        inferenceP95: "250 ms", compositeSLO: true,
+        modelCascade: "lex → mem → LLM (2 s cap)",
+        throughput: "X kQPS @ 25% headroom",
+        availability: "99.9% smart fallback",
+        footnote: "p95 includes network + retrieval; cascade capped at 2 s wall time."
+      },
+      costStructure: {
+        computeUnit: "$2-$8 / 1M inferences",
+        escalationRate: "1% → LLM costly",
+        fastPathEfficiency: "98–99% fast-path",
+        costAvoidance: (() => {
+            const MONTHLY_VOLUME_M = 5; // change to your monthly requests in millions
+            const perMillion = [30000, 100000];
+            const monthlyRange = perMillion.map(v => v * MONTHLY_VOLUME_M);
+            return `$${(monthlyRange[0]/1000)|0}k–$${(monthlyRange[1]/1000)|0}k / month (at ${MONTHLY_VOLUME_M}M reqs)`;
+        })()
+      },
+      tasks: [
+        { task:"Vector search (batched)", avg:"~8–20 ms", notes:"Graph-based ANN, per-language indices" },
+        { task:"Graph traversal", avg:"~15–35 ms", notes:"Language-aware shortest path Surface→Sense" },
+        { task:"Cross-language fallback", avg:"~10 ms", notes:"Back-off across languages" },
+        { task:"Total query runtime (target)", avg:"25–100 ms", notes:"Meets §5 SLOs at scale" }
+      ],
+      functionalValue: [
+        "Sense disambiguation across domains/languages.",
+        "Semantic search with vector precision.",
+        "Relational inference (hypernyms, hyponyms, causal edges).",
+        "Explainability via explained_by / illustrated_by / examples.",
+        "Cross-language conceptual bridging.",
+        "Grounding for compatible agent frameworks."
+      ],
+      compRows: [
+        ["Per-query compute","≈ 25–100 ms / <1 GPU op","1–3 s / 5–100 GPU ops"],
+        ["Cost per 1M queries","$2–$8 (optimized)","$30K–$100K+"],
+        ["Scalability","Linear with index size","Often super-linear with token context"],
+        ["Determinism / Explainability","High (transparent graphs)","Low (black-box completions)"],
+        ["Customizability","High (insert/update graph)","Limited (fine-tuning prompts)"],
+        ["Knowledge updates","Realtime (graph mutation)","Batch retrain or RAG workaround"],
+        ["Language coverage","Multilingual / cross-lingual control","Biased / incomplete embeddings"]
+      ],
+      userScaleCosts: [
+        ["10 M","$0.05–$0.09"],
+        ["50 M","$0.03–$0.06"],
+        ["100 M","$0.02–$0.04"],
+        ["500 M","$0.004–$0.008"],
+        ["1 B","< $0.004"]
+      ],
+      failurePatterns: [
+        "Model drift: recall ↓ → retrain trigger",
+        "Capacity cliff: 80% → graceful degrade",
+        "Context collapse: memory → LLM → analysis-only",
+        "Index staleness: rebuild → A/B → cutover"
+      ],
+      observability: [
+        "Trace depth: tool-use → reasoning",
+        "Quality gates: p50/p95 + accuracy",
+        "Alert velocity: 5m SLO, real-time OOM",
+        "Inference costs: per-request breakdown"
+      ],
+      securityAndCLOps: [
+        "Execution: local-only inference",
+        "Data sovereignty: PII-scrubbed vectors",
+        "Model integrity: signed weights/indices",
+        "Compute isolation: network-gapped nodes",
+        "Model refresh: source-change triggers",
+        "Vector health: symmetry + pattern dist",
+        "State evolution: persist → validate → deploy",
+        "Feedback loops: quality → retrain → deploy"
+      ]
+    };
+
+    // ---------- Exec Brief Render ----------
+    const $ = s => document.querySelector(s);
+    function fillKPIs(id, items){
+      const root = $(id); root.innerHTML='';
+      items.forEach(({k,v})=>{
+        const d=document.createElement('div'); d.className='hx-kpi';
+        d.innerHTML=`<div class="k">${k}</div><div class="v">${v}</div>`;
+        root.appendChild(d);
+      });
+    }
+    function fillTable(id, rows){
+      const tb = $(id+' tbody'); tb.innerHTML='';
+      rows.forEach(r=>{
+        const tr=document.createElement('tr'); tr.innerHTML=r.map(c=>`<td>${c}</td>`).join(''); tb.appendChild(tr);
+      });
+    }
+    function fillList(id, items){ const ul=$(id); ul.innerHTML=''; items.forEach(x=>{const li=document.createElement('li'); li.textContent=x; ul.appendChild(li);}); }
+    function fillChips(id, items){ const b=$(id); b.innerHTML=''; items.forEach(x=>{const sp=document.createElement('div'); sp.className='hx-chip'; sp.textContent=x; b.appendChild(sp);}); }
+
+    fillKPIs('#hx-perf-kpis', [
+      {k:'Inference p95', v: DATA.perfEnvelope.inferenceP95 + (DATA.perfEnvelope.compositeSLO ? ' (composite SLO)' : '')},
+      {k:'Model cascade', v: DATA.perfEnvelope.modelCascade},
+      {k:'Throughput', v: DATA.perfEnvelope.throughput},
+      {k:'Availability', v: DATA.perfEnvelope.availability}
+    ]);
+    $('#hx-perf-foot').textContent = DATA.perfEnvelope.footnote;
+
+    fillKPIs('#hx-cost-kpis', [
+      {k:'Compute unit', v: DATA.costStructure.computeUnit},
+      {k:'Escalation rate', v: DATA.costStructure.escalationRate},
+      {k:'Efficiency gain', v: DATA.costStructure.fastPathEfficiency},
+      {k:'Cost avoidance', v: DATA.costStructure.costAvoidance}
+    ]);
+    fillTable('#hx-task-table', DATA.tasks.map(t=>[t.task,t.avg,t.notes]));
+    fillTable('#hx-comp-table', DATA.compRows);
+    fillList('#hx-functional-list', DATA.functionalValue);
+    fillTable('#hx-users-table', DATA.userScaleCosts);
+    fillChips('#hx-failure-chips', DATA.failurePatterns);
+    fillChips('#hx-obs-chips', DATA.observability);
+    fillChips('#hx-sec-chips', DATA.securityAndCLOps);
+
+    /* =========================
+       CONFIG: applicability matrix
+       R=required, O=optional, NA=not applicable
+       ========================= */
+    const APPLICABILITY = {
+      GENE:         { ensembl:'R', provenance:'R', created:'R', ontology:'O', hgvs:'NA', uberon:'NA' },
+      PATHWAY:      { ensembl:'NA', provenance:'R', created:'R', ontology:'R', hgvs:'NA', uberon:'NA' },
+      VARIANT:      { ensembl:'NA', provenance:'R', created:'R', ontology:'NA', hgvs:'R',  uberon:'NA' },
+      EFFECT:       { ensembl:'NA', provenance:'R', created:'R', ontology:'NA', hgvs:'NA', uberon:'NA' },
+      CLASSIFICATION:{ensembl:'NA', provenance:'R', created:'R', ontology:'NA', hgvs:'NA', uberon:'NA' },
+      TISSUE:       { ensembl:'NA', provenance:'R', created:'R', ontology:'R',  hgvs:'NA', uberon:'R'  },
+      SOURCE:       { ensembl:'NA', provenance:'R', created:'R', ontology:'NA', hgvs:'NA', uberon:'NA' },
+      OUTPUT:       { ensembl:'NA', provenance:'R', created:'R', ontology:'NA', hgvs:'NA', uberon:'NA' }
+    };
+
+    /* ========== helpers ========== */
+    const NA = '—', UNKNOWN = '∅', REDACTED = '□';
+    const isIsoUtc = s => typeof s === 'string' && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(s);
+    function formatField(value, applicability, col, type){
+      // value can be null (NA), undefined (unknown), or string
+      if (applicability === 'NA') return `<span class="na tooltip">${NA}<span class="tip">Not applicable for ${type}</span></span>`;
+      if (value === 'REDACTED') return `<span class="redact tooltip">${REDACTED}<span class="tip">Withheld for licensing</span></span>`;
+      if (value === undefined)  return `<span class="unk tooltip">${UNKNOWN}<span class="tip">Expected but unknown</span></span>`;
+      if (value === null)       return `<span class="na tooltip">${NA}<span class="tip">Not applicable for ${type}</span></span>`;
+      if (col === 'ontology')   return `<span class="ont mono">${value}</span>`;
+      return `<span class="mono">${value}</span>`;
+    }
+
+    /* ========== validation rules ========== */
+    function validateRow(row){
+      const errs=[], warns=[];
+      const type = row.type;
+      const A = APPLICABILITY[type] || {};
+      // required fields present
+      for(const key of ['ensembl','provenance','created','ontology','hgvs','uberon']){
+        const rule = A[key];
+        if (rule === 'R'){
+          if (!row[key] && row[key] !== 0){
+            errs.push(`Missing required ${key.toUpperCase()} for type ${type} (oid=${row.oid})`);
+          }
+        }
+      }
+      // special: ISO timestamp
+      if (row.created && !isIsoUtc(row.created)){
+        warns.push(`Timestamp not ISO-8601 UTC (created) for oid=${row.oid}: "${row.created}"`);
+      }
+      // special: GENE identifiers
+      if (type==='GENE' && !row.ensembl && !/HGNC:\d+/.test(row?.provenance||'') && !/NCBIGene:\d+/.test(row?.provenance||'')){
+        warns.push(`GENE should include Ensembl or HGNC/NCBI cross-refs (oid=${row.oid})`);
+      }
+      return {errs, warns};
+    }
+
+    /* ========== renderer ========== */
+    function renderNodeRegistry(tableId, rows){
+      const tbody = document.querySelector(`#${tableId} tbody`);
+      tbody.innerHTML = '';
+      let errCount=0, warnCount=0;
+      rows.forEach(row => {
+        const {errs, warns} = validateRow(row);
+        errCount += errs.length; warnCount += warns.length;
+        errs.forEach(e => console.error('[NR][ERROR]', e));
+        warns.forEach(w => console.warn('[NR][WARN] ', w));
+
+        const A = APPLICABILITY[row.type] || {};
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td class="mono">${row.oid}</td>
+          <td>${row.label || ''}</td>
+          <td><span class="pill type-${row.type}">${row.type}</span></td>
+          <td>${formatField(row.ensembl,  A.ensembl,  'ensembl',  row.type)}</td>
+          <td>${formatField(row.provenance,A.provenance,'provenance',row.type)}</td>
+          <td>${formatField(row.created,  A.created,  'created',  row.type)}</td>
+          <td>${formatField(row.ontology, A.ontology, 'ontology', row.type)}</td>
+          <td>${formatField(row.hgvs,     A.hgvs,     'hgvs',     row.type)}</td>
+          <td>${formatField(row.uberon,   A.uberon,   'uberon',   row.type)}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+      const summary = document.getElementById('nr-summary');
+      summary.style.display = 'none'; // Hide validation feedback
+    }
+
+    /* ========== sample data (your BRCA1 panel) ========== */
+    const BRCA1_ROWS = [
+      {
+        oid:'gene:BRCA1', label:'BRCA1', type:'GENE',
+        ensembl:'Ensembl:ENSG00000012048',
+        provenance:'source_db=HGNC; accession=HGNC:1100; xref=NCBIGene:672',
+        created:'2025-08-26T14:25:00Z',
+        ontology: null, // NA for GENE
+        hgvs: null,     // NA for GENE  
+        uberon: null    // NA for GENE
+      },
+      {
+        oid:'pathway:DNA_repair', label:'DNA repair', type:'PATHWAY',
+        ensembl: null, // NA for PATHWAY
+        provenance:'source_db=GO', created:'2025-08-26T14:25:00Z',
+        ontology:'GO:0006281',
+        hgvs: null,    // NA for PATHWAY
+        uberon: null   // NA for PATHWAY
+      },
+      {
+        oid:'variant:BRCA1_c.68_69delAG', label:'BRCA1 c.68_69delAG', type:'VARIANT',
+        ensembl: null, // NA for VARIANT
+        provenance:'source_db=ClinVar; accession=RCVxxxxxxx; pmids=[12345678]',
+        created:'2025-08-26T14:25:00Z',
+        ontology: null, // NA for VARIANT
+        hgvs:'NM_007294.4:c.68_69del; NP_009225.1:p.Glu23ValfsTer17',
+        uberon: null    // NA for VARIANT
+      },
+      {
+        oid:'effect:frameshift_truncation', label:'Frameshift → truncated protein', type:'EFFECT',
+        ensembl: null, // NA for EFFECT
+        provenance:'derived_from=variant:BRCA1_c.68_69delAG',
+        created:'2025-08-26T14:25:00Z',
+        ontology: null, // NA for EFFECT
+        hgvs: null,     // NA for EFFECT
+        uberon: null    // NA for EFFECT
+      },
+      {
+        oid:'classification:pathogenic', label:'Pathogenic', type:'CLASSIFICATION',
+        ensembl: null, // NA for CLASSIFICATION
+        provenance:'source_db=ClinVar; review_status=criteria_provided,multiple_submitters',
+        created:'2025-08-26T14:25:00Z',
+        ontology: null, // NA for CLASSIFICATION
+        hgvs: null,     // NA for CLASSIFICATION
+        uberon: null    // NA for CLASSIFICATION
+      },
+      {
+        oid:'tissue:mammary_epithelium', label:'Mammary epithelium', type:'TISSUE',
+        ensembl: null, // NA for TISSUE
+        provenance:'source_db=UBERON', created:'2025-08-26T14:25:00Z',
+        ontology:'UBERON:0002398',
+        hgvs: null,    // NA for TISSUE
+        uberon:'UBERON:0002398'
+      },
+      {
+        oid:'source:ClinVar_PMID12345678', label:'ClinVar; PMID:12345678', type:'SOURCE',
+        ensembl: null, // NA for SOURCE
+        provenance:'license=CC0; evidence=ECO:0000213', created:'2025-08-26T14:25:00Z',
+        ontology: null, // NA for SOURCE
+        hgvs: null,     // NA for SOURCE
+        uberon: null    // NA for SOURCE
+      },
+      {
+        oid:'output:one_liner', label:'Frameshift → truncated protein (pathogenic)', type:'OUTPUT',
+        ensembl: null, // NA for OUTPUT
+        provenance:'generated_by=pipeline:vX.Y; inputs=[variant:..., evidence:...]',
+        created:'2025-08-26T14:25:00Z',
+        ontology: null, // NA for OUTPUT
+        hgvs: null,     // NA for OUTPUT
+        uberon: null    // NA for OUTPUT
+      }
+    ];
+
+    /* ========== mount ========== */
+    renderNodeRegistry('node-registry', BRCA1_ROWS);
+    </script>
+</body>
+</html>
