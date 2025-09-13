@@ -16,9 +16,9 @@
         :root {
             --primary: #1a1a1a;
             --secondary: #2a2a2a;
-            --accent: rgba(139, 92, 246, 0.3);
-            --accent-light: rgba(168, 85, 247, 0.4);
-            --accent-dark: rgba(109, 40, 217, 0.2);
+            --accent: rgba(0, 255, 255, 0.6);
+            --accent-light: rgba(100, 255, 255, 0.7);
+            --accent-dark: rgba(0, 255, 255, 0.4);
             --success: #22c55e;
             --warning: #f59e0b;
             --danger: #ef4444;
@@ -30,7 +30,7 @@
             --text-muted: rgba(255, 255, 255, 0.7);
             --shadow: 0 2px 8px rgba(0,0,0,0.06);
             --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
-            --gradient-primary: linear-gradient(135deg, rgba(139, 92, 246, 0.3) 0%, rgba(109, 40, 217, 0.2) 100%);
+            --gradient-primary: linear-gradient(135deg, rgba(0, 255, 255, 0.6) 0%, rgba(0, 255, 255, 0.4) 100%);
             --gradient-accent: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
         }
 
@@ -64,7 +64,7 @@
 
         /* Color shifting titles */
         .pulsing-text, h1, h2, h3, h4, h5, h6, .section-title, .architecture-title {
-            background: linear-gradient(45deg, #00ffff, #ff00ff, #ffff00, #ff0080, #8000ff, #ff8000);
+            background: linear-gradient(45deg, #ffffff, #00ffff, #ff00ff, #ffff00, #00ff00, #ffffff);
             background-size: 400% 400%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -85,6 +85,7 @@
             0%, 100% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
         }
+
 
 
         .document {
@@ -122,7 +123,7 @@ margin: 0 15%;
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            font-size: clamp(3.5rem, 6vw, 5rem);
             font-weight: 800;
             margin-bottom: 1rem;
             font-family: 'Crimson Pro', serif;
@@ -133,13 +134,24 @@ margin: 0 15%;
             font-weight: 400;
             margin-bottom: 1rem;
             line-height: 1.5;
+            text-shadow: 0 0 6px rgba(0,0,0,0.6);
         }
 
         .hero-metrics {
-            background: transparent;
-            border: 1px solid rgba(255,255,255,0.15);
-            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(0, 255, 255, 0.8);
+            border-radius: 12px;
             padding: 2rem;
+            box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .hero-metrics:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 255, 255, 1);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+            background: rgba(0, 255, 255, 0.1);
         }
 
         .metric-grid {
@@ -159,12 +171,14 @@ margin: 0 15%;
             color: white;
             display: block;
             margin-bottom: 0.25rem;
+            text-shadow: 0 0 6px rgba(0,0,0,0.5);
         }
 
         .metric-label {
             font-size: 0.875rem;
-            color: rgba(255,255,255,0.7);
+            color: rgba(255,255,255,0.85);
             font-weight: 500;
+            text-shadow: 0 0 4px rgba(0,0,0,0.4);
         }
 
         /* Sections */
@@ -187,16 +201,17 @@ margin: 0 15%;
 
         .section-subtitle {
             font-size: 1.25rem;
-            color: rgba(255,255,255,0.7);
+            color: rgba(255,255,255,0.85);
             max-width: 600px;
             margin: 0 auto;
             font-weight: 400;
+            text-shadow: 0 0 6px rgba(0,0,0,0.6);
         }
 
         /* Architecture Showcase */
         .architecture-showcase {
             background: transparent;
-            border: 2px solid rgba(139, 92, 246, 0.3);
+            border: 2px solid rgba(0, 255, 255, 0.6);
             border-radius: 16px;
             padding: 2rem;
             margin: 2rem 0;
@@ -211,18 +226,22 @@ margin: 0 15%;
         }
 
         .flow-node {
-            background: transparent;
-            border: 1px solid rgba(139, 92, 246, 0.4);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(0, 255, 255, 0.8);
             border-radius: 12px;
             padding: 1.5rem;
             text-align: center;
             min-width: 120px;
             transition: all 0.3s ease;
+            box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
         }
 
         .flow-node:hover {
             transform: translateY(-4px);
-            border-color: rgba(139, 92, 246, 0.6);
+            border-color: rgba(0, 255, 255, 1);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+            background: rgba(0, 255, 255, 0.1);
         }
 
         .flow-icon {
@@ -233,16 +252,18 @@ margin: 0 15%;
         .flow-label {
             font-weight: 600;
             margin-bottom: 0.25rem;
+            text-shadow: 0 0 6px rgba(0,0,0,0.5);
         }
 
         .flow-time {
             font-size: 0.875rem;
-            color: rgba(255,255,255,0.7);
+            color: rgba(255,255,255,0.85);
+            text-shadow: 0 0 4px rgba(0,0,0,0.4);
         }
 
         .flow-arrow {
             font-size: 1.5rem;
-            color: rgba(139, 92, 246, 0.6);
+            color: rgba(255, 100, 0, 0.6);
         }
 
         /* Features Grid */
@@ -253,17 +274,26 @@ margin: 0 15%;
             margin: 3rem 0;
         }
 
+        .features-grid.two-by-two {
+            grid-template-columns: repeat(2, 1fr);
+            justify-content: center;
+        }
+
         .feature-card {
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(0, 255, 255, 0.8);
             border-radius: 12px;
             padding: 2.5rem;
             transition: all 0.3s ease;
+            box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
         }
 
         .feature-card:hover {
             transform: translateY(-4px);
-            border-color: rgba(139, 92, 246, 0.4);
+            border-color: rgba(0, 255, 255, 1);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+            background: rgba(0, 255, 255, 0.1);
         }
 
         .feature-icon {
@@ -275,12 +305,14 @@ margin: 0 15%;
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
+            text-shadow: 0 0 6px rgba(0,0,0,0.5);
         }
 
         .feature-description {
-            font-size: 1rem;
+            font-size: 1.05rem;
             line-height: 1.6;
             margin-bottom: 1.5rem;
+            text-shadow: 0 0 4px rgba(0,0,0,0.4);
         }
 
         .feature-keywords {
@@ -290,7 +322,7 @@ margin: 0 15%;
         }
 
         .keyword {
-            background: rgba(139, 92, 246, 0.2);
+            background: rgba(0, 255, 255, 0.3);
             color: white;
             padding: 0.25rem 0.75rem;
             border-radius: 20px;
@@ -300,34 +332,66 @@ margin: 0 15%;
 
         /* Performance Table */
         .performance-table {
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(0, 255, 255, 0.8);
             border-radius: 12px;
             overflow: hidden;
-            margin: 3rem 0;
+            margin: 3rem auto;
             transition: all 0.3s ease;
+            box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            width: 60%;
+            max-width: 600px;
+        }
+
+        .operational-comparison-table {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(0, 255, 255, 0.8);
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 3rem auto;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            width: 85%;
+            max-width: 900px;
         }
 
         .performance-table:hover {
             transform: translateY(-4px);
-            border-color: rgba(255, 255, 255, 0.3);
-                    }
+            border-color: rgba(0, 255, 255, 1);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+            background: rgba(0, 255, 255, 0.1);
+        }
+
+        .operational-comparison-table:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 255, 255, 1);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+            background: rgba(0, 255, 255, 0.1);
+        }
 
         .table-header {
-            background: transparent;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(0, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(255, 100, 0, 0.3);
             padding: 1rem 1.5rem;
             font-weight: 600;
+            display: flex;
         }
 
         .table-body {
-            background: transparent;
+            background: rgba(255, 255, 255, 0.01);
         }
 
         .table-row {
             display: flex;
             padding: 1rem 1.5rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 100, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .table-row:hover {
+            background: rgba(255, 100, 0, 0.03);
         }
 
         .table-row:last-child {
@@ -337,6 +401,8 @@ margin: 0 15%;
         .table-cell {
             flex: 1;
             font-size: 0.9375rem;
+            text-align: left;
+            text-shadow: 0 0 4px rgba(0,0,0,0.4);
         }
 
         .table-cell.metric {
@@ -349,31 +415,48 @@ margin: 0 15%;
         .cost-comparison {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin: 3rem 0;
+            gap: 2.5rem 2rem;
+            justify-content: center;
+            align-items: start;
+            margin: 3rem 0 2rem 0;
         }
 
         .cost-card {
-            background: transparent;
-            border: 2px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(0, 255, 255, 0.8);
             border-radius: 12px;
             padding: 2rem;
             text-align: center;
             transition: all 0.3s ease;
+            box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
         }
 
         .cost-card.efficient {
-            border-color: var(--success);
+            border-color: rgba(34, 197, 94, 0.6);
         }
 
         .cost-card.expensive {
-            border-color: var(--danger);
+            border-color: rgba(239, 68, 68, 0.6);
+        }
+
+        .cost-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 255, 255, 1);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+            background: rgba(0, 255, 255, 0.1);
         }
 
         .cost-label {
-            font-size: 1.125rem;
-            font-weight: 600;
+            font-size: 1.5rem;
+            font-weight: 700;
             margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ffffff, #00ffff, #ff00ff, #ffff00, #00ff00, #ffffff);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientPulse 20s ease-in-out infinite;
         }
 
         .cost-value {
@@ -381,45 +464,79 @@ margin: 0 15%;
             font-weight: 800;
             font-family: 'JetBrains Mono', monospace;
             margin-bottom: 0.5rem;
+            text-shadow: 0 0 6px rgba(0,0,0,0.5);
         }
 
         .cost-subtitle {
             font-size: 0.875rem;
-            color: rgba(255,255,255,0.7);
+            color: rgba(255,255,255,0.85);
+            text-shadow: 0 0 4px rgba(0,0,0,0.4);
         }
 
         /* Risk Management */
         .risk-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin: 3rem 0;
+            gap: 2.5rem 2rem;
+            justify-content: center;
+            align-items: start;
+            margin: 3rem 0 2rem 0;
+        }
+
+        .risk-grid.two-by-two {
+            grid-template-columns: repeat(2, 1fr);
+            justify-content: center;
         }
 
         .risk-card {
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-left: 4px solid rgba(255, 0, 255, 0.6);
-            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(0, 255, 255, 0.8);
+            border-left: 4px solid rgba(0, 255, 255, 1);
+            border-radius: 12px;
             padding: 1.5rem;
+            box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .risk-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 255, 255, 1);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+            background: rgba(0, 255, 255, 0.1);
         }
 
         .risk-title {
-            font-size: 1.125rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ffffff, #00ffff, #ff00ff, #ffff00, #00ff00, #ffffff);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientPulse 20s ease-in-out infinite;
         }
 
         .risk-description {
-            font-size: 0.9375rem;
-            line-height: 1.5;
+            font-size: 1rem;
+            line-height: 1.6;
+            text-shadow: 0 0 4px rgba(0,0,0,0.4);
         }
 
         /* Contact Section */
+        .footer-sections {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            padding: 4rem 0;
+            margin: 3rem 0;
+            align-items: start;
+        }
+
         .contact-section {
             background: transparent;
             text-align: center;
-            padding: 4rem 0;
         }
 
         .contact-info {
@@ -431,45 +548,99 @@ margin: 0 15%;
             font-size: 2rem;
             font-weight: 700;
             margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ffffff, #00ffff, #ff00ff, #ffff00, #00ff00, #ffffff);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientPulse 20s ease-in-out infinite;
         }
 
         .contact-text {
-            font-size: 1.125rem;
+            font-size: 1.25rem;
             margin-bottom: 2rem;
-            color: rgba(255,255,255,0.8);
+            color: rgba(255,255,255,0.9);
+            text-shadow: 0 0 4px rgba(0,0,0,0.4);
         }
 
         .contact-link a {
-            color: rgba(139, 92, 246, 0.8);
+            color: rgba(0, 255, 255, 1);
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.125rem;
+            font-size: 1.25rem;
+            text-shadow: 0 0 6px rgba(0, 255, 255, 0.5);
         }
 
         .contact-link a:hover {
-            color: rgba(139, 92, 246, 1);
+            color: rgba(0, 255, 255, 1);
+            text-shadow: 0 0 12px rgba(0, 255, 255, 0.8);
+        }
+
+        /* License Section */
+        .license-section {
+            background: transparent;
+            text-align: center;
+        }
+
+        .license-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ffffff, #00ffff, #ff00ff, #ffff00, #00ff00, #ffffff);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientPulse 20s ease-in-out infinite;
+        }
+
+        .license-text {
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+            color: rgba(255,255,255,0.9);
+            text-shadow: 0 0 4px rgba(0,0,0,0.4);
         }
 
         /* Executive Brief */
         .executive-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin: 3rem 0;
+            gap: 2.5rem 2rem;
+            justify-content: center;
+            align-items: start;
+            margin: 3rem 0 2rem 0;
         }
 
         .executive-card {
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(0, 255, 255, 0.8);
             border-radius: 12px;
             padding: 2rem;
-                    }
+            box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .executive-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 255, 255, 1);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+            background: rgba(0, 255, 255, 0.1);
+        }
 
         .executive-card h3 {
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: white;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ffffff, #00ffff, #ff00ff, #ffff00, #00ff00, #ffffff);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientPulse 20s ease-in-out infinite;
         }
 
         .kpi-grid {
@@ -484,120 +655,187 @@ margin: 0 15%;
 
         .kpi-label {
             font-size: 0.875rem;
-            color: rgba(255,255,255,0.7);
+            color: rgba(255,255,255,0.85);
             margin-bottom: 0.25rem;
+            text-shadow: 0 0 4px rgba(0,0,0,0.4);
         }
 
         .kpi-value {
             font-size: 1.125rem;
             font-weight: 600;
             color: white;
+            text-shadow: 0 0 6px rgba(0,0,0,0.5);
         }
 
         /* Failure Patterns */
         .failure-patterns {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 3rem 0;
+            gap: 2.5rem 2rem;
+            justify-content: center;
+            align-items: start;
+            margin: 3rem 0 2rem 0;
         }
 
         .pattern-card {
-            background: transparent;
-            border: 1px solid rgba(255, 0, 0, 0.3);
-            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(0, 255, 255, 0.8);
+            border-radius: 12px;
             padding: 1.5rem;
             text-align: center;
-                    }
+            box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .pattern-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 255, 255, 1);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+            background: rgba(0, 255, 255, 0.1);
+        }
 
         .pattern-title {
-            font-size: 1.125rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ffffff, #00ffff, #ff00ff, #ffff00, #00ff00, #ffffff);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientPulse 20s ease-in-out infinite;
         }
 
         .pattern-description {
-            font-size: 0.9375rem;
-            color: rgba(255,255,255,0.8);
+            font-size: 1rem;
+            color: rgba(255,255,255,0.9);
+            text-shadow: 0 0 4px rgba(0,0,0,0.4);
         }
 
         /* Observability Grid */
         .observability-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 3rem 0;
+            gap: 2.5rem 2rem;
+            justify-content: center;
+            align-items: start;
+            margin: 3rem 0 2rem 0;
         }
 
         .obs-card {
-            background: transparent;
-            border: 1px solid rgba(0, 255, 255, 0.3);
-            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(0, 255, 255, 0.8);
+            border-radius: 12px;
             padding: 1.5rem;
             text-align: center;
-                    }
+            box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .obs-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 255, 255, 1);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+            background: rgba(0, 255, 255, 0.1);
+        }
 
         .obs-title {
-            font-size: 1.125rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ffffff, #00ffff, #ff00ff, #ffff00, #00ff00, #ffffff);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientPulse 20s ease-in-out infinite;
         }
 
         .obs-description {
-            font-size: 0.9375rem;
-            color: rgba(255,255,255,0.8);
+            font-size: 1rem;
+            color: rgba(255,255,255,0.9);
+            text-shadow: 0 0 4px rgba(0,0,0,0.4);
         }
 
         /* Security Grid */
         .security-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 3rem 0;
+            gap: 2.5rem 2rem;
+            justify-content: center;
+            align-items: start;
+            margin: 3rem 0 2rem 0;
         }
 
         .security-card {
-            background: transparent;
-            border: 1px solid rgba(255, 255, 0, 0.3);
-            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(0, 255, 255, 0.8);
+            border-radius: 12px;
             padding: 1.5rem;
             text-align: center;
-                    }
+            box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .security-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 255, 255, 1);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+            background: rgba(0, 255, 255, 0.1);
+        }
 
         .security-title {
-            font-size: 1.125rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ffffff, #00ffff, #ff00ff, #ffff00, #00ff00, #ffffff);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientPulse 20s ease-in-out infinite;
         }
 
         .security-description {
-            font-size: 0.9375rem;
-            color: rgba(255,255,255,0.8);
+            font-size: 1rem;
+            color: rgba(255,255,255,0.9);
+            text-shadow: 0 0 4px rgba(0,0,0,0.4);
         }
 
         /* Active Inference Grid */
         .active-inference-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem 2rem;
+            justify-content: center;
+            align-items: start;
+            margin: 3rem 0 2rem 0;
+        }
+
+        .active-inference-grid.two-by-two {
+            grid-template-columns: repeat(2, 1fr);
+            justify-content: center;
         }
 
         .inference-card {
-            background: transparent;
-            border: 1px solid rgba(139, 92, 246, 0.4);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(0, 255, 255, 0.8);
             border-radius: 12px;
             padding: 2rem;
             text-align: center;
             transition: all 0.3s ease;
+            box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
         }
 
         .inference-card:hover {
             transform: translateY(-4px);
-            border-color: rgba(139, 92, 246, 0.6);
+            border-color: rgba(0, 255, 255, 1);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+            background: rgba(0, 255, 255, 0.1);
         }
 
         .inference-icon {
@@ -606,16 +844,22 @@ margin: 0 15%;
         }
 
         .inference-title {
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            color: white;
+            background: linear-gradient(45deg, #ffffff, #00ffff, #ff00ff, #ffff00, #00ff00, #ffffff);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientPulse 20s ease-in-out infinite;
         }
 
         .inference-description {
-            font-size: 1rem;
+            font-size: 1.05rem;
             line-height: 1.6;
             color: rgba(255,255,255,0.9);
+            text-shadow: 0 0 4px rgba(0,0,0,0.4);
         }
 
         /* Responsive Design */
@@ -648,6 +892,23 @@ margin: 0 15%;
 
             .kpi-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .features-grid.two-by-two {
+                grid-template-columns: 1fr;
+            }
+
+            .active-inference-grid.two-by-two {
+                grid-template-columns: 1fr;
+            }
+
+            .risk-grid.two-by-two {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-sections {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
         }
     </style>
@@ -691,11 +952,11 @@ margin: 0 15%;
         <!-- Active Inference Section -->
         <div class="section">
             <div class="section-header">
-                <h2 class="section-title">Active Inference & Contextual Learning</h2>
+                <h2 class="section-title">Active Inference</h2>
                 <p class="section-subtitle">Real-time adaptation and continuous improvement through user feedback</p>
             </div>
             
-            <div class="active-inference-grid">
+            <div class="active-inference-grid two-by-two">
                 <div class="inference-card">
                     <div class="inference-icon"></div>
                     <div class="inference-title">Contextual Online Learning</div>
@@ -703,30 +964,28 @@ margin: 0 15%;
                         Smoothed updates adjust weights in real-time based on user interactions and feedback signals.
                     </div>
                 </div>
+                <div class="inference-card">
+                    <div class="inference-icon"></div>
+                    <div class="inference-title">Active Inference</div>
+                    <div class="inference-description">
+                        Guides expansion and refinement of the knowledge graph through intelligent query analysis.
+                    </div>
+                </div>
+                <div class="inference-card">
+                    <div class="inference-icon"></div>
+                    <div class="inference-title">Real-time Adaptation</div>
+                    <div class="inference-description">
+                        Each user signal produces auditable ranking shifts and immediate system improvements.
+                    </div>
+                </div>
+                <div class="inference-card">
+                    <div class="inference-icon"></div>
+                    <div class="inference-title">Provenance Tracking</div>
+                    <div class="inference-description">
+                        Every answer pack cites edges and heuristics with full traceability and explainability.
+                    </div>
+                </div>
             </div>
-        <div class="inference-card">
-            <div class="inference-icon"></div>
-            <div class="inference-title">Active Inference</div>
-            <div class="inference-description">
-                Guides expansion and refinement of the knowledge graph through intelligent query analysis.
-            </div>
-        </div>
-        
-        <div class="inference-card">
-            <div class="inference-icon"></div>
-            <div class="inference-title">Real-time Adaptation</div>
-            <div class="inference-description">
-                Each user signal produces auditable ranking shifts and immediate system improvements.
-            </div>
-        </div>
-        
-        <div class="inference-card">
-            <div class="inference-icon"></div>
-            <div class="inference-title">Provenance Tracking</div>
-            <div class="inference-description">
-                Every answer pack cites edges and heuristics with full traceability and explainability.
-            </div>
-        </div>
         <!-- System Architecture -->
         <div class="section">
             <div class="section-header">
@@ -771,7 +1030,7 @@ margin: 0 15%;
                 <h2 class="section-title">Core Capabilities</h2>
             </div>
             
-            <div class="features-grid">
+            <div class="features-grid two-by-two">
                 <div class="feature-card">
                     <div class="feature-icon"></div>
                     <h3 class="feature-title">Ultra-Low Latency</h3>
@@ -903,7 +1162,7 @@ margin: 0 15%;
                 <h2 class="section-title">Risk Controls & Governance</h2>
             </div>
             
-            <div class="risk-grid">
+            <div class="risk-grid two-by-two">
                 <div class="risk-card">
                     <div class="risk-title">Latency Variance Management</div>
                     <div class="risk-description">
@@ -1028,7 +1287,7 @@ margin: 0 15%;
                 <h2 class="section-title">Operational Comparison</h2>
             </div>
             
-            <div class="performance-table">
+            <div class="operational-comparison-table">
                 <div class="table-header">
                     <div class="table-cell">Metric</div>
                     <div class="table-cell">Hyperlexicon</div>
@@ -1207,31 +1466,36 @@ margin: 0 15%;
             </div>
         </div>
 
-        <!-- Contact Section -->
-        <div class="contact-section">
-            <div class="contact-info">
-                <div class="contact-title">Contact Information</div>
-                <div class="contact-text">
-                    Adiuvates ad Meliorationum Omniem.
-                </div>
-                <div class="contact-link">
-                    <a href="mailto:contact@hyperlexicon.ai">benjaminnelson1@outlook.com</a>
+        <!-- Footer Sections -->
+        <div class="footer-sections">
+            <!-- Contact Section -->
+            <div class="contact-section">
+                <div class="contact-info">
+                    <div class="contact-title">Contact Information</div>
+                    <div class="contact-text">
+                        Adiuvantes ad Meliorationum Omniem.
+                    </div>
+                    <div class="contact-link">
+                        <a href="mailto:contact@hyperlexicon.ai">benjaminnelson1@outlook.com</a>
+                    </div>
                 </div>
             </div>
-        </div>
+            
             <!-- License Section -->
-        <div class="License">
-            <div class="license-info">
-                <div class="license-title">Commercial Licensing Available</div>
-                <div class="license-text">
-                    Copyright (c) 2025 Hyperlexicon. Benjamin R Nelson. All Rights Reserved.
+            <div class="license-section">
+                <div class="contact-info">
+                    <div class="license-title">Commercial Licensing Available</div>
+                    <div class="license-text">
+                        Copyright (c) 2025 Hyperlexicon. Benjamin R Nelson.<br>All Rights Reserved.
+                    </div>
+                    <div class="license-text">
+                        Adiuvantes ad Meliuorationum Omniem
+                    </div>
+                    <div class="contact-link">
+                        <a href="mailto:contact@hyperlexicon.ai">benjaminnelson1@outlook.com</a>
+                    </div>
                 </div>
-                <div class="license-text">
-                    Adiuvantes ad Meliuorationum Omniem
-                </div>
-                <div class="contact-link">
-                    <a href="mailto:contact@hyperlexicon.ai">benjaminnelson1@outlook.com</a>
-                            </div>
+            </div>
         </div>
         </div>
         </div>
