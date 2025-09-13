@@ -5,178 +5,291 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hyperlexicon: Hybrid Intelligence at Biomedical Scale</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&family=Crimson+Pro:wght@700;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;900&family=Crimson+Pro:wght@700;900&display=swap');
+
     :root {
-      --abyss-bg: #11131a;
-      --abyss-panel: rgba(10,13,27,0.82);
-      --abyss-blur: blur(8px);
-      --abyss-border: #22d3ee;
-      --abyss-border-glow: 0 0 16px #22d3ee88, 0 0 2px #a855f7cc;
-      --abyss-accent: #22d3ee;
-      --abyss-accent-soft: #a855f7;
-      --text-main: #e3f6fd;
-      --text-subtle: #c7c9e3;
-      --radius: 16px;
-      --shadow: 0 4px 32px #0a1a2f85;
+      --elite-gradient: linear-gradient(90deg, #22d3ee, #a855f7 30%, #f59e42 70%, #22d3ee 100%);
+      --elite-accent: #a855f7;
+      --elite-bg: rgba(16,21,30,0.93);
+      --elite-bg-glass: rgba(20,24,34,0.96);
+      --elite-border: rgba(168, 85, 247, 0.7);
+      --elite-shadow: 0 4px 32px 0 #a855f766, 0 1.2px 16px #22d3ee44;
+      --elite-radius: 18px;
+      --elite-text: #f8fafc;
+      --elite-dim: #cbd5e1;
     }
-    html, body {
-      background: var(--abyss-bg);
-      color: var(--text-main);
-      font-family: 'Inter', 'Crimson Pro', serif;
-      font-size: 1.07rem;
-      margin: 0; padding: 0;
-      line-height: 1.68;
+
+    html { background: #10141e; }
+    body {
+      font-family: 'Inter', 'Crimson Pro', sans-serif;
+      color: var(--elite-text);
+      background: transparent;
+      margin: 0;
+      font-size: 1.05rem;
+      letter-spacing: 0.01em;
+      line-height: 1.65;
     }
+
     .jellyfish-bg {
       position: fixed; inset: 0;
       z-index: -1;
-      background: url('jellyfish1.png') center/cover no-repeat fixed, var(--abyss-bg);
+      background: url('jellyfish1.png') center/cover no-repeat fixed, #111827;
       opacity: 1;
-      filter: blur(0.5px) brightness(0.93) saturate(1.13);
+      filter: blur(0.2px) brightness(0.88) saturate(1.1);
     }
-    .document {
-      max-width: 950px;
-      margin: 0 auto;
-      padding: 0 4vw;
+
+    .document { max-width: 1100px; margin: 0 auto; padding: 0 2vw; }
+
+    /* C-suite Elite Card */
+    .elite-card, .feature-card, .cost-card, .risk-card, .executive-card, .pattern-card, .obs-card, .security-card, .inference-card {
+      background: var(--elite-bg-glass);
+      border-radius: var(--elite-radius);
+      position: relative;
+      border: 2.2px solid transparent;
+      border-image: var(--elite-gradient) 1;
+      box-shadow: var(--elite-shadow);
+      padding: 1.1rem 1.4rem 1.05rem 1.4rem;
+      margin-bottom: 1.15rem;
+      transition: box-shadow 0.18s, border-image-source 0.5s;
+      color: var(--elite-text) !important;
+      text-shadow: 0 2px 12px #000B, 0 0 1px #a855f7;
+      font-size: 1.08rem;
+      backdrop-filter: blur(2.5px) saturate(1.15);
+      -webkit-backdrop-filter: blur(2.5px) saturate(1.15);
+      overflow: hidden;
+      will-change: border-image-source;
     }
-    .section, .hero {
-      margin: 2.4rem 0 1.7rem 0;
+    .elite-card:hover, .feature-card:hover, .cost-card:hover, .risk-card:hover, .executive-card:hover, .pattern-card:hover, .obs-card:hover, .security-card:hover, .inference-card:hover {
+      box-shadow: 0 4px 32px #a855f799, 0 2.5px 36px #22d3ee66;
+      border-image: linear-gradient(120deg, #a855f7, #22d3ee 50%, #f59e42 100%) 1;
     }
-    .section-header { margin-bottom: 1.2rem; }
-    .section-title, .hero h1 {
+
+    /* Elite Titles */
+    .section-title, .pulsing-text, .feature-title, .risk-title, .cost-label, .executive-card h3, .pattern-title, .obs-title, .security-title, .inference-title, .hero h1 {
       font-family: 'Crimson Pro', serif;
       font-weight: 900;
-      font-size: 2.2rem;
-      color: var(--text-main);
+      font-size: 1.4em;
+      background: var(--elite-gradient);
+      background-size: 500% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: eliteGradientPulse 14s ease-in-out infinite;
       letter-spacing: 0.01em;
-      margin-bottom: 0.18em;
-      text-shadow: 0 0 12px #22d3ee55, 0 2px 24px #a855f755;
-    }
-    .section-subtitle, .hero-subtitle {
-      color: var(--text-subtle);
-      font-size: 1.13rem;
       margin-bottom: 0.4em;
-      font-weight: 500;
-      letter-spacing: 0.01em;
+      text-shadow: 0 3px 14px #000A, 0 0 1px #a855f7;
     }
-    /* ABYSSAL LUMINOUS CARD */
-    .abyss-card {
-      background: var(--abyss-panel);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      border: 1.7px solid var(--abyss-border);
-      box-shadow: var(--abyss-border-glow), var(--shadow);
-      /* Subtle luminous border on hover/focus */
-      transition: border-color 0.2s, box-shadow 0.3s;
-      padding: 1.15rem 1.45rem;
-      margin-bottom: 1.1rem;
-      color: var(--text-main);
-      backdrop-filter: var(--abyss-blur);
-      -webkit-backdrop-filter: var(--abyss-blur);
+
+    @keyframes eliteGradientPulse {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
     }
-    .abyss-card:focus-within, .abyss-card:hover {
-      border-color: var(--abyss-accent-soft);
-      box-shadow: 0 0 18px #a855f7aa, 0 0 22px #22d3ee77, var(--shadow);
-    }
-    .feature-title, .cost-label, .risk-title, .inference-title {
-      color: var(--abyss-accent);
-      font-weight: 800;
-      font-size: 1.18em;
-      margin-bottom: 0.39em;
-      letter-spacing: 0.01em;
-      font-family: inherit;
-      text-shadow: 0 0 8px #22d3ee77;
-    }
-    .feature-description, .risk-description, .inference-description {
-      color: var(--text-main);
-      font-size: 1em;
-      margin-bottom: 0.3em;
-    }
-    .feature-keywords {
-      margin-top: 0.35em;
-      display: flex; flex-wrap: wrap; gap: 0.26em;
-    }
-    .keyword {
-      background: #20235a;
-      color: var(--abyss-accent);
-      border-radius: 1.1em;
-      font-size: 0.96em;
-      font-weight: 700;
-      padding: 0.18em 0.93em;
-      margin-bottom: 0.13em;
-      letter-spacing: 0.01em;
-      box-shadow: 0 0 8px #22d3ee55;
-    }
-    /* Minimalist grid */
-    .features-grid {
+
+    /* Section headers */
+    .section-header { text-align: left; margin-bottom: 1em; }
+    .section-title { font-size: 2.2rem; }
+    .section-subtitle { color: var(--elite-dim); font-size: 1.22rem; margin-bottom: 0.3em; }
+
+    /* Cards grid compact */
+    .features-grid, .cost-comparison, .risk-grid, .executive-grid, .failure-patterns, .observability-grid, .security-grid, .active-inference-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.02rem;
-      margin: 0.18em 0 0.6em 0;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.1rem;
+      margin: 0.35em 0 0.6em 0;
     }
+
+    /* Keyword/metric badges */
+    .keyword, .metric-value {
+      display: inline-block;
+      background: linear-gradient(90deg, #a855f7cc 60%, #22d3eecc 100%);
+      color: #fff;
+      font-weight: 700;
+      font-family: inherit;
+      border-radius: 1.2em;
+      font-size: 1em;
+      padding: 0.18em 0.95em;
+      margin: 0 0.16em 0.13em 0;
+      box-shadow: 0 1.5px 6px #a855f755;
+      letter-spacing: 0.01em;
+      text-shadow: 0 1px 6px #0008;
+    }
+
+    /* Table, metrics, and precision grid */
+    .performance-table {
+      background: var(--elite-bg-glass);
+      border-radius: var(--elite-radius);
+      border: 2.2px solid transparent;
+      border-image: var(--elite-gradient) 1;
+      box-shadow: var(--elite-shadow);
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+      font-size: 0.99em;
+    }
+    .table-header, .table-row {
+      display: flex; align-items: center;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .table-header { font-weight: 800; font-size:1.11em; border-bottom: 1.5px solid #a855f7AA; padding: 0.38em 1em; }
+    .table-row { border-bottom: 1px solid #3335; padding: 0.29em 1em; }
+    .table-row:last-child { border-bottom: none; }
+    .table-cell, .metric { flex: 1; }
+    .metric { text-align: right; color: #22d3ee; font-weight: 800; }
+    /* Hero section */
+    .hero { background: transparent; min-height: 24vh; display: flex; align-items: center; margin-top: 1.8em;}
+    .hero-content {
+      background: var(--elite-bg-glass); border-radius: var(--elite-radius); box-shadow: var(--elite-shadow);
+      padding: 2.1rem 2.2rem;
+      display: grid; grid-template-columns: 1fr 355px; gap: 2.1rem;
+      align-items: center;
+    }
+    .hero h1 { font-size: 2.7rem; }
+    .hero-subtitle { color: var(--elite-dim); font-size: 1.21rem; margin-top: 0.3em; }
+
+    /* Contact/Legal */
+    .contact-section { padding: 1.2rem 0 0.7rem 0; }
+    .contact-title { font-size: 1.18rem; font-weight: 800;}
+    .contact-link a { color: #22d3ee; font-weight: 700; text-shadow: 0 0 8px #22d3ee55; }
+    .contact-link a:hover { color: #a855f7; }
+
     /* Responsive */
-    @media (max-width: 600px) {
-      .features-grid { grid-template-columns: 1fr; gap: 0.7rem; }
-      .document { padding: 0 1vw; }
+    @media (max-width: 800px) {
+      .document { padding: 0 1vw;}
+      .hero-content {grid-template-columns: 1fr;}
+    }
+    @media (max-width: 520px) {
+      .features-grid, .cost-comparison, .risk-grid, .executive-grid,
+      .failure-patterns, .observability-grid, .security-grid, .active-inference-grid {
+        grid-template-columns: 1fr; gap: 0.95rem;
+      }
+      .hero-content { padding: 1.1rem 0.7rem; }
     }
   </style>
 </head>
 <body>
   <div class="jellyfish-bg"></div>
   <div class="document">
+    <!-- Hero Section -->
     <div class="hero">
-      <div>
-        <h1>Hybrid Intelligence at Biomedical Scale</h1>
-        <p class="hero-subtitle">
-          Advanced multilingual knowledge graph architecture delivering sub-100ms inference with full interpretability for global enterprise deployments.
-        </p>
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="pulsing-text">Hybrid Intelligence at Biomedical Scale</h1>
+          <p class="hero-subtitle">
+            Advanced multilingual knowledge graph architecture delivering sub-100ms inference with full interpretability for global enterprise deployments.
+          </p>
+        </div>
+        <div class="hero-metrics elite-card">
+          <div class="metric-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem;">
+            <div class="metric">
+              <span class="metric-value">&lt;30ms</span>
+              <span class="metric-label">p50 Latency</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">99.9%</span>
+              <span class="metric-label">Availability</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">0.1-1%</span>
+              <span class="metric-label">LLM Cost</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">100%</span>
+              <span class="metric-label">Traceable</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <!-- Abyssal luminous cards example -->
+    <!-- Active Inference Section -->
+    <div class="section">
+      <div class="section-header">
+        <h2 class="section-title">Active Inference & Contextual Learning</h2>
+        <p class="section-subtitle">Real-time adaptation and continuous improvement through user feedback</p>
+      </div>
+      <div class="active-inference-grid">
+        <div class="inference-card">
+          <div class="inference-title">Contextual Online Learning</div>
+          <div class="inference-description">Smoothed updates adjust weights in real-time based on user interactions and feedback signals.</div>
+        </div>
+        <div class="inference-card">
+          <div class="inference-title">Active Inference</div>
+          <div class="inference-description">Guides expansion and refinement of the knowledge graph through intelligent query analysis.</div>
+        </div>
+        <div class="inference-card">
+          <div class="inference-title">Real-time Adaptation</div>
+          <div class="inference-description">Each user signal produces auditable ranking shifts and immediate system improvements.</div>
+        </div>
+        <div class="inference-card">
+          <div class="inference-title">Provenance Tracking</div>
+          <div class="inference-description">Every answer pack cites edges and heuristics with full traceability and explainability.</div>
+        </div>
+      </div>
+    </div>
+    <!-- System Architecture -->
+    <div class="section">
+      <div class="section-header">
+        <h2 class="section-title">System Architecture</h2>
+        <p class="section-subtitle">Multilingual knowledge graph with hybrid retrieval and contextual learning.</p>
+      </div>
+      <div class="architecture-showcase elite-card">
+        <div class="flow-container" style="display:flex;justify-content:center;gap:0.7em;">
+          <div class="flow-node elite-card" style="padding:1.1em 1.3em;">
+            <div class="flow-label">Query Input</div>
+            <div class="flow-time">~5ms</div>
+          </div>
+          <div class="flow-arrow" style="font-size:1.4em;color:#22d3ee;font-weight:700;align-self:center;">→</div>
+          <div class="flow-node elite-card" style="padding:1.1em 1.3em;">
+            <div class="flow-label">Vector Search</div>
+            <div class="flow-time">8-20ms</div>
+          </div>
+          <div class="flow-arrow" style="font-size:1.4em;color:#22d3ee;font-weight:700;align-self:center;">→</div>
+          <div class="flow-node elite-card" style="padding:1.1em 1.3em;">
+            <div class="flow-label">Graph Traversal</div>
+            <div class="flow-time">15-35ms</div>
+          </div>
+          <div class="flow-arrow" style="font-size:1.4em;color:#22d3ee;font-weight:700;align-self:center;">→</div>
+          <div class="flow-node elite-card" style="padding:1.1em 1.3em;">
+            <div class="flow-label">Response</div>
+            <div class="flow-time">~5ms</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Core Capabilities -->
     <div class="section">
       <div class="section-header">
         <h2 class="section-title">Core Capabilities</h2>
-        <p class="section-subtitle">Minimal, precise, and visually striking focus on data.</p>
       </div>
       <div class="features-grid">
-        <div class="abyss-card" tabindex="0">
+        <div class="feature-card">
           <div class="feature-title">Ultra-Low Latency</div>
-          <div class="feature-description">
-            Sub-100ms inference with p50 &lt;30ms and p95 &lt;80ms on commodity hardware.
-          </div>
+          <div class="feature-description">Sub-100ms inference with p50 &lt;30ms and p95 &lt;80ms on commodity hardware.</div>
           <div class="feature-keywords">
             <span class="keyword">p95: &lt;80ms</span>
             <span class="keyword">p50: &lt;30ms</span>
             <span class="keyword">Real-time</span>
           </div>
         </div>
-        <div class="abyss-card" tabindex="0">
+        <div class="feature-card">
           <div class="feature-title">Contextual Learning</div>
-          <div class="feature-description">
-            Online learning with smoothed updates and active inference for continuous improvement.
-          </div>
+          <div class="feature-description">Online learning with smoothed updates and active inference for continuous improvement.</div>
           <div class="feature-keywords">
             <span class="keyword">Online Updates</span>
             <span class="keyword">Active Inference</span>
             <span class="keyword">Real-time</span>
           </div>
         </div>
-        <div class="abyss-card" tabindex="0">
+        <div class="feature-card">
           <div class="feature-title">Full Interpretability</div>
-          <div class="feature-description">
-            Every answer includes provenance, edge citations, and heuristic explanations.
-          </div>
+          <div class="feature-description">Every answer includes provenance, edge citations, and heuristic explanations.</div>
           <div class="feature-keywords">
             <span class="keyword">Audit Trail</span>
             <span class="keyword">Provenance</span>
             <span class="keyword">Explainable</span>
           </div>
         </div>
-        <div class="abyss-card" tabindex="0">
+        <div class="feature-card">
           <div class="feature-title">Cross-Lingual Reasoning</div>
-          <div class="feature-description">
-            Multilingual knowledge graph with 50+ languages and cross-lingual concept bridging.
-          </div>
+          <div class="feature-description">Multilingual knowledge graph with 50+ languages and cross-lingual concept bridging.</div>
           <div class="feature-keywords">
             <span class="keyword">50+ Languages</span>
             <span class="keyword">Cross-lingual</span>
@@ -185,7 +298,9 @@
         </div>
       </div>
     </div>
-    <!-- Add more minimal, luminous sections as needed -->
+    <!-- (Continue your content as in your original...) -->
+    <!-- Performance Benchmarks, Economic Impact, Risk Controls, Executive Brief, etc. -->
+    <!-- ... -->
   </div>
 </body>
 </html>
