@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyperlexicon: Hybrid Intelligence at Biomedical Scale</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&family=Crimson+Pro:wght@300;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #2a2a2a;
+            --accent: rgba(139, 92, 246, 0.3);
+            --accent-light: rgba(168, 85, 247, 0.4);
+            --accent-dark: rgba(109, 40, 217, 0.2);
+            --success: #22c55e;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --muted: #666666;
+            --border: rgba(255, 255, 255, 0.1);
+            --bg: transparent;
+            --card: transparent;
+            --text: white;
+            --text-muted: rgba(255, 255, 255, 0.7);
+            --shadow: 0 2px 8px rgba(0,0,0,0.06);
+            --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+            --gradient-primary: linear-gradient(135deg, rgba(139, 92, 246, 0.3) 0%, rgba(109, 40, 217, 0.2) 100%);
+            --gradient-accent: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: white !important;
+            background: transparent;
+            font-feature-settings: 'cv02', 'cv03', 'cv04', 'ss01';
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .jellyfish-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 1;
+            background-image: url('jellyfish1.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: #000;
+        }
+
+        /* Color shifting titles */
+        .pulsing-text, h1, h2, h3, h4, h5, h6, .section-title, .architecture-title {
+            background: linear-gradient(45deg, #00ffff, #ff00ff, #ffff00, #ff0080, #8000ff, #ff8000);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientPulse 20s ease-in-out infinite;
+        }
+
+        /* White text throughout */
+        * {
+            color: white !important;
+                    }
+        
+        p, .feature-description, .metric-description, .cost-description, .risk-description, .contact-text, .hero-subtitle, .section-content, .table-cell, .cost-label, .cost-value, .risk-title, .risk-item, .contact-title, .contact-link, .flow-label, .flow-time, .metric-value, .metric-label, .section-subtitle, .hero h1, .hero p, .hero-subtitle, .metric-value, .metric-label, .feature-title, .feature-description, .table-cell, .cost-label, .cost-value, .risk-title, .risk-description, .contact-title, .contact-text {
+            color: white !important;
+                    }
+
+        @keyframes gradientPulse {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+
+        .document {
+            background: transparent !important;
+            min-height: 100vh;
+            position: relative;
+            z-index: 1;
+margin: 0 15%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: transparent;
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            font-family: 'Crimson Pro', serif;
+        }
+
+        .hero-subtitle {
+            font-size: 1.375rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .hero-metrics {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .metric {
+            text-align: center;
+        }
+
+        .metric-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: white;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .metric-label {
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.7);
+            font-weight: 500;
+        }
+
+        /* Sections */
+        .section {
+            padding: 4rem 0;
+            background: transparent;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            font-family: 'Crimson Pro', serif;
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+
+        /* Architecture Showcase */
+        .architecture-showcase {
+            background: transparent;
+            border: 2px solid rgba(139, 92, 246, 0.3);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .flow-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .flow-node {
+            background: transparent;
+            border: 1px solid rgba(139, 92, 246, 0.4);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            min-width: 120px;
+            transition: all 0.3s ease;
+        }
+
+        .flow-node:hover {
+            transform: translateY(-4px);
+            border-color: rgba(139, 92, 246, 0.6);
+        }
+
+        .flow-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .flow-label {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .flow-time {
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .flow-arrow {
+            font-size: 1.5rem;
+            color: rgba(139, 92, 246, 0.6);
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature-card {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(139, 92, 246, 0.4);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .feature-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .keyword {
+            background: rgba(139, 92, 246, 0.2);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* Performance Table */
+        .performance-table {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 3rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .performance-table:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.3);
+                    }
+
+        .table-header {
+            background: transparent;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem 1.5rem;
+            font-weight: 600;
+        }
+
+        .table-body {
+            background: transparent;
+        }
+
+        .table-row {
+            display: flex;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .table-row:last-child {
+            border-bottom: none;
+        }
+
+        .table-cell {
+            flex: 1;
+            font-size: 0.9375rem;
+        }
+
+        .table-cell.metric {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            text-align: right;
+        }
+
+        /* Cost Comparison */
+        .cost-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .cost-card {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .cost-card.efficient {
+            border-color: var(--success);
+        }
+
+        .cost-card.expensive {
+            border-color: var(--danger);
+        }
+
+        .cost-label {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .cost-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            font-family: 'JetBrains Mono', monospace;
+            margin-bottom: 0.5rem;
+        }
+
+        .cost-subtitle {
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Risk Management */
+        .risk-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .risk-card {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 4px solid rgba(255, 0, 255, 0.6);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .risk-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .risk-description {
+            font-size: 0.9375rem;
+            line-height: 1.5;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: transparent;
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .contact-text {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .contact-link a {
+            color: rgba(139, 92, 246, 0.8);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.125rem;
+        }
+
+        .contact-link a:hover {
+            color: rgba(139, 92, 246, 1);
+        }
+
+        /* Executive Brief */
+        .executive-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .executive-card {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+                    }
+
+        .executive-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .kpi-item {
+            text-align: center;
+        }
+
+        .kpi-label {
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 0.25rem;
+        }
+
+        .kpi-value {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        /* Failure Patterns */
+        .failure-patterns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .pattern-card {
+            background: transparent;
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+                    }
+
+        .pattern-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .pattern-description {
+            font-size: 0.9375rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* Observability Grid */
+        .observability-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .obs-card {
+            background: transparent;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+                    }
+
+        .obs-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .obs-description {
+            font-size: 0.9375rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* Security Grid */
+        .security-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .security-card {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 0, 0.3);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+                    }
+
+        .security-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .security-description {
+            font-size: 0.9375rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* Active Inference Grid */
+        .active-inference-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .inference-card {
+            background: transparent;
+            border: 1px solid rgba(139, 92, 246, 0.4);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .inference-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(139, 92, 246, 0.6);
+        }
+
+        .inference-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .inference-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .inference-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.9);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 2rem 1rem;
+            }
+            
+            .metric-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .flow-container {
+                flex-direction: column;
+            }
+
+            .flow-arrow {
+                transform: rotate(90deg);
+            }
+
+            .cost-comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .executive-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .kpi-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Jellyfish background -->
+    <div class="jellyfish-bg"></div>
+    
+            <div class="document">
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="pulsing-text">Hybrid Intelligence at Biomedical Scale</h1>
+                    <p class="hero-subtitle">
+                        Advanced multilingual knowledge graph architecture delivering sub-100ms inference with full interpretability for global enterprise deployments.
+                    </p>
+                </div>
+                <div class="hero-metrics">
+                    <div class="metric-grid">
+                        <div class="metric">
+                            <span class="metric-value">&lt;30ms</span>
+                            <span class="metric-label">p50 Latency</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">99.9%</span>
+                            <span class="metric-label">Availability</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">0.1-1%</span>
+                            <span class="metric-label">LLM Cost</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">100%</span>
+                            <span class="metric-label">Traceable</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Active Inference Section -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Active Inference & Contextual Learning</h2>
+                <p class="section-subtitle">Real-time adaptation and continuous improvement through user feedback</p>
+            </div>
+            
+            <div class="active-inference-grid">
+                <div class="inference-card">
+                    <div class="inference-icon"></div>
+                    <div class="inference-title">Contextual Online Learning</div>
+                    <div class="inference-description">
+                        Smoothed updates adjust weights in real-time based on user interactions and feedback signals.
+                    </div>
+                </div>
+            </div>
+        <div class="inference-card">
+            <div class="inference-icon"></div>
+            <div class="inference-title">Active Inference</div>
+            <div class="inference-description">
+                Guides expansion and refinement of the knowledge graph through intelligent query analysis.
+            </div>
+        </div>
+        
+        <div class="inference-card">
+            <div class="inference-icon"></div>
+            <div class="inference-title">Real-time Adaptation</div>
+            <div class="inference-description">
+                Each user signal produces auditable ranking shifts and immediate system improvements.
+            </div>
+        </div>
+        
+        <div class="inference-card">
+            <div class="inference-icon"></div>
+            <div class="inference-title">Provenance Tracking</div>
+            <div class="inference-description">
+                Every answer pack cites edges and heuristics with full traceability and explainability.
+            </div>
+        </div>
+        <!-- System Architecture -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">System Architecture</h2>
+                <p class="section-subtitle">
+                    Multilingual knowledge graph with hybrid retrieval and contextual learning.
+                </p>
+            </div>
+            
+            <div class="architecture-showcase">
+                <div class="flow-container">
+                    <div class="flow-node">
+                        <div class="flow-icon"></div>
+                        <div class="flow-label">Query Input</div>
+                        <div class="flow-time">~5ms</div>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-node">
+                        <div class="flow-icon"></div>
+                        <div class="flow-label">Vector Search</div>
+                        <div class="flow-time">8-20ms</div>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-node">
+                        <div class="flow-icon"></div>
+                        <div class="flow-label">Graph Traversal</div>
+                        <div class="flow-time">15-35ms</div>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-node">
+                        <div class="flow-icon"></div>
+                        <div class="flow-label">Response</div>
+                        <div class="flow-time">~5ms</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Core Capabilities -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Core Capabilities</h2>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h3 class="feature-title">Ultra-Low Latency</h3>
+                    <p class="feature-description">
+                        Sub-100ms inference with p50 &lt;30ms and p95 &lt;80ms on commodity hardware.
+                    </p>
+                    <div class="feature-keywords">
+                        <span class="keyword">p95: &lt;80ms</span>
+                        <span class="keyword">p50: &lt;30ms</span>
+                        <span class="keyword">Real-time</span>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h3 class="feature-title">Contextual Learning</h3>
+                    <p class="feature-description">
+                        Online learning with smoothed updates and active inference for continuous improvement.
+                    </p>
+                    <div class="feature-keywords">
+                        <span class="keyword">Online Updates</span>
+                        <span class="keyword">Active Inference</span>
+                        <span class="keyword">Real-time</span>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h3 class="feature-title">Full Interpretability</h3>
+                    <p class="feature-description">
+                        Every answer includes provenance, edge citations, and heuristic explanations.
+                    </p>
+                    <div class="feature-keywords">
+                        <span class="keyword">Audit Trail</span>
+                        <span class="keyword">Provenance</span>
+                        <span class="keyword">Explainable</span>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h3 class="feature-title">Cross-Lingual Reasoning</h3>
+                    <p class="feature-description">
+                        Multilingual knowledge graph with 50+ languages and cross-lingual concept bridging.
+                    </p>
+                    <div class="feature-keywords">
+                        <span class="keyword">50+ Languages</span>
+                        <span class="keyword">Cross-lingual</span>
+                        <span class="keyword">Multilingual</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Performance Benchmarks -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Performance Benchmarks</h2>
+            </div>
+            
+            <div class="performance-table">
+                <div class="table-header">
+                    <div class="table-cell">Metric</div>
+                    <div class="table-cell metric">Value</div>
+                </div>
+                <div class="table-body">
+                    <div class="table-row">
+                        <div class="table-cell">Inference p50</div>
+                        <div class="table-cell metric">&lt;30ms</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell">Inference p95</div>
+                        <div class="table-cell metric">&lt;80ms</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell">Vector Search</div>
+                        <div class="table-cell metric">8-20ms (batched)</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell">Graph Traversal</div>
+                        <div class="table-cell metric">15-35ms</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell">Cross-language Fallback</div>
+                        <div class="table-cell metric">~10ms</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell">Total Query Runtime</div>
+                        <div class="table-cell metric">25-100ms</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell">Throughput</div>
+                        <div class="table-cell metric">X kQPS @ 25% headroom</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell">Availability</div>
+                        <div class="table-cell metric">99.9% smart fallback</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Economic Impact -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Economic Impact</h2>
+                <p class="section-subtitle">
+                    Transformative cost efficiency for enterprise knowledge operations.
+                </p>
+            </div>
+            
+            <div class="cost-comparison">
+                <div class="cost-card efficient">
+                    <div class="cost-label">Hyperlexicon</div>
+                    <div class="cost-value">$2-8</div>
+                    <div class="cost-subtitle">per million queries</div>
+                </div>
+                <div class="cost-card expensive">
+                    <div class="cost-label">Traditional LLMs</div>
+                    <div class="cost-value">$30k-100k</div>
+                    <div class="cost-subtitle">per million queries</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Risk Controls -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Risk Controls & Governance</h2>
+            </div>
+            
+            <div class="risk-grid">
+                <div class="risk-card">
+                    <div class="risk-title">Latency Variance Management</div>
+                    <div class="risk-description">
+                        Warm caches, ANN batching, fixed top-k, radius caps, and degrade-to-FTS fallback.
+                    </div>
+                </div>
+                <div class="risk-card">
+                    <div class="risk-title">Heuristic Overreach Prevention</div>
+                    <div class="risk-description">
+                        Named-policy logs, A/B switches, quarantine tags, and revert-to-prior mechanisms.
+                    </div>
+                </div>
+                <div class="risk-card">
+                    <div class="risk-title">Data Drift & Bias Control</div>
+                    <div class="risk-description">
+                        Per-language calibration, balanced sampling, and domain-aware scoring.
+                    </div>
+                </div>
+                <div class="risk-card">
+                    <div class="risk-title">Provenance Integrity</div>
+                    <div class="risk-description">
+                        Mandatory source/license/timestamps with block on unprovenanced edges.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Executive Brief -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Executive Brief</h2>
+                <p class="section-subtitle">Model Performance Envelope & Intelligence Cost Structure</p>
+            </div>
+            
+            <div class="executive-grid">
+                <div class="executive-card">
+                    <h3>Model Performance Envelope</h3>
+                    <div class="kpi-grid">
+                        <div class="kpi-item">
+                            <div class="kpi-label">Inference p95</div>
+                            <div class="kpi-value">250 ms</div>
+                        </div>
+                        <div class="kpi-item">
+                            <div class="kpi-label">Model Cascade</div>
+                            <div class="kpi-value">lex → mem → LLM (2s cap)</div>
+                        </div>
+                        <div class="kpi-item">
+                            <div class="kpi-label">Throughput</div>
+                            <div class="kpi-value">X kQPS @ 25% headroom</div>
+                        </div>
+                        <div class="kpi-item">
+                            <div class="kpi-label">Availability</div>
+                            <div class="kpi-value">99.9% smart fallback</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="executive-card">
+                    <h3>Intelligence Cost Structure</h3>
+                    <div class="kpi-grid">
+                        <div class="kpi-item">
+                            <div class="kpi-label">Compute Unit</div>
+                            <div class="kpi-value">$2–$8 / 1M inferences</div>
+                        </div>
+                        <div class="kpi-item">
+                            <div class="kpi-label">Escalation Rate</div>
+                            <div class="kpi-value">1–5% → LLM costly</div>
+                        </div>
+                        <div class="kpi-item">
+                            <div class="kpi-label">Fast-Path Efficiency</div>
+                            <div class="kpi-value">95–99% fast-path</div>
+                        </div>
+                        <div class="kpi-item">
+                            <div class="kpi-label">Cost Avoidance</div>
+                            <div class="kpi-value">avoids $30k–$100k per 1M reqs</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Task-Level Timing -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Task-Level Timing Targets</h2>
+            </div>
+            
+            <div class="performance-table">
+                <div class="table-header">
+                    <div class="table-cell">Task</div>
+                    <div class="table-cell metric">Avg Time</div>
+                    <div class="table-cell">Notes</div>
+                </div>
+                <div class="table-body">
+                    <div class="table-row">
+                        <div class="table-cell">Vector search (batched)</div>
+                        <div class="table-cell metric">~8–20 ms</div>
+                        <div class="table-cell">Graph-based ANN, per-language indices</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell">Graph traversal</div>
+                        <div class="table-cell metric">~15–35 ms</div>
+                        <div class="table-cell">Language-aware shortest path Surface→Sense</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell">Cross-language fallback</div>
+                        <div class="table-cell metric">~10 ms</div>
+                        <div class="table-cell">Back-off across languages</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell">Total query runtime</div>
+                        <div class="table-cell metric">25–100 ms</div>
+                        <div class="table-cell">Meets SLOs at scale</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Operational Comparison -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Operational Comparison</h2>
+            </div>
+            
+            <div class="performance-table">
+                <div class="table-header">
+                    <div class="table-cell">Metric</div>
+                    <div class="table-cell">Hyperlexicon</div>
+                    <div class="table-cell">LLMs (e.g., GPT-4, Claude)</div>
+                </div>
+                <div class="table-body">
+                    <div class="table-row">
+                        <div class="table-cell">Per-query compute</div>
+                        <div class="table-cell">≈25–100 ms / <1 GPU op</div>
+                        <div class="table-cell">1–3s / 5–100 GPU ops</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell">Cost per 1M queries</div>
+                        <div class="table-cell">$2–$8 (optimized)</div>
+                        <div class="table-cell">$30K–$100K+</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell">Scalability</div>
+                        <div class="table-cell">Linear with index size</div>
+                        <div class="table-cell">Often super-linear with token context</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell">Determinism / Explainability</div>
+                        <div class="table-cell">High (transparent graphs)</div>
+                        <div class="table-cell">Low (black-box completions)</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell">Customizability</div>
+                        <div class="table-cell">High (insert/update graph)</div>
+                        <div class="table-cell">Limited (fine-tuning prompts)</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell">Knowledge updates</div>
+                        <div class="table-cell">Realtime (graph mutation)</div>
+                        <div class="table-cell">Batch retrain or RAG workaround</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell">Language coverage</div>
+                        <div class="table-cell">Multilingual / cross-lingual control</div>
+                        <div class="table-cell">Biased / incomplete embeddings</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- User-Scale Cost Model -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">User-Scale Cost Model</h2>
+                <p class="section-subtitle">Illustrative, optimized cost structure</p>
+            </div>
+            
+            <div class="performance-table">
+                <div class="table-header">
+                    <div class="table-cell">Users</div>
+                    <div class="table-cell metric">Estimated Cost / User</div>
+                </div>
+                <div class="table-body">
+                    <div class="table-row">
+                        <div class="table-cell">10 M</div>
+                        <div class="table-cell metric">$0.05–$0.09</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell">50 M</div>
+                        <div class="table-cell metric">$0.03–$0.06</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell">100 M</div>
+                        <div class="table-cell metric">$0.02–$0.04</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell">500 M</div>
+                        <div class="table-cell metric">$0.004–$0.008</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell">1 B</div>
+                        <div class="table-cell metric"><$0.004</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI-Specific Failure Patterns -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">AI-Specific Failure Patterns</h2>
+            </div>
+            
+            <div class="failure-patterns">
+                <div class="pattern-card">
+                    <div class="pattern-title">Model Drift</div>
+                    <div class="pattern-description">Recall ↓ → retrain trigger</div>
+                </div>
+                <div class="pattern-card">
+                    <div class="pattern-title">Capacity Cliff</div>
+                    <div class="pattern-description">80% → graceful degrade</div>
+                </div>
+                <div class="pattern-card">
+                    <div class="pattern-title">Context Collapse</div>
+                    <div class="pattern-description">Memory → LLM → analysis-only</div>
+                </div>
+                <div class="pattern-card">
+                    <div class="pattern-title">Index Staleness</div>
+                    <div class="pattern-description">Rebuild → A/B → cutover</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Neural Observability -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Neural Observability</h2>
+                <p class="section-subtitle">Quality & Gates</p>
+            </div>
+            
+            <div class="observability-grid">
+                <div class="obs-card">
+                    <div class="obs-title">Trace Depth</div>
+                    <div class="obs-description">Tool-use → reasoning</div>
+                </div>
+                <div class="obs-card">
+                    <div class="obs-title">Quality Gates</div>
+                    <div class="obs-description">p50/p95 + accuracy</div>
+                </div>
+                <div class="obs-card">
+                    <div class="obs-title">Alert Velocity</div>
+                    <div class="obs-description">5m SLO, real-time OOM</div>
+                </div>
+                <div class="obs-card">
+                    <div class="obs-title">Inference Costs</div>
+                    <div class="obs-description">Per-request breakdown</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ML Security Model -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">ML Security Model</h2>
+                <p class="section-subtitle">Continuous Learning Operations</p>
+            </div>
+            
+            <div class="security-grid">
+                <div class="security-card">
+                    <div class="security-title">Execution</div>
+                    <div class="security-description">Local-only inference</div>
+                </div>
+                <div class="security-card">
+                    <div class="security-title">Data Sovereignty</div>
+                    <div class="security-description">PII-scrubbed vectors</div>
+                </div>
+                <div class="security-card">
+                    <div class="security-title">Model Integrity</div>
+                    <div class="security-description">Signed weights/indices</div>
+                </div>
+                <div class="security-card">
+                    <div class="security-title">Compute Isolation</div>
+                    <div class="security-description">Network-gapped nodes</div>
+                </div>
+                <div class="security-card">
+                    <div class="security-title">Model Refresh</div>
+                    <div class="security-description">Source-change triggers</div>
+                </div>
+                <div class="security-card">
+                    <div class="security-title">Vector Health</div>
+                    <div class="security-description">Symmetry + pattern dist</div>
+                </div>
+                <div class="security-card">
+                    <div class="security-title">State Evolution</div>
+                    <div class="security-description">Persist → validate → deploy</div>
+                </div>
+                <div class="security-card">
+                    <div class="security-title">Feedback Loops</div>
+                    <div class="security-description">Quality → retrain → deploy</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <div class="contact-info">
+                <div class="contact-title">Contact Information</div>
+                <div class="contact-text">
+                    Adiuvates ad Meliorationum Omniem.
+                </div>
+                <div class="contact-link">
+                    <a href="mailto:contact@hyperlexicon.ai">benjaminnelson1@outlook.com</a>
+                </div>
+            </div>
+        </div>
+            <!-- License Section -->
+        <div class="License">
+            <div class="license-info">
+                <div class="license-title">Commercial Licensing Available</div>
+                <div class="license-text">
+                    Copyright (c) 2025 Hyperlexicon. Benjamin R Nelson. All Rights Reserved.
+                </div>
+                <div class="license-text">
+                    Adiuvantes ad Meliuorationum Omniem
+                </div>
+                <div class="contact-link">
+                    <a href="mailto:contact@hyperlexicon.ai">benjaminnelson1@outlook.com</a>
+                            </div>
+        </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
