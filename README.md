@@ -14,7 +14,7 @@
 
 | Category | Jump to |
 |---|---|
-| Interactive Visualizations | [Biomedical Use Case](#biomedical-use-case-html) &middot; [Whitepaper](#whitepaper) &middot; [Executive Brief](#executive-brief) &middot; [Knowledge Graph](#knowledge-graph-html) |
+| Interactive Visualizations (live) | [Biomedical Use Case](https://inferbenji.github.io/HyperLexicon_UseCase/index.html) &middot; [Whitepaper](https://inferbenji.github.io/HyperLexicon_UseCase/hyperlexiconbrief.html) &middot; [Executive Brief](https://inferbenji.github.io/HyperLexicon_UseCase/docs/executive-brief.html) &middot; [Knowledge Graph](https://inferbenji.github.io/HyperLexicon_UseCase/docs/knowledge-graph.html) |
 | Technical Reports | [System Overview](#system-overview) &middot; [Data Dictionary](#data-dictionary) &middot; [API Reference](#api-reference) &middot; [Usage Examples](#usage-examples) &middot; [Troubleshooting](#troubleshooting) |
 | Analysis Data | [Database Analysis](#database-analysis) &middot; [Statistics](#statistics) &middot; [Functionality Tests](#functionality-tests) &middot; [Comprehensive Summary](#comprehensive-summary) |
 | Network Visualizations | [Visualization Catalog](#network-visualization-catalog) |
@@ -25,22 +25,23 @@
 
 ## Interactive Visualizations
 
-Standalone HTML pages &mdash; open directly in a browser for rich, styled presentations.
+> **View live:** These are fully styled, interactive HTML pages hosted via GitHub Pages.
+> Click any link below to open the rendered page directly in your browser.
 
-| Document | File | Description |
-|---|---|---|
-| <a id="biomedical-use-case-html"></a>Biomedical Use Case | [index.html](index.html) | Multi-source knowledge graph, sense-augmented embeddings, STSBenchmark results, BRCA1 pathway node registry |
-| <a id="whitepaper"></a>Whitepaper | [hyperlexiconbrief.html](hyperlexiconbrief.html) | System capabilities, multi-source fusion, Quadrinary Router, benchmark results, deployment profile |
-| <a id="executive-brief"></a>Executive Brief | [docs/executive-brief.html](docs/executive-brief.html) | Performance envelope, architecture efficiency, operational comparison |
-| <a id="knowledge-graph-html"></a>Knowledge Graph Schema | [docs/knowledge-graph.html](docs/knowledge-graph.html) | Multi-source schema (WordNet + ConceptNet + Wiktionary), multilingual coverage, BRCA1 node registry |
+| Document | Live Page | Source | Description |
+|---|---|---|---|
+| <a id="biomedical-use-case-html"></a>Biomedical Use Case | [**Open &rarr;**](https://inferbenji.github.io/HyperLexicon_UseCase/index.html) | [source](index.html) | Multi-source knowledge graph, sense-augmented embeddings, STSBenchmark results, BRCA1 pathway node registry |
+| <a id="whitepaper"></a>Whitepaper | [**Open &rarr;**](https://inferbenji.github.io/HyperLexicon_UseCase/hyperlexiconbrief.html) | [source](hyperlexiconbrief.html) | System capabilities, multi-source fusion, Quadrinary Router, benchmark results, deployment profile |
+| <a id="executive-brief"></a>Executive Brief | [**Open &rarr;**](https://inferbenji.github.io/HyperLexicon_UseCase/docs/executive-brief.html) | [source](docs/executive-brief.html) | Performance envelope, architecture efficiency, operational comparison |
+| <a id="knowledge-graph-html"></a>Knowledge Graph Schema | [**Open &rarr;**](https://inferbenji.github.io/HyperLexicon_UseCase/docs/knowledge-graph.html) | [source](docs/knowledge-graph.html) | Multi-source schema (WordNet + ConceptNet + Wiktionary), multilingual coverage, BRCA1 node registry |
 
 Additional variants in `docs/`:
 
-| File | Description |
-|---|---|
-| [docs/index.html](docs/index.html) | Biomedical use case (alternate copy) |
-| [docs/hyperlexicon_brief.html](docs/hyperlexicon_brief.html) | Knowledge graph structure (alternate styling) |
-| [docs/hyperlexicon_brief1.html](docs/hyperlexicon_brief1.html) | Executive brief (alternate styling) |
+| Document | Live Page | Source | Description |
+|---|---|---|---|
+| Biomedical Use Case (alt) | [**Open &rarr;**](https://inferbenji.github.io/HyperLexicon_UseCase/docs/index.html) | [source](docs/index.html) | Alternate copy |
+| Knowledge Graph (alt) | [**Open &rarr;**](https://inferbenji.github.io/HyperLexicon_UseCase/docs/hyperlexicon_brief.html) | [source](docs/hyperlexicon_brief.html) | Alternate styling |
+| Executive Brief (alt) | [**Open &rarr;**](https://inferbenji.github.io/HyperLexicon_UseCase/docs/hyperlexicon_brief1.html) | [source](docs/hyperlexicon_brief1.html) | Alternate styling |
 
 ---
 
