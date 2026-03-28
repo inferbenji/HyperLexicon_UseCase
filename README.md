@@ -296,6 +296,12 @@ HyperLexicon_UseCase/
 
 This work exists because **Mark Head** believed in it before anyone else did. A patron of the arts, a philanthropist, and a man whose instinct for what matters has never needed a spreadsheet to justify it &mdash; Mark provided the funding and the freedom that made Hyperlexicon possible. In a field crowded with committees and conditional term sheets, he simply said *yes*. Every node in this graph, every benchmark on these pages, traces back to that decision. The debt is not financial; it is the rarer kind &mdash; the kind you repay by building something worthy of the trust.
 
+### Daniel Friedman ([@docxology](https://github.com/docxology))
+
+The knowledge curation behind Hyperlexicon owes a profound debt to **Daniel Friedman**, whose work assembling, structuring, and refining the data that feeds these graphs shaped the system at a foundational level. As a collaborator, mentor, and guide, Daniel brought rigor and vision to this project that elevated it far beyond what it would have been otherwise.
+
+*Daniel Friedman is acknowledged here in his individual capacity. His contributions reflect independent collaboration and do not imply institutional affiliation, organizational endorsement, or formal association with any entity. All architectural and engineering decisions in Hyperlexicon remain solely those of the author.*
+
 ---
 
 ### Data Sources
