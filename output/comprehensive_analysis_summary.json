@@ -1,0 +1,89 @@
+{
+  "analysis_timestamp": "2025-08-24T14:10:11.253685",
+  "project_root": "/home/trim/Documents/GitHub/Lexinomicon",
+  "output_directory": "/home/trim/Documents/GitHub/Lexinomicon/output",
+  "analysis_components": {
+    "database": {
+      "database/database_analysis.json": {
+        "exists": true,
+        "size": 159912
+      },
+      "database/database_analysis.txt": {
+        "exists": true,
+        "size": 2104
+      }
+    },
+    "analysis": {
+      "analysis/statistics_report.json": {
+        "exists": true,
+        "size": 2051
+      },
+      "analysis/statistics_summary.txt": {
+        "exists": true,
+        "size": 1200
+      },
+      "analysis/functionality_test_report.json": {
+        "exists": true,
+        "size": 89819
+      },
+      "analysis/functionality_test_summary.txt": {
+        "exists": true,
+        "size": 1279
+      }
+    },
+    "visualizations": {
+      "visualizations/node_type_distribution.png": {
+        "exists": true,
+        "size": 148782
+      },
+      "visualizations/edge_type_distribution.png": {
+        "exists": true,
+        "size": 186879
+      },
+      "visualizations/degree_distribution.png": {
+        "exists": true,
+        "size": 198595
+      }
+    },
+    "reports": {
+      "reports/README.md": {
+        "exists": true,
+        "size": 2093
+      },
+      "reports/system_overview.md": {
+        "exists": true,
+        "size": 2153
+      },
+      "reports/api_reference.md": {
+        "exists": true,
+        "size": 1823
+      },
+      "reports/usage_examples.md": {
+        "exists": true,
+        "size": 3853
+      },
+      "reports/data_dictionary.md": {
+        "exists": true,
+        "size": 5002
+      },
+      "reports/troubleshooting_guide.md": {
+        "exists": true,
+        "size": 5281
+      }
+    }
+  },
+  "system_status": {
+    "database": {
+      "exists": true,
+      "size_mb": 139.64
+    },
+    "faiss_index": {
+      "exists": true,
+      "size_mb": 202.9
+    },
+    "id_mapping": {
+      "exists": true,
+      "size_mb": 0.9
+    }
+  }
+}

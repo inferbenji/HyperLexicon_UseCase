@@ -1,0 +1,1587 @@
+{
+  "timestamp": "2025-08-24T14:06:19.929314",
+  "system_info": {
+    "python_version": "3.10.12 (main, Aug 15 2025, 14:32:43) [GCC 11.4.0]",
+    "project_root": "/home/trim/Documents/GitHub/Lexinomicon",
+    "database_exists": true,
+    "index_exists": true
+  },
+  "cli_tests": {
+    "computer": {
+      "status": "success",
+      "execution_time_ms": 17788.06,
+      "results_count": 5,
+      "results": [
+        {
+          "id": 39129,
+          "definition": "a computer that represents information by numerical (binary) digits",
+          "surfaces_en": [
+            "digital computer"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 38470,
+                "lemmas": "computer, computing machine, computing device, data processor, electronic computer, information processing system"
+              }
+            ],
+            "hyponym": [
+              {
+                "id": 37467,
+                "lemmas": "bulletin board system, bulletin board, electronic bulletin board, bbs"
+              },
+              {
+                "id": 39926,
+                "lemmas": "file server"
+              },
+              {
+                "id": 42187,
+                "lemmas": "mainframe, mainframe computer"
+              },
+              {
+                "id": 42507,
+                "lemmas": "minicomputer"
+              },
+              {
+                "id": 42681,
+                "lemmas": "multiprocessor"
+              },
+              {
+                "id": 43404,
+                "lemmas": "personal computer, PC, microcomputer"
+              }
+            ],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.5355419795728653
+        },
+        {
+          "id": 75375,
+          "definition": "a person who uses computers for work or entertainment or communication or business",
+          "surfaces_en": [
+            "computer user"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 21795,
+                "lemmas": "person, individual, someone, somebody, mortal, soul"
+              }
+            ],
+            "hyponym": [
+              {
+                "id": 75373,
+                "lemmas": "computer expert, computer guru"
+              },
+              {
+                "id": 75374,
+                "lemmas": "computer scientist"
+              },
+              {
+                "id": 75589,
+                "lemmas": "cybernaut"
+              },
+              {
+                "id": 78419,
+                "lemmas": "power user"
+              },
+              {
+                "id": 78519,
+                "lemmas": "programmer, computer programmer, coder, software engineer"
+              },
+              {
+                "id": 79745,
+                "lemmas": "system administrator"
+              }
+            ],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.5395856928043795
+        },
+        {
+          "id": 43404,
+          "definition": "a small digital computer based on a microprocessor and designed to be used by one person at a time",
+          "surfaces_en": [
+            "PC",
+            "microcomputer",
+            "personal computer"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 39129,
+                "lemmas": "digital computer"
+              }
+            ],
+            "hyponym": [
+              {
+                "id": 39046,
+                "lemmas": "desktop computer"
+              },
+              {
+                "id": 43794,
+                "lemmas": "portable computer"
+              }
+            ],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.5357843926869326
+        },
+        {
+          "id": 41094,
+          "definition": "a computer intended for use in the home",
+          "surfaces_en": [
+            "home computer"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 38470,
+                "lemmas": "computer, computing machine, computing device, data processor, electronic computer, information processing system"
+              }
+            ],
+            "hyponym": [],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.5828471848690553
+        },
+        {
+          "id": 46038,
+          "definition": "a mainframe computer that is one of the most powerful available at a given time",
+          "surfaces_en": [
+            "supercomputer"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 42187,
+                "lemmas": "mainframe, mainframe computer"
+              }
+            ],
+            "hyponym": [],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.5559493133980171
+        }
+      ],
+      "stdout": "[\n  {\n    \"id\": 39129,\n    \"definition\": \"a computer that represents information by numerical (binary) digits\",\n    \"surfaces_en\": [\n      \"digital computer\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [\n        {\n          \"id\": 38470,\n          \"lemmas\": \"computer, computing machine, computing device, data processor, electronic computer, information processing system\"\n        }\n      ],\n      \"hyponym\": [\n        {\n          \"id\": 37467,\n          \"lemmas\": \"bulletin board system, bulletin board, electronic bulletin board, bbs\"\n        },\n        {\n          \"id\": 39926,\n          \"lemmas\": \"file server\"\n        },\n        {\n          \"id\": 42187,\n          \"lemmas\": \"mainframe, mainframe computer\"\n        },\n        {\n          \"id\": 42507,\n          \"lemmas\": \"minicomputer\"\n        },\n        {\n          \"id\": 42681,\n          \"lemmas\": \"multiprocessor\"\n        },\n        {\n          \"id\": 43404,\n          \"lemmas\": \"personal computer, PC, microcomputer\"\n        }\n      ],\n      \"antonym\": [],\n      \"similar_to\": []\n    },\n    \"score\": 0.5355419795728653\n  },\n  {\n    \"id\": 75375,\n    \"definition\": \"a person who uses computers for work or entertainment or communication or business\",\n    \"surfaces_en\": [\n      \"computer user\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [\n        {\n          \"id\": 21795,\n          \"lemmas\": \"person, individual, someone, somebody, mortal, soul\"\n        }\n      ],\n      \"hyponym\": [\n        {\n          \"id\": 75373,\n          \"lemmas\": \"computer expert, computer guru\"\n        },\n        {\n          \"id\": 75374,\n          \"lemmas\": \"computer scientist\"\n        },\n        {\n          \"id\": 75589,\n          \"lemmas\": \"cybernaut\"\n        },\n        {\n          \"id\": 78419,\n          \"lemmas\": \"power user\"\n        },\n        {\n          \"id\": 78519,\n          \"lemmas\": \"programmer, computer programmer, coder, software engineer\"\n        },\n        {\n          \"id\": 79745,\n          \"lemmas\": \"system administrator\"\n        }\n      ],\n      \"antonym\": [],\n      \"similar_to\": []\n    },\n    \"score\": 0.5395856928043795\n  },\n  {\n    \"id\": 43404,\n    \"definition\": \"a small digital computer based on a microprocessor and designed to be used by one person at a time\",\n    \"surfaces_en\": [\n      \"PC\",\n      \"microcomputer\",\n      \"personal computer\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [\n        {\n          \"id\": 39129,\n          \"lemmas\": \"digital computer\"\n        }\n      ],\n      \"hyponym\": [\n        {\n          \"id\": 39046,\n          \"lemmas\": \"desktop computer\"\n        },\n        {\n          \"id\": 43794,\n          \"lemmas\": \"portable computer\"\n        }\n      ],\n      \"antonym\": [],\n      \"similar_to\": []\n    },\n    \"score\": 0.5357843926869326\n  },\n  {\n    \"id\": 41094,\n    \"definition\": \"a computer intended for use in the home\",\n    \"surfaces_en\": [\n      \"home computer\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [\n        {\n          \"id\": 38470,\n          \"lemmas\": \"computer, computing machine, computing device, data processor, electronic computer, information processing system\"\n        }\n      ],\n      \"hyponym\": [],\n      \"antonym\": [],\n      \"similar_to\": []\n    },\n    \"score\": 0.5828471848690553\n  },\n  {\n    \"id\": 46038,\n    \"definition\": \"a mainframe computer that is one of the most powerful available at a given time\",\n    \"surfaces_en\": [\n      \"supercomputer\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [\n        {\n          \"id\": 42187,\n          \"lemmas\": \"mainframe, mainframe computer\"\n        }\n      ],\n      \"hyponym\": [],\n      \"antonym\": [],\n      \"similar_to\": []\n    },\n    \"score\": 0.5559493133980171\n  }\n]\n",
+      "stderr": "2025-08-24 14:06:25.483720: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /tmp/.mount_CursorqmBHLb/usr/lib/:/tmp/.mount_CursorqmBHLb/usr/lib32/:/tmp/.mount_CursorqmBHLb/usr/lib64/:/tmp/.mount_CursorqmBHLb/lib/:/tmp/.mount_CursorqmBHLb/lib/i386-linux-gnu/:/tmp/.mount_CursorqmBHLb/lib/x86_64-linux-gnu/:/tmp/.mount_CursorqmBHLb/lib/aarch64-linux-gnu/:/tmp/.mount_CursorqmBHLb/lib32/:/tmp/.mount_CursorqmBHLb/lib64/:/tmp/.mount_CursorLibWEg/usr/lib/:/tmp/.mount_CursorLibWEg/usr/lib32/:/tmp/.mount_CursorLibWEg/usr/lib64/:/tmp/.mount_CursorLibWEg/lib/:/tmp/.mount_CursorLibWEg/lib/i386-linux-gnu/:/tmp/.mount_CursorLibWEg/lib/x86_64-linux-gnu/:/tmp/.mount_CursorLibWEg/lib/aarch64-linux-gnu/:/tmp/.mount_CursorLibWEg/lib32/:/tmp/.mount_CursorLibWEg/lib64/:\n2025-08-24 14:06:25.483763: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.\n/home/trim/.local/lib/python3.10/site-packages/torch/cuda/__init__.py:129: UserWarning: CUDA initialization: CUDA unknown error - this may be due to an incorrectly set up environment, e.g. changing env variable CUDA_VISIBLE_DEVICES after program start. Setting the available devices to be zero. (Triggered internally at /pytorch/c10/cuda/CUDAFunctions.cpp:109.)\n  return torch._C._cuda_getDeviceCount() > 0\n/home/trim/.local/lib/python3.10/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884\n  warnings.warn(\n"
+    },
+    "machine learning": {
+      "status": "success",
+      "execution_time_ms": 14592.61,
+      "results_count": 5,
+      "results": [
+        {
+          "id": 53634,
+          "definition": "coming to understand something clearly and distinctly",
+          "surfaces_en": [
+            "realisation",
+            "realization",
+            "recognition"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 53624,
+                "lemmas": "understanding, apprehension, discernment, savvy"
+              }
+            ],
+            "hyponym": [],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.43569104327145564
+        },
+        {
+          "id": 13020,
+          "definition": "not supervised or under constant observation",
+          "surfaces_en": [
+            "unsupervised"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [],
+            "hyponym": [],
+            "antonym": [
+              {
+                "id": 13019,
+                "lemmas": "supervised"
+              }
+            ],
+            "similar_to": [
+              {
+                "id": 13021,
+                "lemmas": "unattended"
+              }
+            ]
+          },
+          "score": 0.460469085622873
+        },
+        {
+          "id": 107495,
+          "definition": "break down into components or essential features",
+          "surfaces_en": [
+            "analyse",
+            "analyze"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [],
+            "hyponym": [
+              {
+                "id": 107496,
+                "lemmas": "factor analyse, factor analyze"
+              }
+            ],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.43820722920568
+        },
+        {
+          "id": 93683,
+          "definition": "data processing using sophisticated data search capabilities and statistical algorithms to discover patterns and correlations in large preexisting databases; a way to discover new meaning in data",
+          "surfaces_en": [
+            "data mining"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 93684,
+                "lemmas": "data processing"
+              }
+            ],
+            "hyponym": [],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.46060943634013135
+        },
+        {
+          "id": 53467,
+          "definition": "reasoning from detailed facts to general principles",
+          "surfaces_en": [
+            "generalisation",
+            "generalization",
+            "induction",
+            "inductive reasoning"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 53421,
+                "lemmas": "colligation"
+              }
+            ],
+            "hyponym": [],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.4345086091267647
+        }
+      ],
+      "stdout": "[\n  {\n    \"id\": 53634,\n    \"definition\": \"coming to understand something clearly and distinctly\",\n    \"surfaces_en\": [\n      \"realisation\",\n      \"realization\",\n      \"recognition\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [\n        {\n          \"id\": 53624,\n          \"lemmas\": \"understanding, apprehension, discernment, savvy\"\n        }\n      ],\n      \"hyponym\": [],\n      \"antonym\": [],\n      \"similar_to\": []\n    },\n    \"score\": 0.43569104327145564\n  },\n  {\n    \"id\": 13020,\n    \"definition\": \"not supervised or under constant observation\",\n    \"surfaces_en\": [\n      \"unsupervised\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [],\n      \"hyponym\": [],\n      \"antonym\": [\n        {\n          \"id\": 13019,\n          \"lemmas\": \"supervised\"\n        }\n      ],\n      \"similar_to\": [\n        {\n          \"id\": 13021,\n          \"lemmas\": \"unattended\"\n        }\n      ]\n    },\n    \"score\": 0.460469085622873\n  },\n  {\n    \"id\": 107495,\n    \"definition\": \"break down into components or essential features\",\n    \"surfaces_en\": [\n      \"analyse\",\n      \"analyze\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [],\n      \"hyponym\": [\n        {\n          \"id\": 107496,\n          \"lemmas\": \"factor analyse, factor analyze\"\n        }\n      ],\n      \"antonym\": [],\n      \"similar_to\": []\n    },\n    \"score\": 0.43820722920568\n  },\n  {\n    \"id\": 93683,\n    \"definition\": \"data processing using sophisticated data search capabilities and statistical algorithms to discover patterns and correlations in large preexisting databases; a way to discover new meaning in data\",\n    \"surfaces_en\": [\n      \"data mining\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [\n        {\n          \"id\": 93684,\n          \"lemmas\": \"data processing\"\n        }\n      ],\n      \"hyponym\": [],\n      \"antonym\": [],\n      \"similar_to\": []\n    },\n    \"score\": 0.46060943634013135\n  },\n  {\n    \"id\": 53467,\n    \"definition\": \"reasoning from detailed facts to general principles\",\n    \"surfaces_en\": [\n      \"generalisation\",\n      \"generalization\",\n      \"induction\",\n      \"inductive reasoning\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [\n        {\n          \"id\": 53421,\n          \"lemmas\": \"colligation\"\n        }\n      ],\n      \"hyponym\": [],\n      \"antonym\": [],\n      \"similar_to\": []\n    },\n    \"score\": 0.4345086091267647\n  }\n]\n",
+      "stderr": "2025-08-24 14:06:40.940616: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /tmp/.mount_CursorqmBHLb/usr/lib/:/tmp/.mount_CursorqmBHLb/usr/lib32/:/tmp/.mount_CursorqmBHLb/usr/lib64/:/tmp/.mount_CursorqmBHLb/lib/:/tmp/.mount_CursorqmBHLb/lib/i386-linux-gnu/:/tmp/.mount_CursorqmBHLb/lib/x86_64-linux-gnu/:/tmp/.mount_CursorqmBHLb/lib/aarch64-linux-gnu/:/tmp/.mount_CursorqmBHLb/lib32/:/tmp/.mount_CursorqmBHLb/lib64/:/tmp/.mount_CursorLibWEg/usr/lib/:/tmp/.mount_CursorLibWEg/usr/lib32/:/tmp/.mount_CursorLibWEg/usr/lib64/:/tmp/.mount_CursorLibWEg/lib/:/tmp/.mount_CursorLibWEg/lib/i386-linux-gnu/:/tmp/.mount_CursorLibWEg/lib/x86_64-linux-gnu/:/tmp/.mount_CursorLibWEg/lib/aarch64-linux-gnu/:/tmp/.mount_CursorLibWEg/lib32/:/tmp/.mount_CursorLibWEg/lib64/:\n2025-08-24 14:06:40.940657: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.\n/home/trim/.local/lib/python3.10/site-packages/torch/cuda/__init__.py:129: UserWarning: CUDA initialization: CUDA unknown error - this may be due to an incorrectly set up environment, e.g. changing env variable CUDA_VISIBLE_DEVICES after program start. Setting the available devices to be zero. (Triggered internally at /pytorch/c10/cuda/CUDAFunctions.cpp:109.)\n  return torch._C._cuda_getDeviceCount() > 0\n/home/trim/.local/lib/python3.10/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884\n  warnings.warn(\n"
+    },
+    "artificial intelligence": {
+      "status": "success",
+      "execution_time_ms": 17256.01,
+      "results_count": 5,
+      "results": [
+        {
+          "id": 55048,
+          "definition": "the branch of computer science that deal with writing computer programs that can solve problems creatively",
+          "surfaces_en": [
+            "AI",
+            "artificial intelligence"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 55045,
+                "lemmas": "computer science, computing"
+              }
+            ],
+            "hyponym": [
+              {
+                "id": 55049,
+                "lemmas": "machine translation, MT"
+              },
+              {
+                "id": 55050,
+                "lemmas": "robotics"
+              }
+            ],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.5428574220503083
+        },
+        {
+          "id": 26776,
+          "definition": "tactical intelligence on the natural and man-made characteristics of an area",
+          "surfaces_en": [
+            "terrain intelligence"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 26775,
+                "lemmas": "tactical intelligence, combat intelligence"
+              }
+            ],
+            "hyponym": [],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.4975522476515522
+        },
+        {
+          "id": 26774,
+          "definition": "intelligence of all types and forms of immediate interest; usually disseminated without delays for evaluation or interpretation",
+          "surfaces_en": [
+            "current intelligence"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 26773,
+                "lemmas": "intelligence, intelligence activity, intelligence operation"
+              }
+            ],
+            "hyponym": [],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.4956334478462187
+        },
+        {
+          "id": 58967,
+          "definition": "a language that is deliberately created for a specific purpose",
+          "surfaces_en": [
+            "artificial language"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 55760,
+                "lemmas": "language, linguistic communication"
+              }
+            ],
+            "hyponym": [
+              {
+                "id": 58968,
+                "lemmas": "Antido"
+              },
+              {
+                "id": 58969,
+                "lemmas": "Arulo"
+              },
+              {
+                "id": 58970,
+                "lemmas": "Basic English"
+              },
+              {
+                "id": 58971,
+                "lemmas": "Blaia Zimondal"
+              },
+              {
+                "id": 58972,
+                "lemmas": "Esperantido"
+              },
+              {
+                "id": 58973,
+                "lemmas": "Esperanto"
+              }
+            ],
+            "antonym": [
+              {
+                "id": 59028,
+                "lemmas": "natural language, tongue"
+              }
+            ],
+            "similar_to": []
+          },
+          "score": 0.5155454447904246
+        },
+        {
+          "id": 58996,
+          "definition": "an artificial language designed to express algorithms",
+          "surfaces_en": [
+            "algorithmic language"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 58994,
+                "lemmas": "programming language, programing language"
+              }
+            ],
+            "hyponym": [
+              {
+                "id": 58995,
+                "lemmas": "algebraic language"
+              }
+            ],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.5374426477882583
+        }
+      ],
+      "stdout": "[\n  {\n    \"id\": 55048,\n    \"definition\": \"the branch of computer science that deal with writing computer programs that can solve problems creatively\",\n    \"surfaces_en\": [\n      \"AI\",\n      \"artificial intelligence\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [\n        {\n          \"id\": 55045,\n          \"lemmas\": \"computer science, computing\"\n        }\n      ],\n      \"hyponym\": [\n        {\n          \"id\": 55049,\n          \"lemmas\": \"machine translation, MT\"\n        },\n        {\n          \"id\": 55050,\n          \"lemmas\": \"robotics\"\n        }\n      ],\n      \"antonym\": [],\n      \"similar_to\": []\n    },\n    \"score\": 0.5428574220503083\n  },\n  {\n    \"id\": 26776,\n    \"definition\": \"tactical intelligence on the natural and man-made characteristics of an area\",\n    \"surfaces_en\": [\n      \"terrain intelligence\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [\n        {\n          \"id\": 26775,\n          \"lemmas\": \"tactical intelligence, combat intelligence\"\n        }\n      ],\n      \"hyponym\": [],\n      \"antonym\": [],\n      \"similar_to\": []\n    },\n    \"score\": 0.4975522476515522\n  },\n  {\n    \"id\": 26774,\n    \"definition\": \"intelligence of all types and forms of immediate interest; usually disseminated without delays for evaluation or interpretation\",\n    \"surfaces_en\": [\n      \"current intelligence\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [\n        {\n          \"id\": 26773,\n          \"lemmas\": \"intelligence, intelligence activity, intelligence operation\"\n        }\n      ],\n      \"hyponym\": [],\n      \"antonym\": [],\n      \"similar_to\": []\n    },\n    \"score\": 0.4956334478462187\n  },\n  {\n    \"id\": 58967,\n    \"definition\": \"a language that is deliberately created for a specific purpose\",\n    \"surfaces_en\": [\n      \"artificial language\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [\n        {\n          \"id\": 55760,\n          \"lemmas\": \"language, linguistic communication\"\n        }\n      ],\n      \"hyponym\": [\n        {\n          \"id\": 58968,\n          \"lemmas\": \"Antido\"\n        },\n        {\n          \"id\": 58969,\n          \"lemmas\": \"Arulo\"\n        },\n        {\n          \"id\": 58970,\n          \"lemmas\": \"Basic English\"\n        },\n        {\n          \"id\": 58971,\n          \"lemmas\": \"Blaia Zimondal\"\n        },\n        {\n          \"id\": 58972,\n          \"lemmas\": \"Esperantido\"\n        },\n        {\n          \"id\": 58973,\n          \"lemmas\": \"Esperanto\"\n        }\n      ],\n      \"antonym\": [\n        {\n          \"id\": 59028,\n          \"lemmas\": \"natural language, tongue\"\n        }\n      ],\n      \"similar_to\": []\n    },\n    \"score\": 0.5155454447904246\n  },\n  {\n    \"id\": 58996,\n    \"definition\": \"an artificial language designed to express algorithms\",\n    \"surfaces_en\": [\n      \"algorithmic language\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [\n        {\n          \"id\": 58994,\n          \"lemmas\": \"programming language, programing language\"\n        }\n      ],\n      \"hyponym\": [\n        {\n          \"id\": 58995,\n          \"lemmas\": \"algebraic language\"\n        }\n      ],\n      \"antonym\": [],\n      \"similar_to\": []\n    },\n    \"score\": 0.5374426477882583\n  }\n]\n",
+      "stderr": "2025-08-24 14:06:56.921235: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /tmp/.mount_CursorqmBHLb/usr/lib/:/tmp/.mount_CursorqmBHLb/usr/lib32/:/tmp/.mount_CursorqmBHLb/usr/lib64/:/tmp/.mount_CursorqmBHLb/lib/:/tmp/.mount_CursorqmBHLb/lib/i386-linux-gnu/:/tmp/.mount_CursorqmBHLb/lib/x86_64-linux-gnu/:/tmp/.mount_CursorqmBHLb/lib/aarch64-linux-gnu/:/tmp/.mount_CursorqmBHLb/lib32/:/tmp/.mount_CursorqmBHLb/lib64/:/tmp/.mount_CursorLibWEg/usr/lib/:/tmp/.mount_CursorLibWEg/usr/lib32/:/tmp/.mount_CursorLibWEg/usr/lib64/:/tmp/.mount_CursorLibWEg/lib/:/tmp/.mount_CursorLibWEg/lib/i386-linux-gnu/:/tmp/.mount_CursorLibWEg/lib/x86_64-linux-gnu/:/tmp/.mount_CursorLibWEg/lib/aarch64-linux-gnu/:/tmp/.mount_CursorLibWEg/lib32/:/tmp/.mount_CursorLibWEg/lib64/:\n2025-08-24 14:06:56.921257: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.\n/home/trim/.local/lib/python3.10/site-packages/torch/cuda/__init__.py:129: UserWarning: CUDA initialization: CUDA unknown error - this may be due to an incorrectly set up environment, e.g. changing env variable CUDA_VISIBLE_DEVICES after program start. Setting the available devices to be zero. (Triggered internally at /pytorch/c10/cuda/CUDAFunctions.cpp:109.)\n  return torch._C._cuda_getDeviceCount() > 0\n/home/trim/.local/lib/python3.10/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884\n  warnings.warn(\n"
+    },
+    "robot": {
+      "status": "success",
+      "execution_time_ms": 20307.28,
+      "results_count": 5,
+      "results": [
+        {
+          "id": 16759,
+          "definition": "of or relating to mechanical robots",
+          "surfaces_en": [
+            "robotic"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [],
+            "hyponym": [],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.5577830276892138
+        },
+        {
+          "id": 8228,
+          "definition": "resembling the unthinking functioning of a machine",
+          "surfaces_en": [
+            "automatic",
+            "automatonlike",
+            "machinelike",
+            "robotic",
+            "robotlike"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [],
+            "hyponym": [],
+            "antonym": [],
+            "similar_to": [
+              {
+                "id": 8227,
+                "lemmas": "mechanical"
+              }
+            ]
+          },
+          "score": 0.5314627807566384
+        },
+        {
+          "id": 55050,
+          "definition": "the area of AI concerned with the practical use of robots",
+          "surfaces_en": [
+            "robotics"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 55048,
+                "lemmas": "artificial intelligence, AI"
+              }
+            ],
+            "hyponym": [
+              {
+                "id": 55051,
+                "lemmas": "animatronics"
+              },
+              {
+                "id": 55052,
+                "lemmas": "telerobotics"
+              }
+            ],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.5621369627719144
+        },
+        {
+          "id": 55052,
+          "definition": "the area of robotics that is concerned with the control of robots from a distance",
+          "surfaces_en": [
+            "telerobotics"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 55050,
+                "lemmas": "robotics"
+              }
+            ],
+            "hyponym": [],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.5360895250631328
+        },
+        {
+          "id": 36516,
+          "definition": "a mechanism that can move automatically",
+          "surfaces_en": [
+            "automaton",
+            "golem",
+            "robot"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 42347,
+                "lemmas": "mechanism"
+              }
+            ],
+            "hyponym": [
+              {
+                "id": 36241,
+                "lemmas": "android, humanoid, mechanical man"
+              }
+            ],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.5674695223711418
+        }
+      ],
+      "stdout": "[\n  {\n    \"id\": 16759,\n    \"definition\": \"of or relating to mechanical robots\",\n    \"surfaces_en\": [\n      \"robotic\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [],\n      \"hyponym\": [],\n      \"antonym\": [],\n      \"similar_to\": []\n    },\n    \"score\": 0.5577830276892138\n  },\n  {\n    \"id\": 8228,\n    \"definition\": \"resembling the unthinking functioning of a machine\",\n    \"surfaces_en\": [\n      \"automatic\",\n      \"automatonlike\",\n      \"machinelike\",\n      \"robotic\",\n      \"robotlike\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [],\n      \"hyponym\": [],\n      \"antonym\": [],\n      \"similar_to\": [\n        {\n          \"id\": 8227,\n          \"lemmas\": \"mechanical\"\n        }\n      ]\n    },\n    \"score\": 0.5314627807566384\n  },\n  {\n    \"id\": 55050,\n    \"definition\": \"the area of AI concerned with the practical use of robots\",\n    \"surfaces_en\": [\n      \"robotics\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [\n        {\n          \"id\": 55048,\n          \"lemmas\": \"artificial intelligence, AI\"\n        }\n      ],\n      \"hyponym\": [\n        {\n          \"id\": 55051,\n          \"lemmas\": \"animatronics\"\n        },\n        {\n          \"id\": 55052,\n          \"lemmas\": \"telerobotics\"\n        }\n      ],\n      \"antonym\": [],\n      \"similar_to\": []\n    },\n    \"score\": 0.5621369627719144\n  },\n  {\n    \"id\": 55052,\n    \"definition\": \"the area of robotics that is concerned with the control of robots from a distance\",\n    \"surfaces_en\": [\n      \"telerobotics\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [\n        {\n          \"id\": 55050,\n          \"lemmas\": \"robotics\"\n        }\n      ],\n      \"hyponym\": [],\n      \"antonym\": [],\n      \"similar_to\": []\n    },\n    \"score\": 0.5360895250631328\n  },\n  {\n    \"id\": 36516,\n    \"definition\": \"a mechanism that can move automatically\",\n    \"surfaces_en\": [\n      \"automaton\",\n      \"golem\",\n      \"robot\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [\n        {\n          \"id\": 42347,\n          \"lemmas\": \"mechanism\"\n        }\n      ],\n      \"hyponym\": [\n        {\n          \"id\": 36241,\n          \"lemmas\": \"android, humanoid, mechanical man\"\n        }\n      ],\n      \"antonym\": [],\n      \"similar_to\": []\n    },\n    \"score\": 0.5674695223711418\n  }\n]\n",
+      "stderr": "2025-08-24 14:07:15.090215: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /tmp/.mount_CursorqmBHLb/usr/lib/:/tmp/.mount_CursorqmBHLb/usr/lib32/:/tmp/.mount_CursorqmBHLb/usr/lib64/:/tmp/.mount_CursorqmBHLb/lib/:/tmp/.mount_CursorqmBHLb/lib/i386-linux-gnu/:/tmp/.mount_CursorqmBHLb/lib/x86_64-linux-gnu/:/tmp/.mount_CursorqmBHLb/lib/aarch64-linux-gnu/:/tmp/.mount_CursorqmBHLb/lib32/:/tmp/.mount_CursorqmBHLb/lib64/:/tmp/.mount_CursorLibWEg/usr/lib/:/tmp/.mount_CursorLibWEg/usr/lib32/:/tmp/.mount_CursorLibWEg/usr/lib64/:/tmp/.mount_CursorLibWEg/lib/:/tmp/.mount_CursorLibWEg/lib/i386-linux-gnu/:/tmp/.mount_CursorLibWEg/lib/x86_64-linux-gnu/:/tmp/.mount_CursorLibWEg/lib/aarch64-linux-gnu/:/tmp/.mount_CursorLibWEg/lib32/:/tmp/.mount_CursorLibWEg/lib64/:\n2025-08-24 14:07:15.090263: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.\n/home/trim/.local/lib/python3.10/site-packages/torch/cuda/__init__.py:129: UserWarning: CUDA initialization: CUDA unknown error - this may be due to an incorrectly set up environment, e.g. changing env variable CUDA_VISIBLE_DEVICES after program start. Setting the available devices to be zero. (Triggered internally at /pytorch/c10/cuda/CUDAFunctions.cpp:109.)\n  return torch._C._cuda_getDeviceCount() > 0\n/home/trim/.local/lib/python3.10/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884\n  warnings.warn(\n"
+    },
+    "neural network": {
+      "status": "success",
+      "execution_time_ms": 18752.37,
+      "results_count": 5,
+      "results": [
+        {
+          "id": 52079,
+          "definition": "any network of neurons or nuclei that function together to perform some function in the body",
+          "surfaces_en": [
+            "neural net",
+            "neural network"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 52078,
+                "lemmas": "reticulum"
+              }
+            ],
+            "hyponym": [
+              {
+                "id": 52081,
+                "lemmas": "reticular formation, RF"
+              },
+              {
+                "id": 52082,
+                "lemmas": "reticular activating system, RAS"
+              }
+            ],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.5766792365562288
+        },
+        {
+          "id": 58078,
+          "definition": "computer architecture in which processors are connected in a manner suggestive of connections between neurons; can learn by trial and error",
+          "surfaces_en": [
+            "neural net",
+            "neural network"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 58077,
+                "lemmas": "computer architecture"
+              }
+            ],
+            "hyponym": [],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.5943947844433473
+        },
+        {
+          "id": 16465,
+          "definition": "of or relating to neurons",
+          "surfaces_en": [
+            "neural",
+            "neuronal",
+            "neuronic"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [],
+            "hyponym": [],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.47181840245251294
+        },
+        {
+          "id": 16532,
+          "definition": "of or relating to the nervous system",
+          "surfaces_en": [
+            "nervous",
+            "neural"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [],
+            "hyponym": [],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.4740913018520265
+        },
+        {
+          "id": 38477,
+          "definition": "(computer science) a network of computers",
+          "surfaces_en": [
+            "computer network"
+          ],
+          "domains": [
+            "computer science.n.01"
+          ],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 42806,
+                "lemmas": "network, electronic network"
+              }
+            ],
+            "hyponym": [
+              {
+                "id": 41373,
+                "lemmas": "Intelnet"
+              },
+              {
+                "id": 41388,
+                "lemmas": "internet, net, cyberspace"
+              },
+              {
+                "id": 41395,
+                "lemmas": "intranet"
+              },
+              {
+                "id": 42003,
+                "lemmas": "local area network, LAN"
+              },
+              {
+                "id": 47375,
+                "lemmas": "wide area network, WAN"
+              },
+              {
+                "id": 47502,
+                "lemmas": "World Wide Web, WWW, web"
+              }
+            ],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.4822692099751892
+        }
+      ],
+      "stdout": "[\n  {\n    \"id\": 52079,\n    \"definition\": \"any network of neurons or nuclei that function together to perform some function in the body\",\n    \"surfaces_en\": [\n      \"neural net\",\n      \"neural network\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [\n        {\n          \"id\": 52078,\n          \"lemmas\": \"reticulum\"\n        }\n      ],\n      \"hyponym\": [\n        {\n          \"id\": 52081,\n          \"lemmas\": \"reticular formation, RF\"\n        },\n        {\n          \"id\": 52082,\n          \"lemmas\": \"reticular activating system, RAS\"\n        }\n      ],\n      \"antonym\": [],\n      \"similar_to\": []\n    },\n    \"score\": 0.5766792365562288\n  },\n  {\n    \"id\": 58078,\n    \"definition\": \"computer architecture in which processors are connected in a manner suggestive of connections between neurons; can learn by trial and error\",\n    \"surfaces_en\": [\n      \"neural net\",\n      \"neural network\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [\n        {\n          \"id\": 58077,\n          \"lemmas\": \"computer architecture\"\n        }\n      ],\n      \"hyponym\": [],\n      \"antonym\": [],\n      \"similar_to\": []\n    },\n    \"score\": 0.5943947844433473\n  },\n  {\n    \"id\": 16465,\n    \"definition\": \"of or relating to neurons\",\n    \"surfaces_en\": [\n      \"neural\",\n      \"neuronal\",\n      \"neuronic\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [],\n      \"hyponym\": [],\n      \"antonym\": [],\n      \"similar_to\": []\n    },\n    \"score\": 0.47181840245251294\n  },\n  {\n    \"id\": 16532,\n    \"definition\": \"of or relating to the nervous system\",\n    \"surfaces_en\": [\n      \"nervous\",\n      \"neural\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [],\n      \"hyponym\": [],\n      \"antonym\": [],\n      \"similar_to\": []\n    },\n    \"score\": 0.4740913018520265\n  },\n  {\n    \"id\": 38477,\n    \"definition\": \"(computer science) a network of computers\",\n    \"surfaces_en\": [\n      \"computer network\"\n    ],\n    \"domains\": [\n      \"computer science.n.01\"\n    ],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [\n        {\n          \"id\": 42806,\n          \"lemmas\": \"network, electronic network\"\n        }\n      ],\n      \"hyponym\": [\n        {\n          \"id\": 41373,\n          \"lemmas\": \"Intelnet\"\n        },\n        {\n          \"id\": 41388,\n          \"lemmas\": \"internet, net, cyberspace\"\n        },\n        {\n          \"id\": 41395,\n          \"lemmas\": \"intranet\"\n        },\n        {\n          \"id\": 42003,\n          \"lemmas\": \"local area network, LAN\"\n        },\n        {\n          \"id\": 47375,\n          \"lemmas\": \"wide area network, WAN\"\n        },\n        {\n          \"id\": 47502,\n          \"lemmas\": \"World Wide Web, WWW, web\"\n        }\n      ],\n      \"antonym\": [],\n      \"similar_to\": []\n    },\n    \"score\": 0.4822692099751892\n  }\n]\n",
+      "stderr": "2025-08-24 14:07:34.772461: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /tmp/.mount_CursorqmBHLb/usr/lib/:/tmp/.mount_CursorqmBHLb/usr/lib32/:/tmp/.mount_CursorqmBHLb/usr/lib64/:/tmp/.mount_CursorqmBHLb/lib/:/tmp/.mount_CursorqmBHLb/lib/i386-linux-gnu/:/tmp/.mount_CursorqmBHLb/lib/x86_64-linux-gnu/:/tmp/.mount_CursorqmBHLb/lib/aarch64-linux-gnu/:/tmp/.mount_CursorqmBHLb/lib32/:/tmp/.mount_CursorqmBHLb/lib64/:/tmp/.mount_CursorLibWEg/usr/lib/:/tmp/.mount_CursorLibWEg/usr/lib32/:/tmp/.mount_CursorLibWEg/usr/lib64/:/tmp/.mount_CursorLibWEg/lib/:/tmp/.mount_CursorLibWEg/lib/i386-linux-gnu/:/tmp/.mount_CursorLibWEg/lib/x86_64-linux-gnu/:/tmp/.mount_CursorLibWEg/lib/aarch64-linux-gnu/:/tmp/.mount_CursorLibWEg/lib32/:/tmp/.mount_CursorLibWEg/lib64/:\n2025-08-24 14:07:34.772513: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.\n/home/trim/.local/lib/python3.10/site-packages/torch/cuda/__init__.py:129: UserWarning: CUDA initialization: CUDA unknown error - this may be due to an incorrectly set up environment, e.g. changing env variable CUDA_VISIBLE_DEVICES after program start. Setting the available devices to be zero. (Triggered internally at /pytorch/c10/cuda/CUDAFunctions.cpp:109.)\n  return torch._C._cuda_getDeviceCount() > 0\n/home/trim/.local/lib/python3.10/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884\n  warnings.warn(\n"
+    },
+    "quantum computing": {
+      "status": "success",
+      "execution_time_ms": 17620.28,
+      "results_count": 5,
+      "results": [
+        {
+          "id": 53874,
+          "definition": "(physics) the smallest discrete quantity of some physical property that a system can possess (according to quantum theory)",
+          "surfaces_en": [
+            "quantum"
+          ],
+          "domains": [
+            "physics.n.01"
+          ],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 21827,
+                "lemmas": "measure, quantity, amount"
+              }
+            ],
+            "hyponym": [
+              {
+                "id": 54931,
+                "lemmas": "quasiparticle"
+              }
+            ],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.504048348120504
+        },
+        {
+          "id": 54952,
+          "definition": "(physics) a physical theory that certain properties occur only in discrete amounts (quanta)",
+          "surfaces_en": [
+            "quantum theory"
+          ],
+          "domains": [
+            "physics.n.01"
+          ],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 54546,
+                "lemmas": "scientific theory"
+              }
+            ],
+            "hyponym": [],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.5093980405749733
+        },
+        {
+          "id": 53875,
+          "definition": "a discrete amount of something that is analogous to the quantities in quantum theory",
+          "surfaces_en": [
+            "quantum"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 53873,
+                "lemmas": "quantity"
+              }
+            ],
+            "hyponym": [],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.48778602654798764
+        },
+        {
+          "id": 54973,
+          "definition": "the branch of quantum physics that accounts for matter at the atomic level; an extension of statistical mechanics based on quantum theory (especially the Pauli exclusion principle)",
+          "surfaces_en": [
+            "quantum mechanics"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 54930,
+                "lemmas": "quantum physics"
+              }
+            ],
+            "hyponym": [
+              {
+                "id": 54953,
+                "lemmas": "wave mechanics"
+              }
+            ],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.48652203138964817
+        },
+        {
+          "id": 54930,
+          "definition": "the branch of physics based on quantum theory",
+          "surfaces_en": [
+            "quantum physics"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 54903,
+                "lemmas": "physics, natural philosophy"
+              }
+            ],
+            "hyponym": [
+              {
+                "id": 54973,
+                "lemmas": "quantum mechanics"
+              },
+              {
+                "id": 54974,
+                "lemmas": "quantum field theory"
+              }
+            ],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.5281771665436987
+        }
+      ],
+      "stdout": "[\n  {\n    \"id\": 53874,\n    \"definition\": \"(physics) the smallest discrete quantity of some physical property that a system can possess (according to quantum theory)\",\n    \"surfaces_en\": [\n      \"quantum\"\n    ],\n    \"domains\": [\n      \"physics.n.01\"\n    ],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [\n        {\n          \"id\": 21827,\n          \"lemmas\": \"measure, quantity, amount\"\n        }\n      ],\n      \"hyponym\": [\n        {\n          \"id\": 54931,\n          \"lemmas\": \"quasiparticle\"\n        }\n      ],\n      \"antonym\": [],\n      \"similar_to\": []\n    },\n    \"score\": 0.504048348120504\n  },\n  {\n    \"id\": 54952,\n    \"definition\": \"(physics) a physical theory that certain properties occur only in discrete amounts (quanta)\",\n    \"surfaces_en\": [\n      \"quantum theory\"\n    ],\n    \"domains\": [\n      \"physics.n.01\"\n    ],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [\n        {\n          \"id\": 54546,\n          \"lemmas\": \"scientific theory\"\n        }\n      ],\n      \"hyponym\": [],\n      \"antonym\": [],\n      \"similar_to\": []\n    },\n    \"score\": 0.5093980405749733\n  },\n  {\n    \"id\": 53875,\n    \"definition\": \"a discrete amount of something that is analogous to the quantities in quantum theory\",\n    \"surfaces_en\": [\n      \"quantum\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [\n        {\n          \"id\": 53873,\n          \"lemmas\": \"quantity\"\n        }\n      ],\n      \"hyponym\": [],\n      \"antonym\": [],\n      \"similar_to\": []\n    },\n    \"score\": 0.48778602654798764\n  },\n  {\n    \"id\": 54973,\n    \"definition\": \"the branch of quantum physics that accounts for matter at the atomic level; an extension of statistical mechanics based on quantum theory (especially the Pauli exclusion principle)\",\n    \"surfaces_en\": [\n      \"quantum mechanics\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [\n        {\n          \"id\": 54930,\n          \"lemmas\": \"quantum physics\"\n        }\n      ],\n      \"hyponym\": [\n        {\n          \"id\": 54953,\n          \"lemmas\": \"wave mechanics\"\n        }\n      ],\n      \"antonym\": [],\n      \"similar_to\": []\n    },\n    \"score\": 0.48652203138964817\n  },\n  {\n    \"id\": 54930,\n    \"definition\": \"the branch of physics based on quantum theory\",\n    \"surfaces_en\": [\n      \"quantum physics\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [\n        {\n          \"id\": 54903,\n          \"lemmas\": \"physics, natural philosophy\"\n        }\n      ],\n      \"hyponym\": [\n        {\n          \"id\": 54973,\n          \"lemmas\": \"quantum mechanics\"\n        },\n        {\n          \"id\": 54974,\n          \"lemmas\": \"quantum field theory\"\n        }\n      ],\n      \"antonym\": [],\n      \"similar_to\": []\n    },\n    \"score\": 0.5281771665436987\n  }\n]\n",
+      "stderr": "2025-08-24 14:07:53.304250: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /tmp/.mount_CursorqmBHLb/usr/lib/:/tmp/.mount_CursorqmBHLb/usr/lib32/:/tmp/.mount_CursorqmBHLb/usr/lib64/:/tmp/.mount_CursorqmBHLb/lib/:/tmp/.mount_CursorqmBHLb/lib/i386-linux-gnu/:/tmp/.mount_CursorqmBHLb/lib/x86_64-linux-gnu/:/tmp/.mount_CursorqmBHLb/lib/aarch64-linux-gnu/:/tmp/.mount_CursorqmBHLb/lib32/:/tmp/.mount_CursorqmBHLb/lib64/:/tmp/.mount_CursorLibWEg/usr/lib/:/tmp/.mount_CursorLibWEg/usr/lib32/:/tmp/.mount_CursorLibWEg/usr/lib64/:/tmp/.mount_CursorLibWEg/lib/:/tmp/.mount_CursorLibWEg/lib/i386-linux-gnu/:/tmp/.mount_CursorLibWEg/lib/x86_64-linux-gnu/:/tmp/.mount_CursorLibWEg/lib/aarch64-linux-gnu/:/tmp/.mount_CursorLibWEg/lib32/:/tmp/.mount_CursorLibWEg/lib64/:\n2025-08-24 14:07:53.304309: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.\n/home/trim/.local/lib/python3.10/site-packages/torch/cuda/__init__.py:129: UserWarning: CUDA initialization: CUDA unknown error - this may be due to an incorrectly set up environment, e.g. changing env variable CUDA_VISIBLE_DEVICES after program start. Setting the available devices to be zero. (Triggered internally at /pytorch/c10/cuda/CUDAFunctions.cpp:109.)\n  return torch._C._cuda_getDeviceCount() > 0\n/home/trim/.local/lib/python3.10/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884\n  warnings.warn(\n"
+    },
+    "blockchain": {
+      "status": "success",
+      "execution_time_ms": 17068.35,
+      "results_count": 5,
+      "results": [
+        {
+          "id": 116060,
+          "definition": "run on a block system",
+          "surfaces_en": [
+            "block"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 116058,
+                "lemmas": "operate, run"
+              }
+            ],
+            "hyponym": [],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.4701834602703034
+        },
+        {
+          "id": 110227,
+          "definition": "restrain or bind with chains",
+          "surfaces_en": [
+            "enchain"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 110300,
+                "lemmas": "restrain, confine, hold"
+              }
+            ],
+            "hyponym": [],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.5551384304247812
+        },
+        {
+          "id": 36485,
+          "definition": "a platform from which an auctioneer sells",
+          "surfaces_en": [
+            "auction block",
+            "block"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 43663,
+                "lemmas": "platform"
+              }
+            ],
+            "hyponym": [],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.48760926890358935
+        },
+        {
+          "id": 110230,
+          "definition": "remove the chains from",
+          "surfaces_en": [
+            "unchain"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 110528,
+                "lemmas": "unfasten"
+              }
+            ],
+            "hyponym": [],
+            "antonym": [
+              {
+                "id": 110229,
+                "lemmas": "chain"
+              }
+            ],
+            "similar_to": []
+          },
+          "score": 0.5902174467888549
+        },
+        {
+          "id": 110228,
+          "definition": "make free",
+          "surfaces_en": [
+            "unchain"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 115956,
+                "lemmas": "free, liberate, release, unloose, unloosen, loose"
+              }
+            ],
+            "hyponym": [],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.5345618783810755
+        }
+      ],
+      "stdout": "[\n  {\n    \"id\": 116060,\n    \"definition\": \"run on a block system\",\n    \"surfaces_en\": [\n      \"block\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [\n        {\n          \"id\": 116058,\n          \"lemmas\": \"operate, run\"\n        }\n      ],\n      \"hyponym\": [],\n      \"antonym\": [],\n      \"similar_to\": []\n    },\n    \"score\": 0.4701834602703034\n  },\n  {\n    \"id\": 110227,\n    \"definition\": \"restrain or bind with chains\",\n    \"surfaces_en\": [\n      \"enchain\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [\n        {\n          \"id\": 110300,\n          \"lemmas\": \"restrain, confine, hold\"\n        }\n      ],\n      \"hyponym\": [],\n      \"antonym\": [],\n      \"similar_to\": []\n    },\n    \"score\": 0.5551384304247812\n  },\n  {\n    \"id\": 36485,\n    \"definition\": \"a platform from which an auctioneer sells\",\n    \"surfaces_en\": [\n      \"auction block\",\n      \"block\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [\n        {\n          \"id\": 43663,\n          \"lemmas\": \"platform\"\n        }\n      ],\n      \"hyponym\": [],\n      \"antonym\": [],\n      \"similar_to\": []\n    },\n    \"score\": 0.48760926890358935\n  },\n  {\n    \"id\": 110230,\n    \"definition\": \"remove the chains from\",\n    \"surfaces_en\": [\n      \"unchain\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [\n        {\n          \"id\": 110528,\n          \"lemmas\": \"unfasten\"\n        }\n      ],\n      \"hyponym\": [],\n      \"antonym\": [\n        {\n          \"id\": 110229,\n          \"lemmas\": \"chain\"\n        }\n      ],\n      \"similar_to\": []\n    },\n    \"score\": 0.5902174467888549\n  },\n  {\n    \"id\": 110228,\n    \"definition\": \"make free\",\n    \"surfaces_en\": [\n      \"unchain\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [\n        {\n          \"id\": 115956,\n          \"lemmas\": \"free, liberate, release, unloose, unloosen, loose\"\n        }\n      ],\n      \"hyponym\": [],\n      \"antonym\": [],\n      \"similar_to\": []\n    },\n    \"score\": 0.5345618783810755\n  }\n]\n",
+      "stderr": "2025-08-24 14:08:10.656023: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /tmp/.mount_CursorqmBHLb/usr/lib/:/tmp/.mount_CursorqmBHLb/usr/lib32/:/tmp/.mount_CursorqmBHLb/usr/lib64/:/tmp/.mount_CursorqmBHLb/lib/:/tmp/.mount_CursorqmBHLb/lib/i386-linux-gnu/:/tmp/.mount_CursorqmBHLb/lib/x86_64-linux-gnu/:/tmp/.mount_CursorqmBHLb/lib/aarch64-linux-gnu/:/tmp/.mount_CursorqmBHLb/lib32/:/tmp/.mount_CursorqmBHLb/lib64/:/tmp/.mount_CursorLibWEg/usr/lib/:/tmp/.mount_CursorLibWEg/usr/lib32/:/tmp/.mount_CursorLibWEg/usr/lib64/:/tmp/.mount_CursorLibWEg/lib/:/tmp/.mount_CursorLibWEg/lib/i386-linux-gnu/:/tmp/.mount_CursorLibWEg/lib/x86_64-linux-gnu/:/tmp/.mount_CursorLibWEg/lib/aarch64-linux-gnu/:/tmp/.mount_CursorLibWEg/lib32/:/tmp/.mount_CursorLibWEg/lib64/:\n2025-08-24 14:08:10.656044: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.\n/home/trim/.local/lib/python3.10/site-packages/torch/cuda/__init__.py:129: UserWarning: CUDA initialization: CUDA unknown error - this may be due to an incorrectly set up environment, e.g. changing env variable CUDA_VISIBLE_DEVICES after program start. Setting the available devices to be zero. (Triggered internally at /pytorch/c10/cuda/CUDAFunctions.cpp:109.)\n  return torch._C._cuda_getDeviceCount() > 0\n/home/trim/.local/lib/python3.10/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884\n  warnings.warn(\n"
+    },
+    "internet of things": {
+      "status": "success",
+      "execution_time_ms": 15576.32,
+      "results_count": 5,
+      "results": [
+        {
+          "id": 67678,
+          "definition": "an interconnected system of things or people",
+          "surfaces_en": [
+            "network",
+            "web"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 67683,
+                "lemmas": "system, scheme"
+              }
+            ],
+            "hyponym": [
+              {
+                "id": 52078,
+                "lemmas": "reticulum"
+              },
+              {
+                "id": 67679,
+                "lemmas": "espionage network"
+              },
+              {
+                "id": 67680,
+                "lemmas": "old boy network"
+              },
+              {
+                "id": 67681,
+                "lemmas": "support system"
+              }
+            ],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.5339799020916834
+        },
+        {
+          "id": 44548,
+          "definition": "(computer science) a device that forwards data packets between computer networks",
+          "surfaces_en": [
+            "router"
+          ],
+          "domains": [
+            "computer science.n.01"
+          ],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 39064,
+                "lemmas": "device"
+              }
+            ],
+            "hyponym": [],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.4640930951515524
+        },
+        {
+          "id": 114066,
+          "definition": "billow up in the form of a cloud",
+          "surfaces_en": [
+            "cloud"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 114065,
+                "lemmas": "billow, wallow"
+              }
+            ],
+            "hyponym": [],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.46869494958570046
+        },
+        {
+          "id": 55738,
+          "definition": "communication by computer",
+          "surfaces_en": [
+            "electronic communication"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 55594,
+                "lemmas": "transmission"
+              }
+            ],
+            "hyponym": [
+              {
+                "id": 55739,
+                "lemmas": "digital communication, data communication"
+              },
+              {
+                "id": 55741,
+                "lemmas": "electronic mail, e-mail, email"
+              },
+              {
+                "id": 55747,
+                "lemmas": "messaging, electronic messaging"
+              },
+              {
+                "id": 55748,
+                "lemmas": "prompt, command prompt"
+              }
+            ],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.4714287030940521
+        },
+        {
+          "id": 14260,
+          "definition": "having no wires",
+          "surfaces_en": [
+            "wireless"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [],
+            "hyponym": [],
+            "antonym": [
+              {
+                "id": 14257,
+                "lemmas": "wired"
+              }
+            ],
+            "similar_to": []
+          },
+          "score": 0.4847665019882192
+        }
+      ],
+      "stdout": "[\n  {\n    \"id\": 67678,\n    \"definition\": \"an interconnected system of things or people\",\n    \"surfaces_en\": [\n      \"network\",\n      \"web\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [\n        {\n          \"id\": 67683,\n          \"lemmas\": \"system, scheme\"\n        }\n      ],\n      \"hyponym\": [\n        {\n          \"id\": 52078,\n          \"lemmas\": \"reticulum\"\n        },\n        {\n          \"id\": 67679,\n          \"lemmas\": \"espionage network\"\n        },\n        {\n          \"id\": 67680,\n          \"lemmas\": \"old boy network\"\n        },\n        {\n          \"id\": 67681,\n          \"lemmas\": \"support system\"\n        }\n      ],\n      \"antonym\": [],\n      \"similar_to\": []\n    },\n    \"score\": 0.5339799020916834\n  },\n  {\n    \"id\": 44548,\n    \"definition\": \"(computer science) a device that forwards data packets between computer networks\",\n    \"surfaces_en\": [\n      \"router\"\n    ],\n    \"domains\": [\n      \"computer science.n.01\"\n    ],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [\n        {\n          \"id\": 39064,\n          \"lemmas\": \"device\"\n        }\n      ],\n      \"hyponym\": [],\n      \"antonym\": [],\n      \"similar_to\": []\n    },\n    \"score\": 0.4640930951515524\n  },\n  {\n    \"id\": 114066,\n    \"definition\": \"billow up in the form of a cloud\",\n    \"surfaces_en\": [\n      \"cloud\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [\n        {\n          \"id\": 114065,\n          \"lemmas\": \"billow, wallow\"\n        }\n      ],\n      \"hyponym\": [],\n      \"antonym\": [],\n      \"similar_to\": []\n    },\n    \"score\": 0.46869494958570046\n  },\n  {\n    \"id\": 55738,\n    \"definition\": \"communication by computer\",\n    \"surfaces_en\": [\n      \"electronic communication\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [\n        {\n          \"id\": 55594,\n          \"lemmas\": \"transmission\"\n        }\n      ],\n      \"hyponym\": [\n        {\n          \"id\": 55739,\n          \"lemmas\": \"digital communication, data communication\"\n        },\n        {\n          \"id\": 55741,\n          \"lemmas\": \"electronic mail, e-mail, email\"\n        },\n        {\n          \"id\": 55747,\n          \"lemmas\": \"messaging, electronic messaging\"\n        },\n        {\n          \"id\": 55748,\n          \"lemmas\": \"prompt, command prompt\"\n        }\n      ],\n      \"antonym\": [],\n      \"similar_to\": []\n    },\n    \"score\": 0.4714287030940521\n  },\n  {\n    \"id\": 14260,\n    \"definition\": \"having no wires\",\n    \"surfaces_en\": [\n      \"wireless\"\n    ],\n    \"domains\": [],\n    \"registers\": [],\n    \"neighbors\": {\n      \"hypernym\": [],\n      \"hyponym\": [],\n      \"antonym\": [\n        {\n          \"id\": 14257,\n          \"lemmas\": \"wired\"\n        }\n      ],\n      \"similar_to\": []\n    },\n    \"score\": 0.4847665019882192\n  }\n]\n",
+      "stderr": "2025-08-24 14:08:27.912598: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /tmp/.mount_CursorqmBHLb/usr/lib/:/tmp/.mount_CursorqmBHLb/usr/lib32/:/tmp/.mount_CursorqmBHLb/usr/lib64/:/tmp/.mount_CursorqmBHLb/lib/:/tmp/.mount_CursorqmBHLb/lib/i386-linux-gnu/:/tmp/.mount_CursorqmBHLb/lib/x86_64-linux-gnu/:/tmp/.mount_CursorqmBHLb/lib/aarch64-linux-gnu/:/tmp/.mount_CursorqmBHLb/lib32/:/tmp/.mount_CursorqmBHLb/lib64/:/tmp/.mount_CursorLibWEg/usr/lib/:/tmp/.mount_CursorLibWEg/usr/lib32/:/tmp/.mount_CursorLibWEg/usr/lib64/:/tmp/.mount_CursorLibWEg/lib/:/tmp/.mount_CursorLibWEg/lib/i386-linux-gnu/:/tmp/.mount_CursorLibWEg/lib/x86_64-linux-gnu/:/tmp/.mount_CursorLibWEg/lib/aarch64-linux-gnu/:/tmp/.mount_CursorLibWEg/lib32/:/tmp/.mount_CursorLibWEg/lib64/:\n2025-08-24 14:08:27.912655: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.\n/home/trim/.local/lib/python3.10/site-packages/torch/cuda/__init__.py:129: UserWarning: CUDA initialization: CUDA unknown error - this may be due to an incorrectly set up environment, e.g. changing env variable CUDA_VISIBLE_DEVICES after program start. Setting the available devices to be zero. (Triggered internally at /pytorch/c10/cuda/CUDAFunctions.cpp:109.)\n  return torch._C._cuda_getDeviceCount() > 0\n/home/trim/.local/lib/python3.10/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884\n  warnings.warn(\n"
+    }
+  },
+  "edge_case_tests": {
+    "": {
+      "status": "error",
+      "return_code": 1,
+      "stderr": "2025-08-24 14:08:41.415409: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /tmp/.mount_CursorqmBHLb/usr/lib/:/tmp/.mount_CursorqmBHLb/usr/lib32/:/tmp/.mount_CursorqmBHLb/usr/lib64/:/tmp/.mount_CursorqmBHLb/lib/:/tmp/.mount_CursorqmBHLb/lib/i386-linux-gnu/:/tmp/.mount_CursorqmBHLb/lib/x86_64-linux-gnu/:/tmp/.mount_CursorqmBHLb/lib/aarch64-linux-gnu/:/tmp/.mount_CursorqmBHLb/lib32/:/tmp/.mount_CursorqmBHLb/lib64/:/tmp/.mount_CursorLibWEg/usr/lib/:/tmp/.mount_CursorLibWEg/usr/lib32/:/tmp/.mount_CursorLibWEg/usr/lib64/:/tmp/.mount_CursorLibWEg/lib/:/tmp/.mount_CursorLibWEg/lib/i386-linux-gnu/:/tmp/.mount_CursorLibWEg/lib/x86_64-linux-gnu/:/tmp/.mount_CursorLibWEg/lib/aarch64-linux-gnu/:/tmp/.mount_CursorLibWEg/lib32/:/tmp/.mount_CursorLibWEg/lib64/:\n2025-08-24 14:08:41.415427: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.\n/home/trim/.local/lib/python3.10/site-packages/torch/cuda/__init__.py:129: UserWarning: CUDA initialization: CUDA unknown error - this may be due to an incorrectly set up environment, e.g. changing env variable CUDA_VISIBLE_DEVICES after program start. Setting the available devices to be zero. (Triggered internally at /pytorch/c10/cuda/CUDAFunctions.cpp:109.)\n  return torch._C._cuda_getDeviceCount() > 0\n/home/trim/.local/lib/python3.10/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884\n  warnings.warn(\nTraceback (most recent call last):\n  File \"/home/trim/Documents/GitHub/Lexinomicon/apps/hyperlexicon/hyperlexicon_service_clean.py\", line 802, in <module>\n    raise SystemExit(cli())\n  File \"/home/trim/Documents/GitHub/Lexinomicon/apps/hyperlexicon/hyperlexicon_service_clean.py\", line 792, in cli\n    out = rt.lookup(args.query, k=args.k, domain=args.domain, register=args.register)\n  File \"/home/trim/Documents/GitHub/Lexinomicon/apps/hyperlexicon/hyperlexicon_service_clean.py\", line 649, in lookup\n    ids = list(dict.fromkeys(self.lexical_candidates(query, lang, 64)))\n  File \"/home/trim/Documents/GitHub/Lexinomicon/apps/hyperlexicon/hyperlexicon_service_clean.py\", line 554, in lexical_candidates\n    q = c.execute(\nsqlite3.OperationalError: fts5: syntax error near \"\"\n"
+    },
+    " ": {
+      "status": "error",
+      "return_code": 1,
+      "stderr": "2025-08-24 14:08:51.241228: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /tmp/.mount_CursorqmBHLb/usr/lib/:/tmp/.mount_CursorqmBHLb/usr/lib32/:/tmp/.mount_CursorqmBHLb/usr/lib64/:/tmp/.mount_CursorqmBHLb/lib/:/tmp/.mount_CursorqmBHLb/lib/i386-linux-gnu/:/tmp/.mount_CursorqmBHLb/lib/x86_64-linux-gnu/:/tmp/.mount_CursorqmBHLb/lib/aarch64-linux-gnu/:/tmp/.mount_CursorqmBHLb/lib32/:/tmp/.mount_CursorqmBHLb/lib64/:/tmp/.mount_CursorLibWEg/usr/lib/:/tmp/.mount_CursorLibWEg/usr/lib32/:/tmp/.mount_CursorLibWEg/usr/lib64/:/tmp/.mount_CursorLibWEg/lib/:/tmp/.mount_CursorLibWEg/lib/i386-linux-gnu/:/tmp/.mount_CursorLibWEg/lib/x86_64-linux-gnu/:/tmp/.mount_CursorLibWEg/lib/aarch64-linux-gnu/:/tmp/.mount_CursorLibWEg/lib32/:/tmp/.mount_CursorLibWEg/lib64/:\n2025-08-24 14:08:51.241249: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.\n/home/trim/.local/lib/python3.10/site-packages/torch/cuda/__init__.py:129: UserWarning: CUDA initialization: CUDA unknown error - this may be due to an incorrectly set up environment, e.g. changing env variable CUDA_VISIBLE_DEVICES after program start. Setting the available devices to be zero. (Triggered internally at /pytorch/c10/cuda/CUDAFunctions.cpp:109.)\n  return torch._C._cuda_getDeviceCount() > 0\n/home/trim/.local/lib/python3.10/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884\n  warnings.warn(\nTraceback (most recent call last):\n  File \"/home/trim/Documents/GitHub/Lexinomicon/apps/hyperlexicon/hyperlexicon_service_clean.py\", line 802, in <module>\n    raise SystemExit(cli())\n  File \"/home/trim/Documents/GitHub/Lexinomicon/apps/hyperlexicon/hyperlexicon_service_clean.py\", line 792, in cli\n    out = rt.lookup(args.query, k=args.k, domain=args.domain, register=args.register)\n  File \"/home/trim/Documents/GitHub/Lexinomicon/apps/hyperlexicon/hyperlexicon_service_clean.py\", line 649, in lookup\n    ids = list(dict.fromkeys(self.lexical_candidates(query, lang, 64)))\n  File \"/home/trim/Documents/GitHub/Lexinomicon/apps/hyperlexicon/hyperlexicon_service_clean.py\", line 554, in lexical_candidates\n    q = c.execute(\nsqlite3.OperationalError: fts5: syntax error near \"\"\n"
+    },
+    "xyz123nonexistent": {
+      "status": "success",
+      "execution_time_ms": 11518.57,
+      "results_count": 3,
+      "results": [
+        {
+          "id": 7506,
+          "definition": "not yet identified",
+          "surfaces_en": [
+            "unidentified"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [],
+            "hyponym": [],
+            "antonym": [],
+            "similar_to": [
+              {
+                "id": 7499,
+                "lemmas": "unknown"
+              }
+            ]
+          },
+          "score": 0.43653115892599886
+        },
+        {
+          "id": 8814,
+          "definition": "not discovered",
+          "surfaces_en": [
+            "undiscovered"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [],
+            "hyponym": [],
+            "antonym": [],
+            "similar_to": [
+              {
+                "id": 8813,
+                "lemmas": "undetected"
+              }
+            ]
+          },
+          "score": 0.4365513320719989
+        },
+        {
+          "id": 4100,
+          "definition": "not able to be ascertained; resisting discovery",
+          "surfaces_en": [
+            "unascertainable",
+            "undiscoverable"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [],
+            "hyponym": [],
+            "antonym": [],
+            "similar_to": [
+              {
+                "id": 4098,
+                "lemmas": "indeterminable, undeterminable"
+              }
+            ]
+          },
+          "score": 0.43588737129186134
+        }
+      ]
+    },
+    "a": {
+      "status": "success",
+      "execution_time_ms": 11015.19,
+      "results_count": 3,
+      "results": [
+        {
+          "id": 58619,
+          "definition": "the 1st letter of the Roman alphabet",
+          "surfaces_en": [
+            "A",
+            "a"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 58614,
+                "lemmas": "letter, letter of the alphabet, alphabetic character"
+              }
+            ],
+            "hyponym": [],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.4830586150985416
+        },
+        {
+          "id": 74446,
+          "definition": "a specialist who administers an anesthetic to a patient before he is treated",
+          "surfaces_en": [
+            "anaesthetist",
+            "anesthesiologist",
+            "anesthetist"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 79420,
+                "lemmas": "specialist, medical specialist"
+              }
+            ],
+            "hyponym": [],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.43728970511774323
+        },
+        {
+          "id": 14638,
+          "definition": "of or at or relating to an anode",
+          "surfaces_en": [
+            "anodal",
+            "anodic"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [],
+            "hyponym": [],
+            "antonym": [
+              {
+                "id": 14639,
+                "lemmas": "cathodic"
+              }
+            ],
+            "similar_to": []
+          },
+          "score": 0.4437945428866605
+        }
+      ]
+    },
+    "supercalifragilisticexpialidocious": {
+      "status": "success",
+      "execution_time_ms": 10996.1,
+      "results_count": 3,
+      "results": [
+        {
+          "id": 22680,
+          "definition": "act of replacing one person or thing by another especially one held to be superior",
+          "surfaces_en": [
+            "supersedure",
+            "supersession"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 22682,
+                "lemmas": "replacement, replacing"
+              }
+            ],
+            "hyponym": [],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.5310982731566882
+        },
+        {
+          "id": 21409,
+          "definition": "in a superfluous manner",
+          "surfaces_en": [
+            "superfluously"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [],
+            "hyponym": [],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.5311327071976562
+        },
+        {
+          "id": 7573,
+          "definition": "extremely large",
+          "surfaces_en": [
+            "super"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [],
+            "hyponym": [],
+            "antonym": [],
+            "similar_to": [
+              {
+                "id": 7530,
+                "lemmas": "large, big"
+              }
+            ]
+          },
+          "score": 0.5377279729560639
+        }
+      ]
+    },
+    "the quick brown fox jumps over the lazy dog": {
+      "status": "success",
+      "execution_time_ms": 11441.09,
+      "results_count": 3,
+      "results": [
+        {
+          "id": 100823,
+          "definition": "the grey or reddish-brown fur of a fox",
+          "surfaces_en": [
+            "fox"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 100817,
+                "lemmas": "fur, pelt"
+              }
+            ],
+            "hyponym": [],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.5422951125736761
+        },
+        {
+          "id": 109457,
+          "definition": "hunt foxes, on horseback and with dogs",
+          "surfaces_en": [
+            "foxhunt"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 109453,
+                "lemmas": "hunt, run, hunt down, track down"
+              }
+            ],
+            "hyponym": [],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.5100735570290892
+        },
+        {
+          "id": 32660,
+          "definition": "small lively black-and-white terriers formerly used to dig out foxes",
+          "surfaces_en": [
+            "fox terrier"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 32646,
+                "lemmas": "terrier"
+              }
+            ],
+            "hyponym": [
+              {
+                "id": 32661,
+                "lemmas": "smooth-haired fox terrier"
+              },
+              {
+                "id": 32662,
+                "lemmas": "wire-haired fox terrier"
+              }
+            ],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.5010873877447436
+        }
+      ]
+    },
+    "!@#$%^&*()": {
+      "status": "error",
+      "return_code": 1,
+      "stderr": "2025-08-24 14:09:46.379520: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /tmp/.mount_CursorqmBHLb/usr/lib/:/tmp/.mount_CursorqmBHLb/usr/lib32/:/tmp/.mount_CursorqmBHLb/usr/lib64/:/tmp/.mount_CursorqmBHLb/lib/:/tmp/.mount_CursorqmBHLb/lib/i386-linux-gnu/:/tmp/.mount_CursorqmBHLb/lib/x86_64-linux-gnu/:/tmp/.mount_CursorqmBHLb/lib/aarch64-linux-gnu/:/tmp/.mount_CursorqmBHLb/lib32/:/tmp/.mount_CursorqmBHLb/lib64/:/tmp/.mount_CursorLibWEg/usr/lib/:/tmp/.mount_CursorLibWEg/usr/lib32/:/tmp/.mount_CursorLibWEg/usr/lib64/:/tmp/.mount_CursorLibWEg/lib/:/tmp/.mount_CursorLibWEg/lib/i386-linux-gnu/:/tmp/.mount_CursorLibWEg/lib/x86_64-linux-gnu/:/tmp/.mount_CursorLibWEg/lib/aarch64-linux-gnu/:/tmp/.mount_CursorLibWEg/lib32/:/tmp/.mount_CursorLibWEg/lib64/:\n2025-08-24 14:09:46.379537: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.\n/home/trim/.local/lib/python3.10/site-packages/torch/cuda/__init__.py:129: UserWarning: CUDA initialization: CUDA unknown error - this may be due to an incorrectly set up environment, e.g. changing env variable CUDA_VISIBLE_DEVICES after program start. Setting the available devices to be zero. (Triggered internally at /pytorch/c10/cuda/CUDAFunctions.cpp:109.)\n  return torch._C._cuda_getDeviceCount() > 0\n/home/trim/.local/lib/python3.10/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884\n  warnings.warn(\nTraceback (most recent call last):\n  File \"/home/trim/Documents/GitHub/Lexinomicon/apps/hyperlexicon/hyperlexicon_service_clean.py\", line 802, in <module>\n    raise SystemExit(cli())\n  File \"/home/trim/Documents/GitHub/Lexinomicon/apps/hyperlexicon/hyperlexicon_service_clean.py\", line 792, in cli\n    out = rt.lookup(args.query, k=args.k, domain=args.domain, register=args.register)\n  File \"/home/trim/Documents/GitHub/Lexinomicon/apps/hyperlexicon/hyperlexicon_service_clean.py\", line 649, in lookup\n    ids = list(dict.fromkeys(self.lexical_candidates(query, lang, 64)))\n  File \"/home/trim/Documents/GitHub/Lexinomicon/apps/hyperlexicon/hyperlexicon_service_clean.py\", line 554, in lexical_candidates\n    q = c.execute(\nsqlite3.OperationalError: fts5: syntax error near \"!\"\n"
+    },
+    "计算机": {
+      "status": "success",
+      "execution_time_ms": 12220.26,
+      "results_count": 3,
+      "results": [
+        {
+          "id": 104595,
+          "definition": "raise",
+          "surfaces_en": [
+            "up"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [
+              {
+                "id": 104589,
+                "lemmas": "increase"
+              }
+            ],
+            "hyponym": [],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.4289413157951253
+        },
+        {
+          "id": 6608,
+          "definition": "shut",
+          "surfaces_en": [
+            "down"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [],
+            "hyponym": [],
+            "antonym": [],
+            "similar_to": [
+              {
+                "id": 6607,
+                "lemmas": "lowered"
+              }
+            ]
+          },
+          "score": 0.4168537850691093
+        },
+        {
+          "id": 21264,
+          "definition": "extremely",
+          "surfaces_en": [
+            "shockingly"
+          ],
+          "domains": [],
+          "registers": [],
+          "neighbors": {
+            "hypernym": [],
+            "hyponym": [],
+            "antonym": [],
+            "similar_to": []
+          },
+          "score": 0.41069881987971135
+        }
+      ]
+    }
+  },
+  "api_tests": {
+    "server_status": "not_running",
+    "endpoint_tests": {}
+  },
+  "quality_analysis": {
+    "total_queries": 8,
+    "successful_queries": 8,
+    "failed_queries": 0,
+    "average_results_per_query": 5.0,
+    "queries_with_results": 8,
+    "average_execution_time_ms": 17370.16,
+    "result_distribution": {
+      "5": 8
+    },
+    "score_distribution": [
+      0.5355419795728653,
+      0.5395856928043795,
+      0.5357843926869326,
+      0.5828471848690553,
+      0.5559493133980171,
+      0.43569104327145564,
+      0.460469085622873,
+      0.43820722920568,
+      0.46060943634013135,
+      0.4345086091267647,
+      0.5428574220503083,
+      0.4975522476515522,
+      0.4956334478462187,
+      0.5155454447904246,
+      0.5374426477882583,
+      0.5577830276892138,
+      0.5314627807566384,
+      0.5621369627719144,
+      0.5360895250631328,
+      0.5674695223711418,
+      0.5766792365562288,
+      0.5943947844433473,
+      0.47181840245251294,
+      0.4740913018520265,
+      0.4822692099751892,
+      0.504048348120504,
+      0.5093980405749733,
+      0.48778602654798764,
+      0.48652203138964817,
+      0.5281771665436987,
+      0.4701834602703034,
+      0.5551384304247812,
+      0.48760926890358935,
+      0.5902174467888549,
+      0.5345618783810755,
+      0.5339799020916834,
+      0.4640930951515524,
+      0.46869494958570046,
+      0.4714287030940521,
+      0.4847665019882192
+    ],
+    "score_stats": {
+      "min": 0.4345,
+      "max": 0.5944,
+      "avg": 0.5125,
+      "median": 0.5125
+    }
+  }
+}

@@ -298,9 +298,173 @@
         </div>
       </div>
     </div>
-    <!-- 
-    <!-- 
-    <!-- 
+    <!-- Multi-Source Knowledge Graph -->
+    <div class="section">
+      <div class="section-header">
+        <h2 class="section-title">Multi-Source Knowledge Graph</h2>
+        <p class="section-subtitle">Unified semantic backbone fusing structured lexical databases with commonsense reasoning</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-title">WordNet 3.1</div>
+          <div class="feature-description">117,659 synsets, 155K+ lemmas, 206,978 surfaces — the gold-standard English lexical graph.</div>
+          <div class="feature-keywords">
+            <span class="keyword">117,659 synsets</span>
+            <span class="keyword">206,978 surfaces</span>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-title">ConceptNet 5.7</div>
+          <div class="feature-description">500K+ commonsense edges across 13 relation types linking everyday concepts to expert terminology.</div>
+          <div class="feature-keywords">
+            <span class="keyword">500K+ edges</span>
+            <span class="keyword">13 relation types</span>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-title">Wiktionary</div>
+          <div class="feature-description">200K+ additional senses harvested from the largest collaborative multilingual dictionary.</div>
+          <div class="feature-keywords">
+            <span class="keyword">200K+ senses</span>
+            <span class="keyword">Crowd-sourced</span>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-title">Open Multilingual WordNet</div>
+          <div class="feature-description">10 languages with aligned synsets enabling cross-lingual concept bridging at graph level.</div>
+          <div class="feature-keywords">
+            <span class="keyword">10 languages</span>
+            <span class="keyword">Aligned synsets</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sense-Augmented Embeddings -->
+    <div class="section">
+      <div class="section-header">
+        <h2 class="section-title">Sense-Augmented Embeddings</h2>
+        <p class="section-subtitle">Knowledge-injected vector representations that outperform raw encoders with zero fine-tuning</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-title">Primary Encoder</div>
+          <div class="feature-description">Mistral-7B producing 4096-dimensional sense-augmented embeddings with full definition context.</div>
+          <div class="feature-keywords">
+            <span class="keyword">Mistral-7B</span>
+            <span class="keyword">4096-dim</span>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-title">Fallback Encoder</div>
+          <div class="feature-description">MiniLM at 384 dimensions for lightweight, high-throughput inference on commodity hardware.</div>
+          <div class="feature-keywords">
+            <span class="keyword">MiniLM</span>
+            <span class="keyword">384-dim</span>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-title">Augmentation Technique</div>
+          <div class="feature-description">Inject definitions, synonyms, and commonsense context before encoding — no model retraining required.</div>
+          <div class="feature-keywords">
+            <span class="keyword">Zero fine-tuning</span>
+            <span class="keyword">Context injection</span>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-title">Reranker</div>
+          <div class="feature-description">CrossEncoder ms-marco-MiniLM-L-6-v2 for precision reranking of retrieved candidates.</div>
+          <div class="feature-keywords">
+            <span class="keyword">CrossEncoder</span>
+            <span class="keyword">ms-marco</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Benchmark Results -->
+    <div class="section">
+      <div class="section-header">
+        <h2 class="section-title">Benchmark Results</h2>
+        <p class="section-subtitle">STSBenchmark evaluation — sense augmentation lifts semantic similarity without any training</p>
+      </div>
+      <div class="performance-table">
+        <div class="table-header">
+          <div class="table-cell">Model</div>
+          <div class="table-cell metric">Spearman ρ</div>
+          <div class="table-cell metric">Pairs</div>
+        </div>
+        <div class="table-row">
+          <div class="table-cell">Sense-Augmented BGE-large</div>
+          <div class="table-cell metric">0.8752</div>
+          <div class="table-cell metric">1,379</div>
+        </div>
+        <div class="table-row">
+          <div class="table-cell">Raw BGE-large (baseline)</div>
+          <div class="table-cell metric">0.8689</div>
+          <div class="table-cell metric">1,379</div>
+        </div>
+        <div class="table-row">
+          <div class="table-cell">Delta (zero fine-tuning)</div>
+          <div class="table-cell metric" style="color:#a855f7;">+0.0063</div>
+          <div class="table-cell metric">—</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Architecture Efficiency -->
+    <div class="section">
+      <div class="section-header">
+        <h2 class="section-title">Architecture Efficiency</h2>
+        <p class="section-subtitle">Quadrinary routing eliminates 95–99% of LLM inference while preserving answer quality</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-title">LLM-Free Resolution</div>
+          <div class="feature-description">95–99% of queries resolve entirely through the knowledge graph without any LLM inference cost.</div>
+          <div class="feature-keywords">
+            <span class="keyword">95–99% local</span>
+            <span class="keyword">Zero LLM</span>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-title">Escalation Rate</div>
+          <div class="feature-description">Only 1–5% of requests escalate to LLM — limited to dictionary/thesaurus edge cases.</div>
+          <div class="feature-keywords">
+            <span class="keyword">1–5% escalation</span>
+            <span class="keyword">Edge cases only</span>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-title">Linear Scaling</div>
+          <div class="feature-description">Compute scales linearly with index size, not token context — no quadratic attention bottleneck.</div>
+          <div class="feature-keywords">
+            <span class="keyword">O(n) index</span>
+            <span class="keyword">No attention cost</span>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-title">Quadrinary Router</div>
+          <div class="feature-description">eLL → Hyperlexicon → conditional LLM → enriched output. Four-stage pipeline maximizes cache hits.</div>
+          <div class="feature-keywords">
+            <span class="keyword">4-stage pipeline</span>
+            <span class="keyword">Cache-first</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="section" style="padding: 2rem 0 2.5rem 0;">
+      <div class="contact-section">
+        <div class="contact-title" style="background: var(--elite-gradient); background-size: 500% 100%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: eliteGradientPulse 14s ease-in-out infinite;">© 2025–2026 Benjamin Nelson</div>
+        <div class="contact-link" style="margin-top: 0.4em;">
+          <a href="mailto:licensing@hyperlexicon.org">licensing@hyperlexicon.org</a>
+          <span style="color: var(--elite-dim); margin-left: 0.6em;">— All rights reserved. Licensing inquiries welcome.</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </body>
 </html>

@@ -1,0 +1,93 @@
+================================================================================
+HYPERLEXICON DATABASE ANALYSIS REPORT
+================================================================================
+
+📊 DATABASE INFORMATION
+----------------------------------------
+database_path: /home/trim/Documents/GitHub/Lexinomicon/hyperlexicon.db
+database_size_mb: 139.64
+analysis_timestamp: 2025-08-24T14:05:52.514620
+sqlite_version: 3.37.2
+page_size: 4096
+page_count: 35747
+
+📋 TABLE STRUCTURE
+----------------------------------------
+Table: node (491102 rows)
+  - id (INTEGER) NULL
+  - type (TEXT) NOT NULL
+  - payload (TEXT) NOT NULL
+  - created_at (INTEGER) NULL
+  - updated_at (INTEGER) NULL
+
+Table: edge (587754 rows)
+  - src (INTEGER) NOT NULL
+  - dst (INTEGER) NOT NULL
+  - type (TEXT) NOT NULL
+  - weight (REAL) NULL DEFAULT 1.0
+  - confidence (REAL) NULL DEFAULT 1.0
+  - source (TEXT) NULL
+  - created_at (INTEGER) NULL
+  - updated_at (INTEGER) NULL
+
+Table: lexicon (206978 rows)
+  - surface () NULL
+  - lang () NULL
+  - surface_unaccented () NULL
+
+Table: lexicon_data (1001 rows)
+  - id (INTEGER) NULL
+  - block (BLOB) NULL
+
+Table: lexicon_idx (738 rows)
+  - segid () NOT NULL
+  - term () NOT NULL
+  - pgno () NULL
+
+Table: lexicon_docsize (206978 rows)
+  - id (INTEGER) NULL
+  - sz (BLOB) NULL
+
+Table: lexicon_config (1 rows)
+  - k () NOT NULL
+  - v () NULL
+
+🔵 NODE ANALYSIS
+----------------------------------------
+Total nodes: 491102
+
+Node type distribution:
+  Surface: 206978
+  Definition: 117659
+  Sense: 117659
+  Example: 48339
+  Domain: 438
+  Register: 29
+
+🔗 EDGE ANALYSIS
+----------------------------------------
+Total edges: 587754
+
+Edge type distribution:
+  realizes: 206978
+  explained_by: 117659
+  hyponym: 89089
+  hypernym: 89089
+  illustrated_by: 48339
+  similar_to: 21386
+  antonym: 7604
+  preferred_in: 6643
+  usage: 967
+
+🔍 LEXICON ANALYSIS
+----------------------------------------
+Total lexicon entries: 206978
+
+Language distribution:
+  None: 206978
+
+Search test results:
+  'computer': 10 matches
+  'machine': 10 matches
+  'learning': 10 matches
+  'artificial': 10 matches

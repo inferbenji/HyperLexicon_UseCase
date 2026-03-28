@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyperlexicon - Knowledge Graph Structure</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+            background: linear-gradient(135deg, #2d1b69 0%, #11047a 50%, #1e1b4b 100%);
+            color: #e2e8f0;
+            line-height: 1.4;
+            font-size: 0.85rem;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #60a5fa;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: #94a3b8;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+        }
+
+        .graph-structure {
+            background: rgba(17, 4, 122, 0.2);
+            border: 1px solid rgba(96, 165, 250, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 2rem 0;
+        }
+
+        .structure-header {
+            background: rgba(96, 165, 250, 0.1);
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid rgba(96, 165, 250, 0.2);
+            font-weight: 600;
+            font-size: 1rem;
+            color: #60a5fa;
+            letter-spacing: 0.05em;
+        }
+
+        .node-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+        }
+
+        .node-table th {
+            background: rgba(30, 27, 75, 0.4);
+            color: #818cf8;
+            padding: 0.8rem 1rem;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(129, 140, 248, 0.2);
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+        }
+
+        .node-table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.05);
+            vertical-align: top;
+            font-weight: 400;
+        }
+
+        .node-table tr:nth-child(even) {
+            background: rgba(30, 27, 75, 0.15);
+        }
+
+        .node-table tr:hover {
+            background: rgba(96, 165, 250, 0.05);
+        }
+
+        .node-id {
+            color: #60a5fa;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        .node-label {
+            color: #e2e8f0;
+            font-weight: 500;
+        }
+
+        .node-type {
+            color: #34d399;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+        }
+
+        .node-type.gene { color: #60a5fa; }
+        .node-type.pathway { color: #8b5cf6; }
+        .node-type.variant { color: #f59e0b; }
+        .node-type.effect { color: #ef4444; }
+        .node-type.classification { color: #ec4899; }
+        .node-type.tissue { color: #10b981; }
+        .node-type.source { color: #94a3b8; }
+        .node-type.output { color: #06b6d4; }
+
+        .ensemble-id {
+            color: #818cf8;
+            font-size: 0.75rem;
+        }
+
+        .provenance-info {
+            color: #94a3b8;
+            font-size: 0.75rem;
+        }
+
+        .timestamp {
+            color: #64748b;
+            font-size: 0.7rem;
+            font-weight: 400;
+        }
+
+        .ontology-ref {
+            color: #fbbf24;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .hgvs-notation {
+            color: #a78bfa;
+            font-size: 0.75rem;
+            font-family: 'SF Mono', monospace;
+        }
+
+        .uberon-ref {
+            color: #34d399;
+            font-size: 0.75rem;
+        }
+
+        .null-field {
+            color: #475569;
+            font-style: italic;
+        }
+
+        .schema-info {
+            background: rgba(17, 4, 122, 0.3);
+            border: 1px solid rgba(129, 140, 248, 0.2);
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin: 2rem 0;
+        }
+
+        .schema-title {
+            color: #818cf8;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.1em;
+        }
+
+        .schema-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+
+        .schema-block {
+            background: rgba(30, 27, 75, 0.2);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            padding: 1.2rem;
+            border-radius: 2px;
+        }
+
+        .schema-block-title {
+            color: #60a5fa;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.05em;
+        }
+
+        .field-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .field-list li {
+            padding: 0.2rem 0;
+            color: #cbd5e1;
+            font-size: 0.75rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .field-name {
+            color: #94a3b8;
+        }
+
+        .field-type {
+            color: #60a5fa;
+            font-weight: 500;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-block {
+            background: rgba(17, 4, 122, 0.2);
+            border: 1px solid rgba(96, 165, 250, 0.15);
+            padding: 1.2rem;
+            border-radius: 2px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #60a5fa;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #94a3b8;
+            font-size: 0.8rem;
+            font-weight: 400;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 1rem; }
+            .title { font-size: 2rem; }
+            body { font-size: 0.8rem; }
+            .node-table { font-size: 0.7rem; }
+            .schema-grid { grid-template-columns: 1fr; }
+        }
+
+        .overflow-scroll {
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">HYPERLEXICON</h1>
+            <p class="subtitle">MULTI-SOURCE KNOWLEDGE GRAPH • NODE STRUCTURE</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-block">
+                <span class="stat-value">8</span>
+                <span class="stat-label">Node Types</span>
+            </div>
+            <div class="stat-block">
+                <span class="stat-value">820K+</span>
+                <span class="stat-label">Total Nodes</span>
+            </div>
+            <div class="stat-block">
+                <span class="stat-value">7</span>
+                <span class="stat-label">Edge Types</span>
+            </div>
+            <div class="stat-block">
+                <span class="stat-value">1.3M+</span>
+                <span class="stat-label">Total Edges</span>
+            </div>
+        </div>
+
+        <div class="schema-info">
+            <div class="schema-title">KNOWLEDGE SOURCES</div>
+            <div class="schema-grid">
+                <div class="schema-block">
+                    <div class="schema-block-title">WORDNET 3.1</div>
+                    <ul class="field-list">
+                        <li><span class="field-name">Synsets</span> <span class="field-type">117,659</span></li>
+                        <li><span class="field-name">Lemmas</span> <span class="field-type">155K+</span></li>
+                        <li><span class="field-name">Surfaces</span> <span class="field-type">206,978</span></li>
+                        <li><span class="field-name">Domains</span> <span class="field-type">438</span></li>
+                        <li><span class="field-name">Taxonomy edges</span> <span class="field-type">hypernym, hyponym, antonym, similar_to</span></li>
+                    </ul>
+                </div>
+
+                <div class="schema-block">
+                    <div class="schema-block-title">CONCEPTNET 5.7</div>
+                    <ul class="field-list">
+                        <li><span class="field-name">Commonsense edges</span> <span class="field-type">500K+</span></li>
+                        <li><span class="field-name">Relations</span> <span class="field-type">relatedTo, usedFor, capableOf, causes, hasProperty, atLocation, isA, partOf, derivedFrom, definedAs, similarTo, synonym, antonym</span></li>
+                    </ul>
+                </div>
+
+                <div class="schema-block">
+                    <div class="schema-block-title">WIKTIONARY</div>
+                    <ul class="field-list">
+                        <li><span class="field-name">Additional senses</span> <span class="field-type">200K+</span></li>
+                        <li><span class="field-name">Coverage</span> <span class="field-type">Modern vocabulary, slang, technical terms beyond WordNet's 2006 coverage</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="schema-info">
+            <div class="schema-title">MULTILINGUAL COVERAGE</div>
+            <div class="schema-grid">
+                <div class="schema-block">
+                    <div class="schema-block-title">OPEN MULTILINGUAL WORDNET</div>
+                    <ul class="field-list">
+                        <li><span class="field-name">Total languages</span> <span class="field-type">10</span></li>
+                        <li><span class="field-name">Primary</span> <span class="field-type">en</span></li>
+                        <li><span class="field-name">Via OMW</span> <span class="field-type">es, fr, de, it, pt, ru, zh, ja, ko</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="graph-structure">
+            <div class="structure-header">NODE REGISTRY • BRCA1 PATHWAY EXAMPLE</div>
+            <div class="overflow-scroll">
+                <table class="node-table">
+                    <thead>
+                        <tr>
+                            <th>OID</th>
+                            <th>LABEL</th>
+                            <th>TYPE</th>
+                            <th>ENSEMBLE</th>
+                            <th>PROVENANCE</th>
+                            <th>CREATED</th>
+                            <th>ONTOLOGY</th>
+                            <th>HGVS</th>
+                            <th>UBERON_LIKE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="node-id">gene:BRCA1</td>
+                            <td class="node-label">BRCA1</td>
+                            <td class="node-type gene">GENE</td>
+                            <td class="ensemble-id">ENSG00000012048</td>
+                            <td class="provenance-info">GO:DNA repair</td>
+                            <td class="timestamp">2025-08-26 14:25</td>
+                            <td class="null-field">—</td>
+                            <td class="null-field">—</td>
+                            <td class="null-field">—</td>
+                        </tr>
+                        <tr>
+                            <td class="node-id">pathway:DNA_repair</td>
+                            <td class="node-label">DNA repair</td>
+                            <td class="node-type pathway">PATHWAY</td>
+                            <td class="null-field">—</td>
+                            <td class="null-field">—</td>
+                            <td class="timestamp">2025-08-26 14:25</td>
+                            <td class="ontology-ref">GO:0006281</td>
+                            <td class="null-field">—</td>
+                            <td class="null-field">—</td>
+                        </tr>
+                        <tr>
+                            <td class="node-id">variant:c.68_69delAG</td>
+                            <td class="node-label">BRCA1 c.68_69delAG</td>
+                            <td class="node-type variant">VARIANT</td>
+                            <td class="null-field">—</td>
+                            <td class="null-field">—</td>
+                            <td class="timestamp">2025-08-26 14:25</td>
+                            <td class="null-field">—</td>
+                            <td class="hgvs-notation">NM_007294.4:c.68_69del</td>
+                            <td class="null-field">—</td>
+                        </tr>
+                        <tr>
+                            <td class="node-id">effect:frameshift_truncation</td>
+                            <td class="node-label">Frameshift → truncated protein</td>
+                            <td class="node-type effect">EFFECT</td>
+                            <td class="null-field">—</td>
+                            <td class="null-field">—</td>
+                            <td class="timestamp">2025-08-26 14:25</td>
+                            <td class="null-field">—</td>
+                            <td class="null-field">—</td>
+                            <td class="null-field">—</td>
+                        </tr>
+                        <tr>
+                            <td class="node-id">classification:pathogenic</td>
+                            <td class="node-label">Pathogenic</td>
+                            <td class="node-type classification">CLASSIFICATION</td>
+                            <td class="null-field">—</td>
+                            <td class="null-field">—</td>
+                            <td class="timestamp">2025-08-26 14:25</td>
+                            <td class="null-field">—</td>
+                            <td class="null-field">—</td>
+                            <td class="null-field">—</td>
+                        </tr>
+                        <tr>
+                            <td class="node-id">tissue:mammary_epithelium</td>
+                            <td class="node-label">Mammary epithelium</td>
+                            <td class="node-type tissue">TISSUE</td>
+                            <td class="null-field">—</td>
+                            <td class="null-field">—</td>
+                            <td class="timestamp">2025-08-26 14:25</td>
+                            <td class="null-field">—</td>
+                            <td class="null-field">—</td>
+                            <td class="uberon-ref">UBERON:0002398</td>
+                        </tr>
+                        <tr>
+                            <td class="node-id">source:ClinVar_PMID12345678</td>
+                            <td class="node-label">ClinVar + PMID:12345678</td>
+                            <td class="node-type source">SOURCE</td>
+                            <td class="null-field">—</td>
+                            <td class="null-field">—</td>
+                            <td class="timestamp">2025-08-26 14:25</td>
+                            <td class="null-field">—</td>
+                            <td class="null-field">—</td>
+                            <td class="null-field">—</td>
+                        </tr>
+                        <tr>
+                            <td class="node-id">output:one_liner</td>
+                            <td class="node-label">Frameshift → truncated protein (pathogenic)</td>
+                            <td class="node-type output">OUTPUT</td>
+                            <td class="null-field">—</td>
+                            <td class="null-field">—</td>
+                            <td class="timestamp">2025-08-26 14:25</td>
+                            <td class="null-field">—</td>
+                            <td class="null-field">—</td>
+                            <td class="null-field">—</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="schema-info">
+            <div class="schema-title">NODE SCHEMA SPECIFICATION</div>
+            <div class="schema-grid">
+                <div class="schema-block">
+                    <div class="schema-block-title">CORE IDENTIFIERS</div>
+                    <ul class="field-list">
+                        <li><span class="field-name">oid</span> <span class="field-type">STRING PRIMARY KEY</span></li>
+                        <li><span class="field-name">label</span> <span class="field-type">STRING DISPLAY</span></li>
+                        <li><span class="field-name">type</span> <span class="field-type">ENUM NODE_TYPE</span></li>
+                        <li><span class="field-name">created</span> <span class="field-type">TIMESTAMP UTC</span></li>
+                    </ul>
+                </div>
+                
+                <div class="schema-block">
+                    <div class="schema-block-title">SEMANTIC REFERENCES</div>
+                    <ul class="field-list">
+                        <li><span class="field-name">ensemble</span> <span class="field-type">STRING? ENSEMBL_ID</span></li>
+                        <li><span class="field-name">ontology</span> <span class="field-type">STRING? GO_TERM</span></li>
+                        <li><span class="field-name">hgvs</span> <span class="field-type">STRING? HGVS_NOTATION</span></li>
+                        <li><span class="field-name">uberon_like</span> <span class="field-type">STRING? ANATOMY_REF</span></li>
+                    </ul>
+                </div>
+                
+                <div class="schema-block">
+                    <div class="schema-block-title">PROVENANCE & METADATA</div>
+                    <ul class="field-list">
+                        <li><span class="field-name">provenance</span> <span class="field-type">STRING? SOURCE_INFO</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="schema-info">
+            <div class="schema-title">TYPE DISTRIBUTION & PATTERNS</div>
+            <div class="schema-grid">
+                <div class="schema-block">
+                    <div class="schema-block-title">BIOLOGICAL ENTITIES</div>
+                    <ul class="field-list">
+                        <li><span class="field-name">gene</span> <span class="field-type">ENSEMBLE + GO TERMS</span></li>
+                        <li><span class="field-name">pathway</span> <span class="field-type">GO ONTOLOGY REF</span></li>
+                        <li><span class="field-name">variant</span> <span class="field-type">HGVS NOTATION</span></li>
+                        <li><span class="field-name">tissue</span> <span class="field-type">UBERON REFERENCE</span></li>
+                    </ul>
+                </div>
+                
+                <div class="schema-block">
+                    <div class="schema-block-title">ANALYTICAL NODES</div>
+                    <ul class="field-list">
+                        <li><span class="field-name">effect</span> <span class="field-type">FUNCTIONAL IMPACT</span></li>
+                        <li><span class="field-name">classification</span> <span class="field-type">CLINICAL SIGNIFICANCE</span></li>
+                        <li><span class="field-name">source</span> <span class="field-type">PROVENANCE TRACKING</span></li>
+                        <li><span class="field-name">output</span> <span class="field-type">INFERENCE RESULT</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="schema-info">
+            <div class="schema-title">GRAPH TOPOLOGY METRICS</div>
+            <div class="schema-grid">
+                <div class="schema-block">
+                    <div class="schema-block-title">CONNECTIVITY PATTERNS</div>
+                    <ul class="field-list">
+                        <li><span class="field-name">Gene → Pathway</span> <span class="field-type">1:N MEMBERSHIP</span></li>
+                        <li><span class="field-name">Variant → Gene</span> <span class="field-type">N:1 BELONGS_TO</span></li>
+                        <li><span class="field-name">Effect → Variant</span> <span class="field-type">1:1 CAUSES</span></li>
+                        <li><span class="field-name">Classification → Effect</span> <span class="field-type">1:1 DESCRIBES</span></li>
+                    </ul>
+                </div>
+                
+                <div class="schema-block">
+                    <div class="schema-block-title">INFERENCE CHAINS</div>
+                    <ul class="field-list">
+                        <li><span class="field-name">Gene → Tissue</span> <span class="field-type">EXPRESSION_IN</span></li>
+                        <li><span class="field-name">Source → *</span> <span class="field-type">EVIDENCE_FOR</span></li>
+                        <li><span class="field-name">* → Output</span> <span class="field-type">GENERATES</span></li>
+                        <li><span class="field-name">Query → Output</span> <span class="field-type">SEMANTIC_MATCH</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+================================================================================
+HYPERLEXICON STATISTICS SUMMARY
+================================================================================
+
+📊 BASIC STATISTICS
+----------------------------------------
+Database size: 139.64 MB
+Analysis timestamp: 2025-08-24T14:06:00.672872
+
+Node Statistics:
+  Definition: 117,659
+  Domain: 438
+  Example: 48,339
+  Register: 29
+  Sense: 117,659
+  Surface: 206,978
+
+Edge Statistics:
+  antonym: 7,604
+  explained_by: 117,659
+  hypernym: 89,089
+  hyponym: 89,089
+  illustrated_by: 48,339
+  preferred_in: 6,643
+  realizes: 206,978
+  similar_to: 21,386
+  usage: 967
+
+Lexicon Statistics:
+  NULL: 206,978
+
+🔗 NETWORK ANALYSIS
+----------------------------------------
+Average node degree: 2.39
+Max node degree: 816
+Min node degree: 1
+
+Node type degrees:
+  Sense: 9,178,698
+  Surface: 206,978
+  Definition: 117,659
+  Example: 48,339
+  Domain: 6,643
+  Register: 967
+
+⚡ PERFORMANCE BENCHMARKS
+----------------------------------------
+'computer': 1351.13ms, 5 results
+'machine learning': 108.33ms, 5 results
+'artificial intelligence': 91.66ms, 5 results
+'robot': 95.01ms, 5 results
+'neural network': 98.09ms, 5 results

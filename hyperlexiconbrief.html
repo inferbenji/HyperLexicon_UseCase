@@ -826,6 +826,192 @@ margin: 0 15%;
             </div>
         </div>
 
+        <!-- Multi-Source Knowledge Graph -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Multi-Source Knowledge Graph</h2>
+                <p class="section-subtitle">Unified lexical intelligence from curated open sources</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📖</div>
+                    <h3 class="feature-title">WordNet 3.1</h3>
+                    <p class="feature-description">
+                        117,659 synsets · 155K+ lemmas · 206,978 surface forms · 438 domains
+                    </p>
+                    <div class="feature-keywords">
+                        <span class="keyword">Synsets</span>
+                        <span class="keyword">Lemmas</span>
+                        <span class="keyword">Domains</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3 class="feature-title">ConceptNet 5.7</h3>
+                    <p class="feature-description">
+                        500K+ commonsense edges · 13 relation types
+                    </p>
+                    <div class="feature-keywords">
+                        <span class="keyword">Commonsense</span>
+                        <span class="keyword">Relations</span>
+                        <span class="keyword">Edges</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3 class="feature-title">Wiktionary</h3>
+                    <p class="feature-description">
+                        200K+ additional senses beyond WordNet
+                    </p>
+                    <div class="feature-keywords">
+                        <span class="keyword">Extended Senses</span>
+                        <span class="keyword">Open Source</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3 class="feature-title">Open Multilingual WordNet</h3>
+                    <p class="feature-description">
+                        9 additional languages: es, fr, de, it, pt, ru, zh, ja, ko
+                    </p>
+                    <div class="feature-keywords">
+                        <span class="keyword">Multilingual</span>
+                        <span class="keyword">Cross-lingual</span>
+                        <span class="keyword">9 Languages</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sense-Augmented Embeddings -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Sense-Augmented Embeddings</h2>
+                <p class="section-subtitle">Inject definitions, synonyms, and commonsense relations before encoding</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Primary Encoder</h3>
+                    <p class="feature-description">
+                        Mistral-7B — 4096-dim, shared for generation AND embeddings
+                    </p>
+                    <div class="feature-keywords">
+                        <span class="keyword">4096-dim</span>
+                        <span class="keyword">Dual-use</span>
+                        <span class="keyword">Mistral-7B</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3 class="feature-title">Fallback Encoder</h3>
+                    <p class="feature-description">
+                        MiniLM — 384-dim, 22M params
+                    </p>
+                    <div class="feature-keywords">
+                        <span class="keyword">384-dim</span>
+                        <span class="keyword">22M params</span>
+                        <span class="keyword">MiniLM</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="feature-title">Reranker</h3>
+                    <p class="feature-description">
+                        CrossEncoder ms-marco-MiniLM-L-6-v2
+                    </p>
+                    <div class="feature-keywords">
+                        <span class="keyword">CrossEncoder</span>
+                        <span class="keyword">ms-marco</span>
+                        <span class="keyword">Reranking</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧬</div>
+                    <h3 class="feature-title">Sense Injection</h3>
+                    <p class="feature-description">
+                        Inject definitions, synonyms, and commonsense relations before encoding to produce sense-augmented vectors
+                    </p>
+                    <div class="feature-keywords">
+                        <span class="keyword">Definitions</span>
+                        <span class="keyword">Synonyms</span>
+                        <span class="keyword">Commonsense</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Benchmark Results -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Benchmark Results</h2>
+                <p class="section-subtitle">STSBenchmark — zero fine-tuning</p>
+            </div>
+            
+            <div class="performance-table">
+                <div class="table-header">
+                    <div class="table-cell">Configuration</div>
+                    <div class="table-cell metric">Spearman ρ</div>
+                </div>
+                <div class="table-body">
+                    <div class="table-row">
+                        <div class="table-cell">HyperLexicon + BGE-large</div>
+                        <div class="table-cell metric">0.8752</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell">BGE-large-en-v1.5 raw baseline</div>
+                        <div class="table-cell metric">0.8689</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell">Delta</div>
+                        <div class="table-cell metric">+0.0063</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell">Test pairs</div>
+                        <div class="table-cell metric">n = 1,379</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quadrinary Router -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Quadrinary Router</h2>
+                <p class="section-subtitle">Four-stage pipeline from preprocessing to enriched output</p>
+            </div>
+            
+            <div class="architecture-showcase">
+                <div class="flow-container">
+                    <div class="flow-node">
+                        <div class="flow-icon">1️⃣</div>
+                        <div class="flow-label">eLL Preprocessing</div>
+                        <div class="flow-time">Stage 1</div>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-node">
+                        <div class="flow-icon">2️⃣</div>
+                        <div class="flow-label">Hyperlexicon Enrichment</div>
+                        <div class="flow-time">Stage 2 — semantic</div>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-node">
+                        <div class="flow-icon">3️⃣</div>
+                        <div class="flow-label">Conditional LLM</div>
+                        <div class="flow-time">Stage 3 — dict/thesaurus, 1–5%</div>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-node">
+                        <div class="flow-icon">4️⃣</div>
+                        <div class="flow-label">Return Enriched Text</div>
+                        <div class="flow-time">Stage 4 — downstream</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Performance Benchmarks -->
         <div class="section">
             <div class="section-header">
@@ -864,7 +1050,7 @@ margin: 0 15%;
                     </div>
                     <div class="table-row">
                         <div class="table-cell">Throughput</div>
-                        <div class="table-cell metric">X kQPS @ 25% headroom</div>
+                        <div class="table-cell metric">15 kQPS @ 25% headroom</div>
                     </div>
                     <div class="table-row">
                         <div class="table-cell">Availability</div>
@@ -874,26 +1060,16 @@ margin: 0 15%;
             </div>
         </div>
 
-        <!-- Economic Impact -->
+        <!-- Compute Efficiency -->
         <div class="section">
             <div class="section-header">
-                <h2 class="section-title">Economic Impact</h2>
-                <p class="section-subtitle">
-                    Transformative cost efficiency for enterprise knowledge operations.
-                </p>
+                <h2 class="section-title">Compute Efficiency</h2>
             </div>
             
-            <div class="cost-comparison">
-                <div class="cost-card efficient">
-                    <div class="cost-label">Hyperlexicon</div>
-                    <div class="cost-value">$2-8</div>
-                    <div class="cost-subtitle">per million queries</div>
-                </div>
-                <div class="cost-card expensive">
-                    <div class="cost-label">Traditional LLMs</div>
-                    <div class="cost-value">$30k-100k</div>
-                    <div class="cost-subtitle">per million queries</div>
-                </div>
+            <div class="architecture-showcase">
+                <p class="feature-description" style="text-align:center; font-size:1.125rem; line-height:1.7;">
+                    95–99% of queries resolve through graph and vector pipelines without LLM inference. Compute scales linearly with index size, not token context.
+                </p>
             </div>
         </div>
 
@@ -944,7 +1120,7 @@ margin: 0 15%;
                     <div class="kpi-grid">
                         <div class="kpi-item">
                             <div class="kpi-label">Inference p95</div>
-                            <div class="kpi-value">250 ms</div>
+                            <div class="kpi-value">&lt; 80 ms</div>
                         </div>
                         <div class="kpi-item">
                             <div class="kpi-label">Model Cascade</div>
@@ -952,7 +1128,7 @@ margin: 0 15%;
                         </div>
                         <div class="kpi-item">
                             <div class="kpi-label">Throughput</div>
-                            <div class="kpi-value">X kQPS @ 25% headroom</div>
+                            <div class="kpi-value">15 kQPS @ 25% headroom</div>
                         </div>
                         <div class="kpi-item">
                             <div class="kpi-label">Availability</div>
@@ -962,23 +1138,23 @@ margin: 0 15%;
                 </div>
                 
                 <div class="executive-card">
-                    <h3>Intelligence Cost Structure</h3>
+                    <h3>Compute Efficiency Profile</h3>
                     <div class="kpi-grid">
                         <div class="kpi-item">
-                            <div class="kpi-label">Compute Unit</div>
-                            <div class="kpi-value">$2–$8 / 1M inferences</div>
+                            <div class="kpi-label">Fast-Path Resolution</div>
+                            <div class="kpi-value">95–99% graph + vector</div>
                         </div>
                         <div class="kpi-item">
-                            <div class="kpi-label">Escalation Rate</div>
-                            <div class="kpi-value">1–5% → LLM costly</div>
+                            <div class="kpi-label">LLM Escalation Rate</div>
+                            <div class="kpi-value">1–5% of traffic</div>
                         </div>
                         <div class="kpi-item">
-                            <div class="kpi-label">Fast-Path Efficiency</div>
-                            <div class="kpi-value">95–99% fast-path</div>
+                            <div class="kpi-label">Scalability</div>
+                            <div class="kpi-value">Linear with index size</div>
                         </div>
                         <div class="kpi-item">
-                            <div class="kpi-label">Cost Avoidance</div>
-                            <div class="kpi-value">avoids $30k–$100k per 1M reqs</div>
+                            <div class="kpi-label">LLM Scope</div>
+                            <div class="kpi-value">Dict/thesaurus only</div>
                         </div>
                     </div>
                 </div>
@@ -1041,9 +1217,9 @@ margin: 0 15%;
                         <div class="table-cell">1–3s / 5–100 GPU ops</div>
                     </div>
                     <div class="table-row">
-                        <div class="table-cell">Cost per 1M queries</div>
-                        <div class="table-cell">$2–$8 (optimized)</div>
-                        <div class="table-cell">$30K–$100K+</div>
+                        <div class="table-cell">LLM inference ratio</div>
+                        <div class="table-cell">1–5% of traffic</div>
+                        <div class="table-cell">100% of traffic</div>
                     </div>
                     <div class="table-row">
                         <div class="table-cell">Scalability</div>
@@ -1074,40 +1250,16 @@ margin: 0 15%;
             </div>
         </div>
 
-        <!-- User-Scale Cost Model -->
+        <!-- Compute Scaling Note -->
         <div class="section">
             <div class="section-header">
-                <h2 class="section-title">User-Scale Cost Model</h2>
-                <p class="section-subtitle">Illustrative, optimized cost structure</p>
+                <h2 class="section-title">Scaling Characteristics</h2>
             </div>
             
-            <div class="performance-table">
-                <div class="table-header">
-                    <div class="table-cell">Users</div>
-                    <div class="table-cell metric">Estimated Cost / User</div>
-                </div>
-                <div class="table-body">
-                    <div class="table-row">
-                        <div class="table-cell">10 M</div>
-                        <div class="table-cell metric">$0.05–$0.09</div>
-                    </div>
-                    <div class="table-row">
-                        <div class="table-cell">50 M</div>
-                        <div class="table-cell metric">$0.03–$0.06</div>
-                    </div>
-                    <div class="table-row">
-                        <div class="table-cell">100 M</div>
-                        <div class="table-cell metric">$0.02–$0.04</div>
-                    </div>
-                    <div class="table-row">
-                        <div class="table-cell">500 M</div>
-                        <div class="table-cell metric">$0.004–$0.008</div>
-                    </div>
-                    <div class="table-row">
-                        <div class="table-cell">1 B</div>
-                        <div class="table-cell metric"><$0.004</div>
-                    </div>
-                </div>
+            <div class="architecture-showcase">
+                <p class="feature-description" style="text-align:center; font-size:1.125rem; line-height:1.7;">
+                    95–99% of queries resolve through graph and vector pipelines without LLM inference. Compute scales linearly with index size, not token context.
+                </p>
             </div>
         </div>
 
@@ -1224,7 +1376,7 @@ margin: 0 15%;
             <div class="license-info">
                 <div class="license-title">Commercial Licensing Available</div>
                 <div class="license-text">
-                    Copyright (c) 2025 Hyperlexicon. Benjamin R Nelson. All Rights Reserved.
+                    Copyright (c) 2025–2026 Benjamin Nelson. All Rights Reserved.
                 </div>
                 <div class="license-text">
                     Adiuvantes ad Meliuorationum Omniem

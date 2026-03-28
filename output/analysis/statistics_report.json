@@ -1,0 +1,100 @@
+{
+  "basic_statistics": {
+    "timestamp": "2025-08-24T14:06:00.672872",
+    "database_size_mb": 139.64,
+    "node_statistics": {
+      "Definition": 117659,
+      "Domain": 438,
+      "Example": 48339,
+      "Register": 29,
+      "Sense": 117659,
+      "Surface": 206978
+    },
+    "edge_statistics": {
+      "antonym": 7604,
+      "explained_by": 117659,
+      "hypernym": 89089,
+      "hyponym": 89089,
+      "illustrated_by": 48339,
+      "preferred_in": 6643,
+      "realizes": 206978,
+      "similar_to": 21386,
+      "usage": 967
+    },
+    "lexicon_statistics": {
+      "NULL": 206978
+    },
+    "surface_length_stats": {
+      "min": 0,
+      "max": 0,
+      "avg": 0,
+      "median": 0
+    }
+  },
+  "relationship_density": {
+    "degree_distribution": {
+      "min": 1,
+      "max": 816,
+      "avg": 2.39,
+      "median": 1
+    },
+    "node_type_degrees": {
+      "Sense": 9178698,
+      "Surface": 206978,
+      "Definition": 117659,
+      "Example": 48339,
+      "Domain": 6643,
+      "Register": 967
+    },
+    "high_degree_nodes": [
+      816,
+      808,
+      800,
+      722,
+      719,
+      644,
+      613,
+      596,
+      596,
+      580
+    ]
+  },
+  "semantic_network": {
+    "hierarchical_relationships": {
+      "hypernym_edges": 89089,
+      "hyponym_edges": 89089,
+      "total_hierarchical": 178178
+    },
+    "lexical_relationships": {
+      "antonym_nodes": 7394,
+      "similar_to_edges": 21386
+    }
+  },
+  "performance_benchmarks": {
+    "computer": {
+      "execution_time_ms": 1351.13,
+      "results_count": 5,
+      "avg_score": 0.5499
+    },
+    "machine learning": {
+      "execution_time_ms": 108.33,
+      "results_count": 5,
+      "avg_score": 0.4459
+    },
+    "artificial intelligence": {
+      "execution_time_ms": 91.66,
+      "results_count": 5,
+      "avg_score": 0.5178
+    },
+    "robot": {
+      "execution_time_ms": 95.01,
+      "results_count": 5,
+      "avg_score": 0.551
+    },
+    "neural network": {
+      "execution_time_ms": 98.09,
+      "results_count": 5,
+      "avg_score": 0.5199
+    }
+  }
+}

@@ -1,0 +1,7971 @@
+{
+  "database_info": {
+    "database_path": "/home/trim/Documents/GitHub/Lexinomicon/hyperlexicon.db",
+    "database_size_mb": 139.64,
+    "analysis_timestamp": "2025-08-24T14:05:52.514620",
+    "sqlite_version": "3.37.2",
+    "page_size": 4096,
+    "page_count": 35747
+  },
+  "table_info": {
+    "node": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "not_null": false,
+          "default": null
+        },
+        {
+          "name": "type",
+          "type": "TEXT",
+          "not_null": true,
+          "default": null
+        },
+        {
+          "name": "payload",
+          "type": "TEXT",
+          "not_null": true,
+          "default": null
+        },
+        {
+          "name": "created_at",
+          "type": "INTEGER",
+          "not_null": false,
+          "default": null
+        },
+        {
+          "name": "updated_at",
+          "type": "INTEGER",
+          "not_null": false,
+          "default": null
+        }
+      ],
+      "row_count": 491102
+    },
+    "edge": {
+      "columns": [
+        {
+          "name": "src",
+          "type": "INTEGER",
+          "not_null": true,
+          "default": null
+        },
+        {
+          "name": "dst",
+          "type": "INTEGER",
+          "not_null": true,
+          "default": null
+        },
+        {
+          "name": "type",
+          "type": "TEXT",
+          "not_null": true,
+          "default": null
+        },
+        {
+          "name": "weight",
+          "type": "REAL",
+          "not_null": false,
+          "default": "1.0"
+        },
+        {
+          "name": "confidence",
+          "type": "REAL",
+          "not_null": false,
+          "default": "1.0"
+        },
+        {
+          "name": "source",
+          "type": "TEXT",
+          "not_null": false,
+          "default": null
+        },
+        {
+          "name": "created_at",
+          "type": "INTEGER",
+          "not_null": false,
+          "default": null
+        },
+        {
+          "name": "updated_at",
+          "type": "INTEGER",
+          "not_null": false,
+          "default": null
+        }
+      ],
+      "row_count": 587754
+    },
+    "lexicon": {
+      "columns": [
+        {
+          "name": "surface",
+          "type": "",
+          "not_null": false,
+          "default": null
+        },
+        {
+          "name": "lang",
+          "type": "",
+          "not_null": false,
+          "default": null
+        },
+        {
+          "name": "surface_unaccented",
+          "type": "",
+          "not_null": false,
+          "default": null
+        }
+      ],
+      "row_count": 206978
+    },
+    "lexicon_data": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "not_null": false,
+          "default": null
+        },
+        {
+          "name": "block",
+          "type": "BLOB",
+          "not_null": false,
+          "default": null
+        }
+      ],
+      "row_count": 1001
+    },
+    "lexicon_idx": {
+      "columns": [
+        {
+          "name": "segid",
+          "type": "",
+          "not_null": true,
+          "default": null
+        },
+        {
+          "name": "term",
+          "type": "",
+          "not_null": true,
+          "default": null
+        },
+        {
+          "name": "pgno",
+          "type": "",
+          "not_null": false,
+          "default": null
+        }
+      ],
+      "row_count": 738
+    },
+    "lexicon_docsize": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "not_null": false,
+          "default": null
+        },
+        {
+          "name": "sz",
+          "type": "BLOB",
+          "not_null": false,
+          "default": null
+        }
+      ],
+      "row_count": 206978
+    },
+    "lexicon_config": {
+      "columns": [
+        {
+          "name": "k",
+          "type": "",
+          "not_null": true,
+          "default": null
+        },
+        {
+          "name": "v",
+          "type": "",
+          "not_null": false,
+          "default": null
+        }
+      ],
+      "row_count": 1
+    }
+  },
+  "node_analysis": {
+    "node_type_distribution": {
+      "Surface": 206978,
+      "Definition": 117659,
+      "Sense": 117659,
+      "Example": 48339,
+      "Domain": 438,
+      "Register": 29
+    },
+    "total_nodes": 491102,
+    "samples_by_type": {
+      "Surface": [
+        {
+          "id": 30000000,
+          "payload": {
+            "text": "able",
+            "lang": "en"
+          }
+        },
+        {
+          "id": 30000001,
+          "payload": {
+            "text": "unable",
+            "lang": "en"
+          }
+        },
+        {
+          "id": 30000002,
+          "payload": {
+            "text": "abaxial",
+            "lang": "en"
+          }
+        },
+        {
+          "id": 30000003,
+          "payload": {
+            "text": "dorsal",
+            "lang": "en"
+          }
+        },
+        {
+          "id": 30000004,
+          "payload": {
+            "text": "adaxial",
+            "lang": "en"
+          }
+        }
+      ],
+      "Definition": [
+        {
+          "id": 10000000,
+          "payload": {
+            "text": "(usually followed by `to') having the necessary means or skill or know-how or authority to do something",
+            "lang": "en"
+          }
+        },
+        {
+          "id": 10000001,
+          "payload": {
+            "text": "(usually followed by `to') not having the necessary means or skill or know-how",
+            "lang": "en"
+          }
+        },
+        {
+          "id": 10000002,
+          "payload": {
+            "text": "facing away from the axis of an organ or organism",
+            "lang": "en"
+          }
+        },
+        {
+          "id": 10000003,
+          "payload": {
+            "text": "nearest to or facing toward the axis of an organ or organism",
+            "lang": "en"
+          }
+        },
+        {
+          "id": 10000004,
+          "payload": {
+            "text": "facing or on the side toward the apex",
+            "lang": "en"
+          }
+        }
+      ],
+      "Sense": [
+        {
+          "id": 1,
+          "payload": {
+            "synset": "00001740-a",
+            "pos": "a",
+            "lang": "en",
+            "lemmas": [
+              "able"
+            ],
+            "lexname": "adj.all"
+          }
+        },
+        {
+          "id": 2,
+          "payload": {
+            "synset": "00002098-a",
+            "pos": "a",
+            "lang": "en",
+            "lemmas": [
+              "unable"
+            ],
+            "lexname": "adj.all"
+          }
+        },
+        {
+          "id": 3,
+          "payload": {
+            "synset": "00002312-a",
+            "pos": "a",
+            "lang": "en",
+            "lemmas": [
+              "abaxial",
+              "dorsal"
+            ],
+            "lexname": "adj.all"
+          }
+        },
+        {
+          "id": 4,
+          "payload": {
+            "synset": "00002527-a",
+            "pos": "a",
+            "lang": "en",
+            "lemmas": [
+              "adaxial",
+              "ventral"
+            ],
+            "lexname": "adj.all"
+          }
+        },
+        {
+          "id": 5,
+          "payload": {
+            "synset": "00002730-a",
+            "pos": "a",
+            "lang": "en",
+            "lemmas": [
+              "acroscopic"
+            ],
+            "lexname": "adj.all"
+          }
+        }
+      ],
+      "Example": [
+        {
+          "id": 20000000,
+          "payload": {
+            "text": "able to swim",
+            "lang": "en"
+          }
+        },
+        {
+          "id": 20000001,
+          "payload": {
+            "text": "she was able to program her computer",
+            "lang": "en"
+          }
+        },
+        {
+          "id": 20000002,
+          "payload": {
+            "text": "we were at last able to buy a car",
+            "lang": "en"
+          }
+        },
+        {
+          "id": 20000003,
+          "payload": {
+            "text": "able to get a grant for the project",
+            "lang": "en"
+          }
+        },
+        {
+          "id": 20000004,
+          "payload": {
+            "text": "unable to get to town without a car",
+            "lang": "en"
+          }
+        }
+      ],
+      "Domain": [
+        {
+          "id": 40000000,
+          "payload": {
+            "name": "biology.n.01"
+          }
+        },
+        {
+          "id": 40000001,
+          "payload": {
+            "name": "botany.n.02"
+          }
+        },
+        {
+          "id": 40000002,
+          "payload": {
+            "name": "physiology.n.01"
+          }
+        },
+        {
+          "id": 40000003,
+          "payload": {
+            "name": "economics.n.01"
+          }
+        },
+        {
+          "id": 40000004,
+          "payload": {
+            "name": "baseball.n.01"
+          }
+        }
+      ],
+      "Register": [
+        {
+          "id": 50000000,
+          "payload": {
+            "name": "colloquialism.n.01"
+          }
+        },
+        {
+          "id": 50000001,
+          "payload": {
+            "name": "intensifier.n.01"
+          }
+        },
+        {
+          "id": 50000002,
+          "payload": {
+            "name": "comparative.n.01"
+          }
+        },
+        {
+          "id": 50000003,
+          "payload": {
+            "name": "combining form.n.01"
+          }
+        },
+        {
+          "id": 50000004,
+          "payload": {
+            "name": "regionalism.n.01"
+          }
+        }
+      ]
+    }
+  },
+  "edge_analysis": {
+    "edge_type_distribution": {
+      "realizes": 206978,
+      "explained_by": 117659,
+      "hyponym": 89089,
+      "hypernym": 89089,
+      "illustrated_by": 48339,
+      "similar_to": 21386,
+      "antonym": 7604,
+      "preferred_in": 6643,
+      "usage": 967
+    },
+    "total_edges": 587754,
+    "relationship_patterns": [
+      {
+        "src_type": "Surface",
+        "edge_type": "realizes",
+        "dst_type": "Sense",
+        "count": 206978
+      },
+      {
+        "src_type": "Sense",
+        "edge_type": "explained_by",
+        "dst_type": "Definition",
+        "count": 117659
+      },
+      {
+        "src_type": "Sense",
+        "edge_type": "hypernym",
+        "dst_type": "Sense",
+        "count": 89089
+      },
+      {
+        "src_type": "Sense",
+        "edge_type": "hyponym",
+        "dst_type": "Sense",
+        "count": 89089
+      },
+      {
+        "src_type": "Sense",
+        "edge_type": "illustrated_by",
+        "dst_type": "Example",
+        "count": 48339
+      },
+      {
+        "src_type": "Sense",
+        "edge_type": "similar_to",
+        "dst_type": "Sense",
+        "count": 21386
+      },
+      {
+        "src_type": "Sense",
+        "edge_type": "antonym",
+        "dst_type": "Sense",
+        "count": 7604
+      },
+      {
+        "src_type": "Sense",
+        "edge_type": "preferred_in",
+        "dst_type": "Domain",
+        "count": 6643
+      },
+      {
+        "src_type": "Sense",
+        "edge_type": "usage",
+        "dst_type": "Register",
+        "count": 967
+      }
+    ],
+    "edge_samples": [
+      {
+        "src": 1,
+        "dst": 10000000,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 1,
+        "dst": 20000000,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 1,
+        "dst": 20000001,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 1,
+        "dst": 20000002,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 1,
+        "dst": 20000003,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000000,
+        "dst": 1,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 2,
+        "dst": 10000001,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 2,
+        "dst": 20000004,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 2,
+        "dst": 20000005,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000001,
+        "dst": 2,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 3,
+        "dst": 10000002,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 3,
+        "dst": 20000006,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000002,
+        "dst": 3,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000003,
+        "dst": 3,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 3,
+        "dst": 40000000,
+        "type": "preferred_in",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 4,
+        "dst": 10000003,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 4,
+        "dst": 20000007,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000004,
+        "dst": 4,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000005,
+        "dst": 4,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 4,
+        "dst": 40000000,
+        "type": "preferred_in",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 5,
+        "dst": 10000004,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000006,
+        "dst": 5,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 5,
+        "dst": 40000001,
+        "type": "preferred_in",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 6,
+        "dst": 10000005,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000007,
+        "dst": 6,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 6,
+        "dst": 40000001,
+        "type": "preferred_in",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 7,
+        "dst": 10000006,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000008,
+        "dst": 7,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000009,
+        "dst": 7,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 7,
+        "dst": 40000002,
+        "type": "preferred_in",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 8,
+        "dst": 10000007,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000010,
+        "dst": 8,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000011,
+        "dst": 8,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000012,
+        "dst": 8,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 8,
+        "dst": 40000002,
+        "type": "preferred_in",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 9,
+        "dst": 10000008,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 9,
+        "dst": 20000008,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 9,
+        "dst": 20000009,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000013,
+        "dst": 9,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 10,
+        "dst": 10000009,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 10,
+        "dst": 20000010,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000014,
+        "dst": 10,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000015,
+        "dst": 10,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 11,
+        "dst": 10000010,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000016,
+        "dst": 11,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 12,
+        "dst": 10000011,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 12,
+        "dst": 20000011,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000017,
+        "dst": 12,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 13,
+        "dst": 10000012,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 13,
+        "dst": 20000012,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 13,
+        "dst": 20000013,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 13,
+        "dst": 20000014,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 13,
+        "dst": 20000015,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000018,
+        "dst": 13,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 14,
+        "dst": 10000013,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 14,
+        "dst": 20000016,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000019,
+        "dst": 14,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 15,
+        "dst": 10000014,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 15,
+        "dst": 20000017,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 15,
+        "dst": 20000018,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000020,
+        "dst": 15,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 16,
+        "dst": 10000015,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 16,
+        "dst": 20000019,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000021,
+        "dst": 16,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 17,
+        "dst": 10000016,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 17,
+        "dst": 20000020,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000022,
+        "dst": 17,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000023,
+        "dst": 17,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 18,
+        "dst": 10000017,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000024,
+        "dst": 18,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 19,
+        "dst": 10000018,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 19,
+        "dst": 20000021,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000025,
+        "dst": 19,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 19,
+        "dst": 50000000,
+        "type": "usage",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 20,
+        "dst": 10000019,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 20,
+        "dst": 20000022,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000026,
+        "dst": 20,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 21,
+        "dst": 10000020,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 21,
+        "dst": 20000023,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000027,
+        "dst": 21,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000028,
+        "dst": 21,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 22,
+        "dst": 10000021,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 22,
+        "dst": 20000024,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 22,
+        "dst": 20000025,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 22,
+        "dst": 20000026,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 22,
+        "dst": 20000027,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000029,
+        "dst": 22,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 23,
+        "dst": 10000022,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 23,
+        "dst": 20000028,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000030,
+        "dst": 23,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 24,
+        "dst": 10000023,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 24,
+        "dst": 20000029,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000031,
+        "dst": 24,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000032,
+        "dst": 24,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 25,
+        "dst": 10000024,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 25,
+        "dst": 20000030,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000033,
+        "dst": 25,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 26,
+        "dst": 10000025,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 26,
+        "dst": 20000031,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 26,
+        "dst": 20000032,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 26,
+        "dst": 20000033,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000034,
+        "dst": 26,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 26,
+        "dst": 50000001,
+        "type": "usage",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 27,
+        "dst": 10000026,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 27,
+        "dst": 20000034,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000035,
+        "dst": 27,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000036,
+        "dst": 27,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 28,
+        "dst": 10000027,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000037,
+        "dst": 28,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 29,
+        "dst": 10000028,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 29,
+        "dst": 20000035,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000038,
+        "dst": 29,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000039,
+        "dst": 29,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30,
+        "dst": 10000029,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000040,
+        "dst": 30,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000041,
+        "dst": 30,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 31,
+        "dst": 10000030,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000042,
+        "dst": 31,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000043,
+        "dst": 31,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000044,
+        "dst": 31,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 32,
+        "dst": 10000031,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000045,
+        "dst": 32,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 33,
+        "dst": 10000032,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 33,
+        "dst": 20000036,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000046,
+        "dst": 33,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 34,
+        "dst": 10000033,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 34,
+        "dst": 20000037,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000047,
+        "dst": 34,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 35,
+        "dst": 10000034,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000048,
+        "dst": 35,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000049,
+        "dst": 35,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 36,
+        "dst": 10000035,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 36,
+        "dst": 20000038,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000050,
+        "dst": 36,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 37,
+        "dst": 10000036,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000051,
+        "dst": 37,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000052,
+        "dst": 37,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 38,
+        "dst": 10000037,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 38,
+        "dst": 20000039,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 38,
+        "dst": 20000040,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000053,
+        "dst": 38,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000054,
+        "dst": 38,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 39,
+        "dst": 10000038,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000055,
+        "dst": 39,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000056,
+        "dst": 39,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000057,
+        "dst": 39,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 40,
+        "dst": 10000039,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000058,
+        "dst": 40,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000059,
+        "dst": 40,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 41,
+        "dst": 10000040,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000060,
+        "dst": 41,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000061,
+        "dst": 41,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 42,
+        "dst": 10000041,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000062,
+        "dst": 42,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 43,
+        "dst": 10000042,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000063,
+        "dst": 43,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000064,
+        "dst": 43,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 44,
+        "dst": 10000043,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 44,
+        "dst": 20000041,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000065,
+        "dst": 44,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 45,
+        "dst": 10000044,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 45,
+        "dst": 20000042,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000066,
+        "dst": 45,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000067,
+        "dst": 45,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 46,
+        "dst": 10000045,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 46,
+        "dst": 20000043,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 46,
+        "dst": 20000044,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 46,
+        "dst": 20000045,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 46,
+        "dst": 20000046,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000068,
+        "dst": 46,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000069,
+        "dst": 46,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000070,
+        "dst": 46,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000071,
+        "dst": 46,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 47,
+        "dst": 10000046,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 47,
+        "dst": 20000047,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 47,
+        "dst": 20000048,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 47,
+        "dst": 20000049,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000072,
+        "dst": 47,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 48,
+        "dst": 10000047,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 48,
+        "dst": 20000050,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000073,
+        "dst": 48,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 49,
+        "dst": 10000048,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 49,
+        "dst": 20000051,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 49,
+        "dst": 20000052,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000074,
+        "dst": 49,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000075,
+        "dst": 49,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 50,
+        "dst": 10000049,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 50,
+        "dst": 20000053,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 50,
+        "dst": 20000054,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 50,
+        "dst": 20000055,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 50,
+        "dst": 20000056,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000076,
+        "dst": 50,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000077,
+        "dst": 50,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000078,
+        "dst": 50,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000079,
+        "dst": 50,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000080,
+        "dst": 50,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000081,
+        "dst": 50,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000082,
+        "dst": 50,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 51,
+        "dst": 10000050,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 51,
+        "dst": 20000057,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000083,
+        "dst": 51,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 52,
+        "dst": 10000051,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 52,
+        "dst": 20000058,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 52,
+        "dst": 20000059,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 52,
+        "dst": 20000060,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000084,
+        "dst": 52,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000085,
+        "dst": 52,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000086,
+        "dst": 52,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000087,
+        "dst": 52,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000088,
+        "dst": 52,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 53,
+        "dst": 10000052,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000089,
+        "dst": 53,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000090,
+        "dst": 53,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 54,
+        "dst": 10000053,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 54,
+        "dst": 20000061,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000091,
+        "dst": 54,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 55,
+        "dst": 10000054,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 55,
+        "dst": 20000062,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 55,
+        "dst": 20000063,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 55,
+        "dst": 20000064,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000092,
+        "dst": 55,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000093,
+        "dst": 55,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000094,
+        "dst": 55,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 56,
+        "dst": 10000055,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 56,
+        "dst": 20000065,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 56,
+        "dst": 20000066,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 56,
+        "dst": 20000067,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000095,
+        "dst": 56,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 57,
+        "dst": 10000056,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 57,
+        "dst": 20000068,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000096,
+        "dst": 57,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 58,
+        "dst": 10000057,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 58,
+        "dst": 20000069,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 58,
+        "dst": 20000070,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000097,
+        "dst": 58,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000098,
+        "dst": 58,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 59,
+        "dst": 10000058,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 59,
+        "dst": 20000071,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000099,
+        "dst": 59,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 60,
+        "dst": 10000059,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 60,
+        "dst": 20000072,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 60,
+        "dst": 20000073,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 60,
+        "dst": 20000074,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000100,
+        "dst": 60,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 61,
+        "dst": 10000060,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 61,
+        "dst": 20000075,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 61,
+        "dst": 20000076,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000101,
+        "dst": 61,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000102,
+        "dst": 61,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 62,
+        "dst": 10000061,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 62,
+        "dst": 20000077,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000103,
+        "dst": 62,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 63,
+        "dst": 10000062,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 63,
+        "dst": 20000078,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 63,
+        "dst": 20000079,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000104,
+        "dst": 63,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000105,
+        "dst": 63,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 64,
+        "dst": 10000063,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 64,
+        "dst": 20000080,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 64,
+        "dst": 20000081,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 64,
+        "dst": 20000082,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 64,
+        "dst": 20000083,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 64,
+        "dst": 20000084,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000106,
+        "dst": 64,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000107,
+        "dst": 64,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000108,
+        "dst": 64,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000109,
+        "dst": 64,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000110,
+        "dst": 64,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 65,
+        "dst": 10000064,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 65,
+        "dst": 20000085,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 65,
+        "dst": 20000086,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000111,
+        "dst": 65,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000112,
+        "dst": 65,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 66,
+        "dst": 10000065,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 66,
+        "dst": 20000087,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000113,
+        "dst": 66,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 66,
+        "dst": 40000003,
+        "type": "preferred_in",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 67,
+        "dst": 10000066,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 67,
+        "dst": 20000088,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000114,
+        "dst": 67,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000115,
+        "dst": 67,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000116,
+        "dst": 67,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000117,
+        "dst": 67,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000118,
+        "dst": 67,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 68,
+        "dst": 10000067,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 68,
+        "dst": 20000089,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000119,
+        "dst": 68,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 69,
+        "dst": 10000068,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 69,
+        "dst": 20000090,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 69,
+        "dst": 20000091,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000120,
+        "dst": 69,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 70,
+        "dst": 10000069,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000121,
+        "dst": 70,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000122,
+        "dst": 70,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000123,
+        "dst": 70,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 71,
+        "dst": 10000070,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 71,
+        "dst": 20000092,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000124,
+        "dst": 71,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 72,
+        "dst": 10000071,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 72,
+        "dst": 20000093,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000125,
+        "dst": 72,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 73,
+        "dst": 10000072,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 73,
+        "dst": 20000094,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000126,
+        "dst": 73,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 74,
+        "dst": 10000073,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000127,
+        "dst": 74,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 75,
+        "dst": 10000074,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 75,
+        "dst": 20000095,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 75,
+        "dst": 20000096,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000128,
+        "dst": 75,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 76,
+        "dst": 10000075,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 76,
+        "dst": 20000097,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000129,
+        "dst": 76,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 77,
+        "dst": 10000076,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000130,
+        "dst": 77,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 78,
+        "dst": 10000077,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 78,
+        "dst": 20000098,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000131,
+        "dst": 78,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 79,
+        "dst": 10000078,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 79,
+        "dst": 20000099,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 79,
+        "dst": 20000100,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000132,
+        "dst": 79,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 80,
+        "dst": 10000079,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 80,
+        "dst": 20000101,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 80,
+        "dst": 20000102,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000133,
+        "dst": 80,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 80,
+        "dst": 40000003,
+        "type": "preferred_in",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 81,
+        "dst": 10000080,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 81,
+        "dst": 20000103,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000134,
+        "dst": 81,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000135,
+        "dst": 81,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000136,
+        "dst": 81,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000137,
+        "dst": 81,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 82,
+        "dst": 10000081,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 82,
+        "dst": 20000104,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 82,
+        "dst": 20000105,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000138,
+        "dst": 82,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 83,
+        "dst": 10000082,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000139,
+        "dst": 83,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 84,
+        "dst": 10000083,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 84,
+        "dst": 20000106,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 84,
+        "dst": 20000107,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000140,
+        "dst": 84,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 85,
+        "dst": 10000084,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 85,
+        "dst": 20000108,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000141,
+        "dst": 85,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 86,
+        "dst": 10000085,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 86,
+        "dst": 20000109,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 86,
+        "dst": 20000110,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000142,
+        "dst": 86,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000143,
+        "dst": 86,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 87,
+        "dst": 10000086,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 87,
+        "dst": 20000111,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000144,
+        "dst": 87,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 88,
+        "dst": 10000087,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 88,
+        "dst": 20000112,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 88,
+        "dst": 20000113,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000145,
+        "dst": 88,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 89,
+        "dst": 10000088,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 89,
+        "dst": 20000114,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 89,
+        "dst": 20000115,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000146,
+        "dst": 89,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000147,
+        "dst": 89,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 90,
+        "dst": 10000089,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 90,
+        "dst": 20000116,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000148,
+        "dst": 90,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 91,
+        "dst": 10000090,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 91,
+        "dst": 20000117,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000149,
+        "dst": 91,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000150,
+        "dst": 91,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 92,
+        "dst": 10000091,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 92,
+        "dst": 20000118,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 92,
+        "dst": 20000119,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000151,
+        "dst": 92,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000152,
+        "dst": 92,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000153,
+        "dst": 92,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 92,
+        "dst": 50000000,
+        "type": "usage",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 93,
+        "dst": 10000092,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 93,
+        "dst": 20000120,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000154,
+        "dst": 93,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000155,
+        "dst": 93,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 94,
+        "dst": 10000093,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000156,
+        "dst": 94,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000157,
+        "dst": 94,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 95,
+        "dst": 10000094,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000158,
+        "dst": 95,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000159,
+        "dst": 95,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 96,
+        "dst": 10000095,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 96,
+        "dst": 20000121,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 96,
+        "dst": 20000122,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000160,
+        "dst": 96,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000161,
+        "dst": 96,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000162,
+        "dst": 96,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000163,
+        "dst": 96,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000164,
+        "dst": 96,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000165,
+        "dst": 96,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 97,
+        "dst": 10000096,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 97,
+        "dst": 20000123,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 97,
+        "dst": 20000124,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 97,
+        "dst": 20000125,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000166,
+        "dst": 97,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000167,
+        "dst": 97,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000168,
+        "dst": 97,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000169,
+        "dst": 97,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 98,
+        "dst": 10000097,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000170,
+        "dst": 98,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000171,
+        "dst": 98,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000172,
+        "dst": 98,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 98,
+        "dst": 50000000,
+        "type": "usage",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 99,
+        "dst": 10000098,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 99,
+        "dst": 20000126,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 99,
+        "dst": 20000127,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000173,
+        "dst": 99,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000174,
+        "dst": 99,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 100,
+        "dst": 10000099,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 100,
+        "dst": 20000128,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 100,
+        "dst": 20000129,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000175,
+        "dst": 100,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000176,
+        "dst": 100,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 101,
+        "dst": 10000100,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 101,
+        "dst": 20000130,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000177,
+        "dst": 101,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000178,
+        "dst": 101,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 102,
+        "dst": 10000101,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 102,
+        "dst": 20000131,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000179,
+        "dst": 102,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000180,
+        "dst": 102,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 103,
+        "dst": 10000102,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 103,
+        "dst": 20000132,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 103,
+        "dst": 20000133,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 103,
+        "dst": 20000134,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 103,
+        "dst": 20000135,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000181,
+        "dst": 103,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 104,
+        "dst": 10000103,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 104,
+        "dst": 20000136,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 104,
+        "dst": 20000137,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 104,
+        "dst": 20000138,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000182,
+        "dst": 104,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000183,
+        "dst": 104,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 105,
+        "dst": 10000104,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 105,
+        "dst": 20000139,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 105,
+        "dst": 20000140,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000184,
+        "dst": 105,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 105,
+        "dst": 50000000,
+        "type": "usage",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 106,
+        "dst": 10000105,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 106,
+        "dst": 20000141,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 106,
+        "dst": 20000142,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000185,
+        "dst": 106,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000186,
+        "dst": 106,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 107,
+        "dst": 10000106,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 107,
+        "dst": 20000143,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000187,
+        "dst": 107,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 108,
+        "dst": 10000107,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 108,
+        "dst": 20000144,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 108,
+        "dst": 20000145,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000188,
+        "dst": 108,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 109,
+        "dst": 10000108,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 109,
+        "dst": 20000146,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 109,
+        "dst": 20000147,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000189,
+        "dst": 109,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000190,
+        "dst": 109,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 110,
+        "dst": 10000109,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 110,
+        "dst": 20000148,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000191,
+        "dst": 110,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000192,
+        "dst": 110,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 111,
+        "dst": 10000110,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 111,
+        "dst": 20000149,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 111,
+        "dst": 20000150,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000193,
+        "dst": 111,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 112,
+        "dst": 10000111,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 112,
+        "dst": 20000151,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 112,
+        "dst": 20000152,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000194,
+        "dst": 112,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000195,
+        "dst": 112,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 112,
+        "dst": 40000004,
+        "type": "preferred_in",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 113,
+        "dst": 10000112,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 113,
+        "dst": 20000153,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 113,
+        "dst": 20000154,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000196,
+        "dst": 113,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000197,
+        "dst": 113,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000198,
+        "dst": 113,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 114,
+        "dst": 10000113,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 114,
+        "dst": 20000155,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000199,
+        "dst": 114,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 115,
+        "dst": 10000114,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 115,
+        "dst": 20000156,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 115,
+        "dst": 20000157,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 115,
+        "dst": 20000158,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000200,
+        "dst": 115,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000201,
+        "dst": 115,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 116,
+        "dst": 10000115,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 116,
+        "dst": 20000159,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 116,
+        "dst": 20000160,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000202,
+        "dst": 116,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 117,
+        "dst": 10000116,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 117,
+        "dst": 20000161,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 117,
+        "dst": 20000162,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 117,
+        "dst": 20000163,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000203,
+        "dst": 117,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000204,
+        "dst": 117,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 118,
+        "dst": 10000117,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 118,
+        "dst": 20000164,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000205,
+        "dst": 118,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 119,
+        "dst": 10000118,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 119,
+        "dst": 20000165,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 119,
+        "dst": 20000166,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 119,
+        "dst": 20000167,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000206,
+        "dst": 119,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 120,
+        "dst": 10000119,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 120,
+        "dst": 20000168,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000207,
+        "dst": 120,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 121,
+        "dst": 10000120,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000208,
+        "dst": 121,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 121,
+        "dst": 40000005,
+        "type": "preferred_in",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 122,
+        "dst": 10000121,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 122,
+        "dst": 20000169,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000209,
+        "dst": 122,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 122,
+        "dst": 40000005,
+        "type": "preferred_in",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 123,
+        "dst": 10000122,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000210,
+        "dst": 123,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 124,
+        "dst": 10000123,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 124,
+        "dst": 20000170,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000211,
+        "dst": 124,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000212,
+        "dst": 124,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 124,
+        "dst": 40000005,
+        "type": "preferred_in",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 125,
+        "dst": 10000124,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000213,
+        "dst": 125,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000214,
+        "dst": 125,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 126,
+        "dst": 10000125,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000215,
+        "dst": 126,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 126,
+        "dst": 40000005,
+        "type": "preferred_in",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 127,
+        "dst": 10000126,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000216,
+        "dst": 127,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 128,
+        "dst": 10000127,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000217,
+        "dst": 128,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 129,
+        "dst": 10000128,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000218,
+        "dst": 129,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000219,
+        "dst": 129,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 129,
+        "dst": 40000005,
+        "type": "preferred_in",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 130,
+        "dst": 10000129,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000220,
+        "dst": 130,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 130,
+        "dst": 40000006,
+        "type": "preferred_in",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 131,
+        "dst": 10000130,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000221,
+        "dst": 131,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000222,
+        "dst": 131,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000223,
+        "dst": 131,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 132,
+        "dst": 10000131,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000224,
+        "dst": 132,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 132,
+        "dst": 40000006,
+        "type": "preferred_in",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 133,
+        "dst": 10000132,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 133,
+        "dst": 20000171,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 133,
+        "dst": 20000172,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 133,
+        "dst": 20000173,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000225,
+        "dst": 133,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 134,
+        "dst": 10000133,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 134,
+        "dst": 20000174,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 134,
+        "dst": 20000175,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000226,
+        "dst": 134,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000227,
+        "dst": 134,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000228,
+        "dst": 134,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 135,
+        "dst": 10000134,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 135,
+        "dst": 20000176,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 135,
+        "dst": 20000177,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 135,
+        "dst": 20000178,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 135,
+        "dst": 20000179,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000229,
+        "dst": 135,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 136,
+        "dst": 10000135,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 136,
+        "dst": 20000180,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 136,
+        "dst": 20000181,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000230,
+        "dst": 136,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 137,
+        "dst": 10000136,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 137,
+        "dst": 20000182,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000231,
+        "dst": 137,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 138,
+        "dst": 10000137,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 138,
+        "dst": 20000183,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000232,
+        "dst": 138,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000233,
+        "dst": 138,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 139,
+        "dst": 10000138,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 139,
+        "dst": 20000184,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 139,
+        "dst": 20000185,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000234,
+        "dst": 139,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 140,
+        "dst": 10000139,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000235,
+        "dst": 140,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 141,
+        "dst": 10000140,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000236,
+        "dst": 141,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000237,
+        "dst": 141,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000238,
+        "dst": 141,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 142,
+        "dst": 10000141,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 142,
+        "dst": 20000186,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 142,
+        "dst": 20000187,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000239,
+        "dst": 142,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000240,
+        "dst": 142,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 143,
+        "dst": 10000142,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 143,
+        "dst": 20000188,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000241,
+        "dst": 143,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 144,
+        "dst": 10000143,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 144,
+        "dst": 20000189,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000242,
+        "dst": 144,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000243,
+        "dst": 144,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 145,
+        "dst": 10000144,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 145,
+        "dst": 20000190,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 145,
+        "dst": 20000191,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000244,
+        "dst": 145,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 146,
+        "dst": 10000145,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 146,
+        "dst": 20000192,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000245,
+        "dst": 146,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 147,
+        "dst": 10000146,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 147,
+        "dst": 20000193,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 147,
+        "dst": 20000194,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 147,
+        "dst": 20000195,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 147,
+        "dst": 20000196,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 147,
+        "dst": 20000197,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 147,
+        "dst": 20000198,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 147,
+        "dst": 20000199,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000246,
+        "dst": 147,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000247,
+        "dst": 147,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000248,
+        "dst": 147,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000249,
+        "dst": 147,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000250,
+        "dst": 147,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000251,
+        "dst": 147,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 148,
+        "dst": 10000147,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 148,
+        "dst": 20000200,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000252,
+        "dst": 148,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 149,
+        "dst": 10000148,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000253,
+        "dst": 149,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 150,
+        "dst": 10000149,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 150,
+        "dst": 20000201,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 150,
+        "dst": 20000202,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 150,
+        "dst": 20000203,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000254,
+        "dst": 150,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000255,
+        "dst": 150,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000256,
+        "dst": 150,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 151,
+        "dst": 10000150,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 151,
+        "dst": 20000204,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 151,
+        "dst": 20000205,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 151,
+        "dst": 20000206,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000257,
+        "dst": 151,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000258,
+        "dst": 151,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000259,
+        "dst": 151,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 152,
+        "dst": 10000151,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 152,
+        "dst": 20000207,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 152,
+        "dst": 20000208,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000260,
+        "dst": 152,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 153,
+        "dst": 10000152,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000261,
+        "dst": 153,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 154,
+        "dst": 10000153,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000262,
+        "dst": 154,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 154,
+        "dst": 40000001,
+        "type": "preferred_in",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 155,
+        "dst": 10000154,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000263,
+        "dst": 155,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 155,
+        "dst": 40000001,
+        "type": "preferred_in",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 156,
+        "dst": 10000155,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 156,
+        "dst": 20000209,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 156,
+        "dst": 20000210,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 156,
+        "dst": 20000211,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000264,
+        "dst": 156,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 157,
+        "dst": 10000156,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 157,
+        "dst": 20000212,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 157,
+        "dst": 20000213,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000265,
+        "dst": 157,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000266,
+        "dst": 157,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 158,
+        "dst": 10000157,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 158,
+        "dst": 20000214,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 158,
+        "dst": 20000215,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 158,
+        "dst": 20000216,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 158,
+        "dst": 20000217,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000267,
+        "dst": 158,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000268,
+        "dst": 158,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000269,
+        "dst": 158,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 159,
+        "dst": 10000158,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 159,
+        "dst": 20000218,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 159,
+        "dst": 20000219,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 159,
+        "dst": 20000220,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 159,
+        "dst": 20000221,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 159,
+        "dst": 20000222,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000270,
+        "dst": 159,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000271,
+        "dst": 159,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000272,
+        "dst": 159,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000273,
+        "dst": 159,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 160,
+        "dst": 10000159,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 160,
+        "dst": 20000223,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000274,
+        "dst": 160,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 160,
+        "dst": 50000000,
+        "type": "usage",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 161,
+        "dst": 10000160,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 161,
+        "dst": 20000224,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000275,
+        "dst": 161,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000276,
+        "dst": 161,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 162,
+        "dst": 10000161,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 162,
+        "dst": 20000225,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000277,
+        "dst": 162,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 163,
+        "dst": 10000162,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000278,
+        "dst": 163,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 164,
+        "dst": 10000163,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 164,
+        "dst": 20000226,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 164,
+        "dst": 20000227,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000279,
+        "dst": 164,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 165,
+        "dst": 10000164,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000280,
+        "dst": 165,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000281,
+        "dst": 165,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 166,
+        "dst": 10000165,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 166,
+        "dst": 20000228,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000282,
+        "dst": 166,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000283,
+        "dst": 166,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 167,
+        "dst": 10000166,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000284,
+        "dst": 167,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000285,
+        "dst": 167,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 168,
+        "dst": 10000167,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 168,
+        "dst": 20000229,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 168,
+        "dst": 20000230,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 168,
+        "dst": 20000231,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000286,
+        "dst": 168,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000287,
+        "dst": 168,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000288,
+        "dst": 168,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000289,
+        "dst": 168,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 169,
+        "dst": 10000168,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 169,
+        "dst": 20000232,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000290,
+        "dst": 169,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 170,
+        "dst": 10000169,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 170,
+        "dst": 20000233,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 170,
+        "dst": 20000234,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000291,
+        "dst": 170,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 171,
+        "dst": 10000170,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 171,
+        "dst": 20000235,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000292,
+        "dst": 171,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 171,
+        "dst": 40000007,
+        "type": "preferred_in",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 172,
+        "dst": 10000171,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 172,
+        "dst": 20000236,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 172,
+        "dst": 20000237,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000293,
+        "dst": 172,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 173,
+        "dst": 10000172,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 173,
+        "dst": 20000238,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000294,
+        "dst": 173,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 174,
+        "dst": 10000173,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000295,
+        "dst": 174,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 175,
+        "dst": 10000174,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 175,
+        "dst": 20000239,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 175,
+        "dst": 20000240,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 175,
+        "dst": 20000241,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000296,
+        "dst": 175,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 176,
+        "dst": 10000175,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 176,
+        "dst": 20000242,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000297,
+        "dst": 176,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 177,
+        "dst": 10000176,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 177,
+        "dst": 20000243,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000298,
+        "dst": 177,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 178,
+        "dst": 10000177,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 178,
+        "dst": 20000244,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 178,
+        "dst": 20000245,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 178,
+        "dst": 20000246,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 178,
+        "dst": 20000247,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000299,
+        "dst": 178,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 179,
+        "dst": 10000178,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 179,
+        "dst": 20000248,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000300,
+        "dst": 179,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 180,
+        "dst": 10000179,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 180,
+        "dst": 20000249,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000301,
+        "dst": 180,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 181,
+        "dst": 10000180,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 181,
+        "dst": 20000250,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000302,
+        "dst": 181,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 182,
+        "dst": 10000181,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 182,
+        "dst": 20000251,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 182,
+        "dst": 20000252,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 182,
+        "dst": 20000253,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000303,
+        "dst": 182,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 183,
+        "dst": 10000182,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 183,
+        "dst": 20000254,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000304,
+        "dst": 183,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 184,
+        "dst": 10000183,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 184,
+        "dst": 20000255,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000305,
+        "dst": 184,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 185,
+        "dst": 10000184,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 185,
+        "dst": 20000256,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 185,
+        "dst": 20000257,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000306,
+        "dst": 185,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000307,
+        "dst": 185,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000308,
+        "dst": 185,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 185,
+        "dst": 40000008,
+        "type": "preferred_in",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 186,
+        "dst": 10000185,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 186,
+        "dst": 20000258,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 186,
+        "dst": 20000259,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000309,
+        "dst": 186,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000310,
+        "dst": 186,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 187,
+        "dst": 10000186,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 187,
+        "dst": 20000260,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000311,
+        "dst": 187,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 188,
+        "dst": 10000187,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 188,
+        "dst": 20000261,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000312,
+        "dst": 188,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 188,
+        "dst": 40000009,
+        "type": "preferred_in",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 189,
+        "dst": 10000188,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 189,
+        "dst": 20000262,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000313,
+        "dst": 189,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 190,
+        "dst": 10000189,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000314,
+        "dst": 190,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 190,
+        "dst": 40000009,
+        "type": "preferred_in",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 191,
+        "dst": 10000190,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 191,
+        "dst": 20000263,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000315,
+        "dst": 191,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 192,
+        "dst": 10000191,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 192,
+        "dst": 20000264,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 192,
+        "dst": 20000265,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 192,
+        "dst": 20000266,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000316,
+        "dst": 192,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 193,
+        "dst": 10000192,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 193,
+        "dst": 20000267,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 193,
+        "dst": 20000268,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000317,
+        "dst": 193,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 193,
+        "dst": 40000009,
+        "type": "preferred_in",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 194,
+        "dst": 10000193,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 194,
+        "dst": 20000269,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 194,
+        "dst": 20000270,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000318,
+        "dst": 194,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 194,
+        "dst": 40000009,
+        "type": "preferred_in",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 195,
+        "dst": 10000194,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 195,
+        "dst": 20000271,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000319,
+        "dst": 195,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 195,
+        "dst": 40000009,
+        "type": "preferred_in",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 196,
+        "dst": 10000195,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 196,
+        "dst": 20000272,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 196,
+        "dst": 20000273,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 196,
+        "dst": 20000274,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000320,
+        "dst": 196,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 197,
+        "dst": 10000196,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000321,
+        "dst": 197,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000322,
+        "dst": 197,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 198,
+        "dst": 10000197,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 198,
+        "dst": 20000275,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 198,
+        "dst": 20000276,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000323,
+        "dst": 198,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 199,
+        "dst": 10000198,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000324,
+        "dst": 199,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 200,
+        "dst": 10000199,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 200,
+        "dst": 20000277,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000325,
+        "dst": 200,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000326,
+        "dst": 200,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 201,
+        "dst": 10000200,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 201,
+        "dst": 20000278,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000327,
+        "dst": 201,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 202,
+        "dst": 10000201,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 202,
+        "dst": 20000279,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 202,
+        "dst": 20000280,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000328,
+        "dst": 202,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000329,
+        "dst": 202,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000330,
+        "dst": 202,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 203,
+        "dst": 10000202,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 203,
+        "dst": 20000281,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000331,
+        "dst": 203,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 203,
+        "dst": 40000010,
+        "type": "preferred_in",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 204,
+        "dst": 10000203,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 204,
+        "dst": 20000282,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000332,
+        "dst": 204,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 205,
+        "dst": 10000204,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 205,
+        "dst": 20000283,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000333,
+        "dst": 205,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000334,
+        "dst": 205,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 206,
+        "dst": 10000205,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000335,
+        "dst": 206,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 207,
+        "dst": 10000206,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 207,
+        "dst": 20000284,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000336,
+        "dst": 207,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 208,
+        "dst": 10000207,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 208,
+        "dst": 20000285,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000337,
+        "dst": 208,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 209,
+        "dst": 10000208,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000338,
+        "dst": 209,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 210,
+        "dst": 10000209,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 210,
+        "dst": 20000286,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 210,
+        "dst": 20000287,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000339,
+        "dst": 210,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000340,
+        "dst": 210,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 211,
+        "dst": 10000210,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000341,
+        "dst": 211,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000342,
+        "dst": 211,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 211,
+        "dst": 40000011,
+        "type": "preferred_in",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 212,
+        "dst": 10000211,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000343,
+        "dst": 212,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 212,
+        "dst": 40000011,
+        "type": "preferred_in",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 213,
+        "dst": 10000212,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 213,
+        "dst": 20000288,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000344,
+        "dst": 213,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 213,
+        "dst": 40000011,
+        "type": "preferred_in",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 214,
+        "dst": 10000213,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 214,
+        "dst": 20000289,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000345,
+        "dst": 214,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 214,
+        "dst": 40000011,
+        "type": "preferred_in",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 215,
+        "dst": 10000214,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 215,
+        "dst": 20000290,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000346,
+        "dst": 215,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 216,
+        "dst": 10000215,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000347,
+        "dst": 216,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 217,
+        "dst": 10000216,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000348,
+        "dst": 217,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 218,
+        "dst": 10000217,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000349,
+        "dst": 218,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 219,
+        "dst": 10000218,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000350,
+        "dst": 219,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 220,
+        "dst": 10000219,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 220,
+        "dst": 20000291,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000351,
+        "dst": 220,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 221,
+        "dst": 10000220,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000352,
+        "dst": 221,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 221,
+        "dst": 40000012,
+        "type": "preferred_in",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 222,
+        "dst": 10000221,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000353,
+        "dst": 222,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 222,
+        "dst": 40000012,
+        "type": "preferred_in",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 223,
+        "dst": 10000222,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 223,
+        "dst": 20000292,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 223,
+        "dst": 20000293,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000354,
+        "dst": 223,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000355,
+        "dst": 223,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 224,
+        "dst": 10000223,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 224,
+        "dst": 20000294,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 224,
+        "dst": 20000295,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000356,
+        "dst": 224,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 225,
+        "dst": 10000224,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 225,
+        "dst": 20000296,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 225,
+        "dst": 20000297,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000357,
+        "dst": 225,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000358,
+        "dst": 225,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 226,
+        "dst": 10000225,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 226,
+        "dst": 20000298,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 226,
+        "dst": 20000299,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000359,
+        "dst": 226,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 227,
+        "dst": 10000226,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 227,
+        "dst": 20000300,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 227,
+        "dst": 20000301,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 227,
+        "dst": 20000302,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000360,
+        "dst": 227,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 227,
+        "dst": 40000013,
+        "type": "preferred_in",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 228,
+        "dst": 10000227,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000361,
+        "dst": 228,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 229,
+        "dst": 10000228,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 229,
+        "dst": 20000303,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 229,
+        "dst": 20000304,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 229,
+        "dst": 20000305,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000362,
+        "dst": 229,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 229,
+        "dst": 40000013,
+        "type": "preferred_in",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 230,
+        "dst": 10000229,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 230,
+        "dst": 20000306,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000363,
+        "dst": 230,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 231,
+        "dst": 10000230,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000364,
+        "dst": 231,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 232,
+        "dst": 10000231,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 232,
+        "dst": 20000307,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000365,
+        "dst": 232,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 232,
+        "dst": 40000014,
+        "type": "preferred_in",
+        "weight": 0.8,
+        "confidence": 0.9
+      },
+      {
+        "src": 233,
+        "dst": 10000232,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000366,
+        "dst": 233,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 234,
+        "dst": 10000233,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000367,
+        "dst": 234,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 235,
+        "dst": 10000234,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 235,
+        "dst": 20000308,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000368,
+        "dst": 235,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000369,
+        "dst": 235,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 236,
+        "dst": 10000235,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000370,
+        "dst": 236,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000371,
+        "dst": 236,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 237,
+        "dst": 10000236,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000372,
+        "dst": 237,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 238,
+        "dst": 10000237,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000373,
+        "dst": 238,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 239,
+        "dst": 10000238,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000374,
+        "dst": 239,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 240,
+        "dst": 10000239,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 240,
+        "dst": 20000309,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000375,
+        "dst": 240,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000376,
+        "dst": 240,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 241,
+        "dst": 10000240,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000377,
+        "dst": 241,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 242,
+        "dst": 10000241,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 242,
+        "dst": 20000310,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 242,
+        "dst": 20000311,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000378,
+        "dst": 242,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 243,
+        "dst": 10000242,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 243,
+        "dst": 20000312,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000379,
+        "dst": 243,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000380,
+        "dst": 243,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 244,
+        "dst": 10000243,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000381,
+        "dst": 244,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000382,
+        "dst": 244,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000383,
+        "dst": 244,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000384,
+        "dst": 244,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000385,
+        "dst": 244,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 245,
+        "dst": 10000244,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000386,
+        "dst": 245,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 246,
+        "dst": 10000245,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 246,
+        "dst": 20000313,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000387,
+        "dst": 246,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 247,
+        "dst": 10000246,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 247,
+        "dst": 20000314,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 247,
+        "dst": 20000315,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000388,
+        "dst": 247,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000389,
+        "dst": 247,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 248,
+        "dst": 10000247,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 248,
+        "dst": 20000316,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000390,
+        "dst": 248,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 249,
+        "dst": 10000248,
+        "type": "explained_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 249,
+        "dst": 20000317,
+        "type": "illustrated_by",
+        "weight": 1.0,
+        "confidence": 1.0
+      },
+      {
+        "src": 30000391,
+        "dst": 249,
+        "type": "realizes",
+        "weight": 1.0,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "lexicon_analysis": {
+    "total_lexicon_entries": 206978,
+    "language_distribution": {
+      "null": 206978
+    },
+    "surface_samples": [
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      },
+      {
+        "surface": null,
+        "lang": null
+      }
+    ],
+    "search_test_results": {
+      "computer": {
+        "matches": 10,
+        "sample_rowids": [
+          30027890,
+          30039454,
+          30043481,
+          30043482,
+          30043671
+        ]
+      },
+      "machine": {
+        "matches": 10,
+        "sample_rowids": [
+          30001649,
+          30001650,
+          30006535,
+          30015706,
+          30027889
+        ]
+      },
+      "learning": {
+        "matches": 10,
+        "sample_rowids": [
+          30043184,
+          30089692,
+          30090300,
+          30090959,
+          30090962
+        ]
+      },
+      "artificial": {
+        "matches": 10,
+        "sample_rowids": [
+          30000638,
+          30014983,
+          30015970,
+          30031619,
+          30042574
+        ]
+      }
+    }
+  }
+}

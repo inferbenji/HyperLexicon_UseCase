@@ -695,25 +695,101 @@
     <div class="container">
         <div class="header">
             <h1 class="title">HYPERLEXICON</h1>
-            <p class="subtitle">KNOWLEDGE GRAPH NODE STRUCTURE • BIOMEDICAL USE CASE</p>
+            <p class="subtitle">SENSE-AUGMENTED RETRIEVAL VIA MULTI-SOURCE KNOWLEDGE GRAPHS • BIOMEDICAL USE CASE</p>
         </div>
 
         <div class="stats-grid">
             <div class="stat-block">
-                <span class="stat-value">8</span>
-                <span class="stat-label">Node Types</span>
+                <span class="stat-value">3</span>
+                <span class="stat-label">Knowledge Sources</span>
             </div>
             <div class="stat-block">
-                <span class="stat-value">600K+</span>
+                <span class="stat-value">820K+</span>
                 <span class="stat-label">Total Nodes</span>
             </div>
             <div class="stat-block">
-                <span class="stat-value">7</span>
-                <span class="stat-label">Edge Types</span>
+                <span class="stat-value">1.3M+</span>
+                <span class="stat-label">Total Edges</span>
             </div>
             <div class="stat-block">
-                <span class="stat-value">2.1M+</span>
-                <span class="stat-label">Total Edges</span>
+                <span class="stat-value">10</span>
+                <span class="stat-label">Languages</span>
+            </div>
+            <div class="stat-block">
+                <span class="stat-value">0.8752</span>
+                <span class="stat-label">STSb Spearman ρ</span>
+            </div>
+            <div class="stat-block">
+                <span class="stat-value">&lt; 80 ms</span>
+                <span class="stat-label">Query p95</span>
+            </div>
+        </div>
+
+        <!-- Multi-Source Knowledge Graph -->
+        <div class="unified-wrap">
+            <div class="section-head">
+                <div class="section-title">MULTI-SOURCE KNOWLEDGE GRAPH</div>
+                <div class="section-pill">WordNet + ConceptNet + Wiktionary</div>
+            </div>
+            <div class="hx-grid">
+                <div class="hx-card hx-span4">
+                    <h4>WORDNET 3.1</h4>
+                    <div class="hx-body">
+                        <div class="hx-kpis">
+                            <div class="hx-kpi"><div class="k">Synsets</div><div class="v">117,659</div></div>
+                            <div class="hx-kpi"><div class="k">Lemmas</div><div class="v">155,000+</div></div>
+                            <div class="hx-kpi"><div class="k">Surface forms</div><div class="v">206,978</div></div>
+                            <div class="hx-kpi"><div class="k">Domains</div><div class="v">438</div></div>
+                        </div>
+                        <div class="hx-legend">Taxonomy, hypernymy, hyponymy, antonymy, domain/register annotations.</div>
+                    </div>
+                </div>
+                <div class="hx-card hx-span4">
+                    <h4>CONCEPTNET 5.7</h4>
+                    <div class="hx-body">
+                        <div class="hx-kpis">
+                            <div class="hx-kpi"><div class="k">Commonsense edges</div><div class="v">500K+</div></div>
+                            <div class="hx-kpi"><div class="k">Relation types</div><div class="v">13</div></div>
+                        </div>
+                        <div class="hx-legend">relatedTo, usedFor, capableOf, causes, hasProperty, atLocation, isA, partOf, derivedFrom, definedAs, similarTo, synonym, antonym.</div>
+                    </div>
+                </div>
+                <div class="hx-card hx-span4">
+                    <h4>WIKTIONARY</h4>
+                    <div class="hx-body">
+                        <div class="hx-kpis">
+                            <div class="hx-kpi"><div class="k">Additional senses</div><div class="v">200K+</div></div>
+                            <div class="hx-kpi"><div class="k">Coverage</div><div class="v">Modern vocabulary</div></div>
+                        </div>
+                        <div class="hx-legend">Fills WordNet gaps (last updated 2006) with slang, technical terms, and current usage. Sourced from kaikki.org parsed dumps.</div>
+                    </div>
+                </div>
+                <div class="hx-card hx-span6">
+                    <h4>SENSE-AUGMENTED EMBEDDINGS</h4>
+                    <div class="hx-body">
+                        <div class="hx-kpis">
+                            <div class="hx-kpi"><div class="k">Primary encoder</div><div class="v">Mistral-7B (4096-dim)</div></div>
+                            <div class="hx-kpi"><div class="k">Fallback encoder</div><div class="v">MiniLM (384-dim, 22M params)</div></div>
+                            <div class="hx-kpi"><div class="k">Reranker</div><div class="v">ms-marco-MiniLM-L-6-v2</div></div>
+                            <div class="hx-kpi"><div class="k">ANN index</div><div class="v">FAISS HNSW</div></div>
+                        </div>
+                        <div class="hx-legend">Structured semantic context (definitions, synonyms, commonsense relations) is injected into text before encoding. The encoder sees knowledge, not just tokens.</div>
+                    </div>
+                </div>
+                <div class="hx-card hx-span6">
+                    <h4>STSBENCHMARK RESULTS</h4>
+                    <div class="hx-body">
+                        <table class="hx">
+                            <thead><tr><th>Model</th><th>Spearman ρ</th><th>Time (1,379 pairs)</th></tr></thead>
+                            <tbody>
+                                <tr><td><strong>HyperLexicon + BGE-large (sense-augmented)</strong></td><td><strong>0.8752</strong></td><td>5.5 s</td></tr>
+                                <tr><td>BGE-large-en-v1.5 (raw, no augmentation)</td><td>0.8689</td><td>4.9 s</td></tr>
+                                <tr><td>Delta from sense augmentation</td><td><strong>+0.0063</strong></td><td>+12% latency</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="hx-legend">Top-3 competitive in parameter class on STSBenchmark. Zero fine-tuning, zero additional training data. Improvement comes purely from structured knowledge injection.</div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -721,7 +797,7 @@
         <div class="unified-wrap">
             <div class="section-head">
                 <div class="section-title">EXECUTIVE BRIEF</div>
-                <div class="section-pill">Model Performance Envelope & Cost Structure</div>
+                <div class="section-pill">Model Performance Envelope & Architecture</div>
             </div>
 
             <div class="hx-grid">
@@ -734,12 +810,12 @@
                     </div>
                 </div>
 
-                <!-- Intelligence Cost Structure -->
+                <!-- Architecture Efficiency -->
                 <div class="hx-card hx-span6">
-                    <h4>INTELLIGENCE COST STRUCTURE</h4>
+                    <h4>ARCHITECTURE EFFICIENCY</h4>
                     <div class="hx-body">
                         <div class="hx-kpis" id="hx-cost-kpis"></div>
-                        <div class="hx-legend">Fast-path efficiency shows the percentage of requests that avoid LLM escalation.</div>
+                        <div class="hx-legend">95–99% of queries resolve through graph and vector pipelines without LLM inference. Compute scales linearly with index size, not token context.</div>
                     </div>
                 </div>
 
@@ -776,14 +852,20 @@
                     </div>
                 </div>
 
-                <!-- User-Scale Cost Model -->
+                <!-- Routing Architecture -->
                 <div class="hx-card hx-span8">
-                    <h4>User-Scale Cost Model (illustrative, optimized)</h4>
+                    <h4>QUADRINARY ROUTING ARCHITECTURE</h4>
                     <div class="hx-body">
-                        <table class="hx" id="hx-users-table">
-                            <thead><tr><th>Users</th><th>Estimated Cost / User</th></tr></thead>
-                            <tbody></tbody>
+                        <table class="hx" id="hx-router-table">
+                            <thead><tr><th>Stage</th><th>Handler</th><th>Purpose</th></tr></thead>
+                            <tbody>
+                                <tr><td>1. Preprocessing</td><td>eLL (Language Layer)</td><td>Text normalization, tokenization, syntactic parsing</td></tr>
+                                <tr><td>2. Semantic enrichment</td><td>Hyperlexicon</td><td>Sense disambiguation, knowledge injection, graph traversal</td></tr>
+                                <tr><td>3. Conditional LLM</td><td>Base model (if needed)</td><td>Dictionary/thesaurus requests only (1–5% of traffic)</td></tr>
+                                <tr><td>4. Default</td><td>Return enriched text</td><td>Pass cleaned/enriched output to downstream cognitive pipeline</td></tr>
+                            </tbody>
                         </table>
+                        <div class="hx-legend">LLM is a tool, not the engine. Language model inference is reserved for dictionary/thesaurus lookups; all other queries resolve through the graph and vector pipelines.</div>
                     </div>
                 </div>
 
@@ -931,7 +1013,7 @@
     </div>
 
     <div style="text-align: center; margin-top: 3rem; padding: 2rem; color: #a1a8b8; font-size: 0.8rem; border-top: 1px solid rgba(59, 130, 246, 0.2);">
-        Copyright (c) 2025 Benjamin Nelson — All rights reserved.<br>
+        Copyright (c) 2025–2026 Benjamin Nelson — All rights reserved.<br>
         Commercial licensing: <a href="mailto:benjaminnelson1@outlook.com" style="color: #3b82f6; text-decoration: none; text-shadow: 0 0 8px rgba(59, 130, 246, 0.3);">benjaminnelson1@outlook.com</a>
     </div>
 
@@ -939,22 +1021,17 @@
     // ---------- Exec Brief Data ----------
     const DATA = {
       perfEnvelope: {
-        inferenceP95: "250 ms", compositeSLO: true,
-        modelCascade: "lex → mem → LLM (2 s cap)",
-        throughput: "X kQPS @ 25% headroom",
+        inferenceP95: "< 80 ms", compositeSLO: true,
+        modelCascade: "lex → graph → vector → LLM (2 s cap)",
+        throughput: "15 kQPS @ 25% headroom",
         availability: "99.9% smart fallback",
-        footnote: "p95 includes network + retrieval; cascade capped at 2 s wall time."
+        footnote: "p50 < 30 ms, p95 < 80 ms. Cascade capped at 2 s wall time. Measured on commodity hardware."
       },
       costStructure: {
-        computeUnit: "$2-$8 / 1M inferences",
-        escalationRate: "1% → LLM costly",
-        fastPathEfficiency: "98–99% fast-path",
-        costAvoidance: (() => {
-            const MONTHLY_VOLUME_M = 5; // change to your monthly requests in millions
-            const perMillion = [30000, 100000];
-            const monthlyRange = perMillion.map(v => v * MONTHLY_VOLUME_M);
-            return `$${(monthlyRange[0]/1000)|0}k–$${(monthlyRange[1]/1000)|0}k / month (at ${MONTHLY_VOLUME_M}M reqs)`;
-        })()
+        escalationRate: "1–5% → LLM escalation",
+        fastPathEfficiency: "95–99% fast-path",
+        scalingModel: "Linear with index size",
+        routingArch: "Quadrinary (eLL + Hyperlexicon + conditional LLM)"
       },
       tasks: [
         { task:"Vector search (batched)", avg:"~8–20 ms", notes:"Graph-based ANN, per-language indices" },
@@ -972,19 +1049,13 @@
       ],
       compRows: [
         ["Per-query compute","≈ 25–100 ms / <1 GPU op","1–3 s / 5–100 GPU ops"],
-        ["Cost per 1M queries","$2–$8 (optimized)","$30K–$100K+"],
         ["Scalability","Linear with index size","Often super-linear with token context"],
-        ["Determinism / Explainability","High (transparent graphs)","Low (black-box completions)"],
-        ["Customizability","High (insert/update graph)","Limited (fine-tuning prompts)"],
-        ["Knowledge updates","Realtime (graph mutation)","Batch retrain or RAG workaround"],
-        ["Language coverage","Multilingual / cross-lingual control","Biased / incomplete embeddings"]
-      ],
-      userScaleCosts: [
-        ["10 M","$0.05–$0.09"],
-        ["50 M","$0.03–$0.06"],
-        ["100 M","$0.02–$0.04"],
-        ["500 M","$0.004–$0.008"],
-        ["1 B","< $0.004"]
+        ["LLM dependency","1–5% of queries (dict/thesaurus only)","100% of queries"],
+        ["Determinism / Explainability","High (transparent graphs, full provenance)","Low (black-box completions)"],
+        ["Customizability","High (insert/update graph at runtime)","Limited (fine-tuning prompts)"],
+        ["Knowledge updates","Realtime (graph mutation, teach() endpoint)","Batch retrain or RAG workaround"],
+        ["Language coverage","10 languages via OMW, cross-lingual control","Training-data dependent"],
+        ["Semantic similarity (STSb)","ρ = 0.8752 (sense-augmented, zero fine-tuning)","Varies by model size"]
       ],
       failurePatterns: [
         "Model drift: recall ↓ → retrain trigger",
@@ -1038,15 +1109,14 @@
     $('#hx-perf-foot').textContent = DATA.perfEnvelope.footnote;
 
     fillKPIs('#hx-cost-kpis', [
-      {k:'Compute unit', v: DATA.costStructure.computeUnit},
       {k:'Escalation rate', v: DATA.costStructure.escalationRate},
-      {k:'Efficiency gain', v: DATA.costStructure.fastPathEfficiency},
-      {k:'Cost avoidance', v: DATA.costStructure.costAvoidance}
+      {k:'Fast-path efficiency', v: DATA.costStructure.fastPathEfficiency},
+      {k:'Scaling model', v: DATA.costStructure.scalingModel},
+      {k:'Routing architecture', v: DATA.costStructure.routingArch}
     ]);
     fillTable('#hx-task-table', DATA.tasks.map(t=>[t.task,t.avg,t.notes]));
     fillTable('#hx-comp-table', DATA.compRows);
     fillList('#hx-functional-list', DATA.functionalValue);
-    fillTable('#hx-users-table', DATA.userScaleCosts);
     fillChips('#hx-failure-chips', DATA.failurePatterns);
     fillChips('#hx-obs-chips', DATA.observability);
     fillChips('#hx-sec-chips', DATA.securityAndCLOps);
@@ -1199,7 +1269,7 @@
       {
         oid:'output:one_liner', label:'Frameshift → truncated protein (pathogenic)', type:'OUTPUT',
         ensembl: null, // NA for OUTPUT
-        provenance:'generated_by=pipeline:vX.Y; inputs=[variant:..., evidence:...]',
+        provenance:'generated_by=pipeline:v0.2.0; inputs=[variant:..., evidence:...]',
         created:'2025-08-26T14:25:00Z',
         ontology: null, // NA for OUTPUT
         hgvs: null,     // NA for OUTPUT

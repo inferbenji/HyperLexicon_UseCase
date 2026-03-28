@@ -1,0 +1,48 @@
+================================================================================
+HYPERLEXICON FUNCTIONALITY TEST SUMMARY
+================================================================================
+
+🔧 SYSTEM INFORMATION
+----------------------------------------
+python_version: 3.10.12 (main, Aug 15 2025, 14:32:43) [GCC 11.4.0]
+project_root: /home/trim/Documents/GitHub/Lexinomicon
+database_exists: True
+index_exists: True
+
+🖥️ CLI TEST RESULTS
+----------------------------------------
+Total queries tested: 8
+Successful queries: 8
+Failed queries: 0
+
+📊 QUALITY ANALYSIS
+----------------------------------------
+Average results per query: 5.0
+Average execution time: 17370.16ms
+Queries with results: 8
+
+Score statistics:
+  min: 0.4345
+  max: 0.5944
+  avg: 0.5125
+  median: 0.5125
+
+🌐 API TEST RESULTS
+----------------------------------------
+Server status: not_running
+
+⚠️ EDGE CASE RESULTS
+----------------------------------------
+'': error
+' ': error
+'xyz123nonexistent': success
+'a': success
+'supercalifragilisticexpialidocious': success
+'the quick brown fox jumps over the lazy dog': success
+'!@#$%^&*()': error
+'计算机': success
+
+🎯 OVERALL ASSESSMENT
+----------------------------------------
+Overall success rate: 100.0%
+System is: 🟢 OPERATIONAL
