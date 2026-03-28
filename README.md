@@ -292,6 +292,14 @@ HyperLexicon_UseCase/
 
 ## Acknowledgements
 
+### Mark Head
+
+This work exists because **Mark Head** believed in it before anyone else did. A patron of the arts, a philanthropist, and a man whose instinct for what matters has never needed a spreadsheet to justify it &mdash; Mark provided the funding and the freedom that made Hyperlexicon possible. In a field crowded with committees and conditional term sheets, he simply said *yes*. Every node in this graph, every benchmark on these pages, traces back to that decision. The debt is not financial; it is the rarer kind &mdash; the kind you repay by building something worthy of the trust.
+
+---
+
+### Data Sources
+
 The lexical data encoded in Hyperlexicon is derived from **Princeton WordNet**, developed at Princeton University's Cognitive Science Laboratory.
 
 > Fellbaum, C. (Ed.). (1998). *WordNet: An Electronic Lexical Database*. Cambridge, MA: MIT Press.
